@@ -144,7 +144,7 @@ export const allDestinations: Destination[] = [
     id: 10,
     name: "Boracay White Beach",
     location: "Malay, Aklan",
-    image: "https://images.unsplash.com/photo-1537953391147-f4f3f6b4cb39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1555931459-d2482358d04e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     rating: 4.9,
     price: "₱4,500",
     entranceFee: "₱75",

@@ -26,7 +26,7 @@ export function Layout() {
         <Outlet />
       </div>
 
-      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[448px] bg-white border-t border-gray-100 px-2 py-3 shadow-2xl">
+      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[448px] bg-white border-t border-gray-100 px-2 py-3 shadow-2xl z-[2000]">
         <div className="flex justify-around items-center">
           {navItems.map((item) => {
             const Icon = item.icon;

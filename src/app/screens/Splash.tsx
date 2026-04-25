@@ -26,9 +26,9 @@ export function Splash() {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="flex-1 flex flex-col items-center px-8 -mt-40 relative z-10"
+        className="flex-1 flex flex-col items-center px-8 -mt-60 relative z-10"
       >
-        <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-2xl mb-4 p-4">
+        <div className="w-40 h-40 bg-white rounded-full flex items-center justify-center shadow-2xl mb-4 p-4">
           <img 
             src="/logo.png" 
             alt="GalaGuide Logo" 
