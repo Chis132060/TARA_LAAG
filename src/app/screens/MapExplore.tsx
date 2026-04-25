@@ -1,23 +1,10 @@
 import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router";
-import { Search, Navigation, Star, MapPin as MapPinIcon, Filter, Layers } from "lucide-react";
+import { Search, Navigation, Star, MapPin as MapPinIcon, Filter } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-
-// Fix for default marker icon in Leaflet
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
-
-// @ts-ignore
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-});
 
 const allDestinations = [
   // Beaches
@@ -279,5 +266,4 @@ export function MapExplore() {
       `}</style>
     </div>
   );
-}
 }
