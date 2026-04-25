@@ -6,38 +6,8 @@ import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from "rea
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const allDestinations = [
-  // Beaches
-  { id: 1, name: "Siargao Cloud 9", image: "https://images.unsplash.com/photo-1572316197910-a32d5e5e8f75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Beaches", color: "#006FB4", lat: 9.8123, lng: 126.1633 },
-  { id: 3, name: "Camiguin White Island", image: "https://images.unsplash.com/photo-1551521021-d929e606badc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.8, category: "Beaches", color: "#006FB4", lat: 9.2558, lng: 124.6547 },
-  { id: 5, name: "Dahican Beach", image: "https://images.unsplash.com/photo-1725357347380-a07aaaa8527b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.8, category: "Beaches", color: "#006FB4", lat: 6.9157, lng: 126.2572 },
-  { id: 6, name: "Britania Islands", image: "https://images.unsplash.com/photo-1760644328320-5e37dc6928d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Beaches", color: "#006FB4", lat: 8.6508, lng: 126.2167 },
-  { id: 9, name: "Naked Island", image: "https://images.unsplash.com/photo-1736776256319-50153ce32dfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.8, category: "Beaches", color: "#006FB4", lat: 9.7717, lng: 126.1167 },
-  { id: 11, name: "Magpupungko Pools", image: "https://images.unsplash.com/photo-1622481227477-8db839366177?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Beaches", color: "#006FB4", lat: 9.8789, lng: 126.1089 },
-  { id: 12, name: "Mantigue Island", image: "https://images.unsplash.com/photo-1768639400843-d604ccce9c3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.7, category: "Beaches", color: "#006FB4", lat: 9.1700, lng: 124.8100 },
-  { id: 14, name: "Samal Island", image: "https://images.unsplash.com/photo-1565565915331-293fd8113954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.8, category: "Beaches", color: "#006FB4", lat: 7.1000, lng: 125.7167 },
+import { allDestinations } from "../data/destinations";
 
-  // Waterfalls
-  { id: 2, name: "Enchanted River", image: "https://images.unsplash.com/photo-1585795361718-2141ba44cbe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Waterfalls", color: "#00C851", lat: 8.3944, lng: 126.2917 },
-  { id: 4, name: "Tinuy-an Falls", image: "https://images.unsplash.com/photo-1609930420316-72622d2db23d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Waterfalls", color: "#00C851", lat: 8.1706, lng: 126.2269 },
-  { id: 18, name: "Aliwagwag Falls", image: "https://images.unsplash.com/photo-1693571569894-e3a71ebc8535?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.7, category: "Waterfalls", color: "#00C851", lat: 7.7231, lng: 126.2950 },
-  { id: 19, name: "Maria Cristina Falls", image: "https://images.unsplash.com/photo-1767167649496-b0945c77ac2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.6, category: "Waterfalls", color: "#00C851", lat: 8.1833, lng: 124.1931 },
-  { id: 22, name: "Katibawasan Falls", image: "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.6, category: "Waterfalls", color: "#00C851", lat: 9.2150, lng: 124.7180 },
-
-  // Mountains
-  { id: 8, name: "Lake Sebu", image: "https://images.unsplash.com/photo-1767167649218-f8b03f66d28c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.7, category: "Mountains", color: "#8B4513", lat: 6.2272, lng: 124.7100 },
-  { id: 13, name: "Mount Apo", image: "https://images.unsplash.com/photo-1767167648895-3e4a0ddf46ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Mountains", color: "#8B4513", lat: 6.9875, lng: 125.2708 },
-
-  // Culture
-  { id: 23, name: "T'boli Living Museum", image: "https://images.unsplash.com/photo-1563280583-7c6d205d1188?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.8, category: "Culture", color: "#9C27B0", lat: 6.2300, lng: 124.7000 },
-  { id: 24, name: "Fort Pilar", image: "https://images.unsplash.com/photo-1563280607-41c1f2406e54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.7, category: "Culture", color: "#9C27B0", lat: 6.9014, lng: 122.0811 },
-  { id: 26, name: "Kadayawan Festival", image: "https://images.unsplash.com/photo-1661200797561-026c99863b2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Culture", color: "#9C27B0", lat: 7.0707, lng: 125.6092 },
-
-  // Food
-  { id: 27, name: "Magsaysay Market", image: "https://images.unsplash.com/photo-1774249447184-6000acf571cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.7, category: "Food", color: "#FF7A00", lat: 7.0736, lng: 125.6167 },
-  { id: 28, name: "Roxas Night Market", image: "https://images.unsplash.com/photo-1694134645469-5326b3a1f865?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.8, category: "Food", color: "#FF7A00", lat: 7.0700, lng: 125.6100 },
-  { id: 31, name: "Tuna Cuisine", image: "https://images.unsplash.com/photo-1537495988501-f9cd94a78f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", rating: 4.9, category: "Food", color: "#FF7A00", lat: 6.1133, lng: 125.1719 },
-];
 
 function ChangeView({ center, zoom }: { center: [number, number], zoom: number }) {
   const map = useMap();
