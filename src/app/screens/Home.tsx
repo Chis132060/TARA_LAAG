@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router";
+import useEmblaCarousel from "embla-carousel-react";
 import { Search, Bell, Star, MapPin, TrendingUp, Mountain, UtensilsCrossed, Landmark } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
@@ -122,6 +123,23 @@ const categories = [
 export function Home() {
   const navigate = useNavigate();
   const [currentBanner, setCurrentBanner] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCurrentBanner(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback((index: number) => {
+    if (emblaApi) emblaApi.scrollTo(index);
+  }, [emblaApi]);
 
   return (
     <div className="bg-[#F9F9FC] min-h-screen pb-4">
@@ -150,13 +168,17 @@ export function Home() {
       <div className="px-6 pt-6">
         <div className="flex justify-between items-center mb-4">
           <h3 style={{ fontSize: '20px', fontWeight: 700 }}>Featured Escapes</h3>
-          <button className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>View All</button>
+          <button onClick={() => navigate("/app/search")} className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>View All</button>
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl mb-6">
-          <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentBanner * 100}%)` }}>
+        <div className="overflow-hidden rounded-3xl mb-6" ref={emblaRef}>
+          <div className="flex">
             {featuredDestinations.map((dest) => (
-              <div key={dest.id} className="min-w-full relative cursor-pointer" onClick={() => navigate(`/app/destination/${dest.id}`)}>
+              <div
+                key={dest.id}
+                className="flex-[0_0_100%] min-w-0 relative cursor-pointer"
+                onClick={() => navigate(`/app/destination/${dest.id}`)}
+              >
                 <ImageWithFallback
                   src={dest.image}
                   alt={dest.name}
@@ -187,15 +209,18 @@ export function Home() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-2 mt-3">
+          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
             {featuredDestinations.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentBanner(index)}
-                className="h-2 rounded-full transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scrollTo(index);
+                }}
+                className="h-1.5 rounded-full transition-all"
                 style={{
-                  width: index === currentBanner ? '24px' : '8px',
-                  backgroundColor: index === currentBanner ? '#FF7A00' : '#d1d5db',
+                  width: index === currentBanner ? '20px' : '6px',
+                  backgroundColor: index === currentBanner ? '#FF7A00' : 'rgba(255, 255, 255, 0.5)',
                 }}
               />
             ))}
@@ -204,7 +229,7 @@ export function Home() {
 
         <div className="flex justify-between items-center mb-4">
           <h3 style={{ fontSize: '18px', fontWeight: 700 }}>Categories</h3>
-          <button className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>View all</button>
+          <button onClick={() => navigate("/app/search")} className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>View all</button>
         </div>
         <div className="flex gap-4 mb-6 overflow-x-auto pb-2">
           {categories.map((category) => (
@@ -227,7 +252,7 @@ export function Home() {
         <div className="mb-6">
           <div className="flex justify-between items-center mb-4">
             <h3 style={{ fontSize: '20px', fontWeight: 700 }}>Popular Destinations</h3>
-            <button className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>See All</button>
+            <button onClick={() => navigate("/app/search")} className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>See All</button>
           </div>
           <div className="space-y-3">
             {popularDestinations.map((dest) => (
@@ -280,7 +305,7 @@ export function Home() {
               <TrendingUp className="w-5 h-5 text-[#FF7A00]" />
               <h3 style={{ fontSize: '20px', fontWeight: 700 }}>Hidden Gems</h3>
             </div>
-            <button className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>See All</button>
+            <button onClick={() => navigate("/app/search")} className="text-[#006FB4]" style={{ fontSize: '14px', fontWeight: 600 }}>See All</button>
           </div>
           <div className="grid grid-cols-2 gap-3">
             {hiddenGems.map((gem) => (

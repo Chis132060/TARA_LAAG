@@ -171,7 +171,7 @@ export function MapExplore() {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-[#1A1A1A]" style={{ fontSize: '20px', fontWeight: 800 }}>Nearby Places</h3>
             <button
-              onClick={() => {}}
+              onClick={() => navigate("/app/search")}
               className="text-[#006FB4]"
               style={{ fontSize: '14px', fontWeight: 600 }}
             >
