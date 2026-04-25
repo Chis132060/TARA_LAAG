@@ -26,18 +26,14 @@ export function Splash() {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="flex-1 flex flex-col items-center px-8 -mt-24 relative z-10"
+        className="flex-1 flex flex-col items-center px-8 -mt-40 relative z-10"
       >
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl mb-6">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="8" fill="#FF7A00"/>
-            <path d="M20 28 L20 35" stroke="#FF7A00" strokeWidth="2"/>
-            <circle cx="20" cy="38" r="2" fill="#FF7A00"/>
-            <path d="M32 28 Q32 24, 36 24 Q40 24, 40 28 L40 32" stroke="#00C851" strokeWidth="2.5" strokeLinecap="round"/>
-            <ellipse cx="36" cy="32" rx="4" ry="2" fill="#00C851"/>
-            <path d="M8 48 Q32 44, 56 48" stroke="#006FB4" strokeWidth="3" strokeLinecap="round"/>
-            <path d="M12 52 Q32 49, 52 52" stroke="#006FB4" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
+        <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-2xl mb-4 p-4">
+          <img 
+            src="/logo.png" 
+            alt="GalaGuide Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
 
         <motion.h1

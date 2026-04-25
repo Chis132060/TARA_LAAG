@@ -1,194 +1,281 @@
-import { useState } from "react";
-import { Plus, Calendar, MapPin, Clock, Edit2, Trash2, ChevronRight } from "lucide-react";
+import { useState, useMemo } from "react";
+import { useNavigate } from "react-router";
+import { ChevronLeft, Plus, MapPin, Trash2, MoreHorizontal, Clock, Edit3, Sparkles, Coffee, UtensilsCrossed, Camera, Waves, Mountain, Hotel } from "lucide-react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { Destination } from "../data/destinations";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+
+// Default activities that get auto-generated for each destination
+const defaultActivities = [
+  { time: "08:00 AM", title: "Breakfast", subtitle: "Local Cuisine", icon: Coffee, color: "#FF7A00" },
+  { time: "10:00 AM", title: "", subtitle: "Swim & Explore", icon: Waves, color: "#006FB4" },
+  { time: "01:00 PM", title: "Lunch", subtitle: "Local Cuisine", icon: UtensilsCrossed, color: "#00C851" },
+  { time: "03:00 PM", title: "", subtitle: "Photography & Sightseeing", icon: Camera, color: "#9333EA" },
+  { time: "06:00 PM", title: "Back to Hotel", subtitle: "Rest & Relax", icon: Hotel, color: "#6B7280" },
+];
 
 export function Trips() {
-  const [trips, setTrips] = useState([
-    {
-      id: 1,
-      name: "Palawan Adventure",
-      startDate: "May 15, 2026",
-      endDate: "May 20, 2026",
-      days: [
-        {
-          day: 1,
-          date: "May 15",
-          activities: [
-            { time: "09:00 AM", name: "Arrival at Puerto Princesa", location: "Airport", duration: "1 hr" },
-            { time: "12:00 PM", name: "City Tour", location: "Puerto Princesa", duration: "3 hrs" },
-            { time: "06:00 PM", name: "Dinner at Kalui Restaurant", location: "Puerto Princesa", duration: "2 hrs" },
-          ],
-        },
-        {
-          day: 2,
-          date: "May 16",
-          activities: [
-            { time: "06:00 AM", name: "Underground River Tour", location: "Sabang", duration: "6 hrs" },
-            { time: "02:00 PM", name: "Lunch Break", location: "Sabang", duration: "1 hr" },
-          ],
-        },
-        {
-          day: 3,
-          date: "May 17",
-          activities: [
-            { time: "07:00 AM", name: "Travel to El Nido", location: "El Nido", duration: "5 hrs" },
-            { time: "03:00 PM", name: "Beach Relaxation", location: "El Nido", duration: "3 hrs" },
-          ],
-        },
-      ],
-    },
-  ]);
+  const navigate = useNavigate();
+  const [itinerary, setItinerary] = useLocalStorage<Destination[]>("itinerary", []);
+  const [activeDay, setActiveDay] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const [showAddModal, setShowAddModal] = useState(false);
+  const removeItem = (id: number) => {
+    setItinerary(itinerary.filter(item => item.id !== id));
+  };
 
-  return (
-    <div className="bg-[#F9F9FC] min-h-screen">
-      <div className="bg-white px-6 pt-6 pb-6 border-b border-gray-100">
-        <div className="flex justify-between items-center mb-2">
-          <h1 className="text-[#1A1A1A]" style={{ fontSize: '28px', fontWeight: 800 }}>My Trips</h1>
+  const clearAll = () => {
+    if (window.confirm("Are you sure you want to clear your entire itinerary?")) {
+      setItinerary([]);
+    }
+  };
+
+  // Generate trip dates starting from tomorrow
+  const tripStartDate = useMemo(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    return d;
+  }, []);
+
+  const getDayDate = (dayIndex: number) => {
+    const d = new Date(tripStartDate);
+    d.setDate(d.getDate() + dayIndex);
+    return d;
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  };
+
+  const formatDateRange = () => {
+    const start = tripStartDate;
+    const end = new Date(tripStartDate);
+    end.setDate(end.getDate() + Math.max(itinerary.length - 1, 0));
+    return `${start.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} – ${end.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+  };
+
+  // Current day's destination
+  const currentDest = itinerary[activeDay] || null;
+
+  // Build activities for the current day
+  const activities = useMemo(() => {
+    if (!currentDest) return [];
+    return defaultActivities.map((act) => ({
+      ...act,
+      title: act.title || currentDest.name,
+      image: act.title === "" ? currentDest.image : undefined,
+    }));
+  }, [currentDest]);
+
+  if (itinerary.length === 0) {
+    return (
+      <div className="bg-[#F9F9FC] min-h-screen pb-24">
+        {/* Header */}
+        <div className="bg-white px-6 pt-6 pb-5 flex items-center gap-4 border-b border-gray-50">
+          <button onClick={() => navigate(-1)} className="w-10 h-10 bg-[#F3F4F6] rounded-full flex items-center justify-center">
+            <ChevronLeft className="w-6 h-6 text-[#1A1A1A]" />
+          </button>
+          <h1 className="text-[#1A1A1A]" style={{ fontSize: '20px', fontWeight: 800 }}>My Itinerary</h1>
+        </div>
+
+        <div className="flex flex-col items-center justify-center py-24 px-6 text-center">
+          <div className="w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-sm mb-8 border border-gray-100">
+            <span style={{ fontSize: '48px' }}>🗺️</span>
+          </div>
+          <h3 className="text-[#1A1A1A] mb-3" style={{ fontSize: '24px', fontWeight: 800 }}>Plan Your Adventure</h3>
+          <p className="text-[#6B7280] mb-10 max-w-[260px]" style={{ fontSize: '16px', lineHeight: '1.6' }}>
+            Add destinations to start building your dream Philippine itinerary!
+          </p>
           <button
-            onClick={() => setShowAddModal(true)}
-            className="w-12 h-12 bg-gradient-to-br from-[#FF7A00] to-[#ff9940] rounded-full flex items-center justify-center shadow-md"
+            onClick={() => navigate("/app/search")}
+            className="px-10 py-5 bg-[#FF7A00] text-white rounded-[24px] shadow-xl shadow-[#FF7A00]/25 active:scale-95 transition-transform"
+            style={{ fontSize: '18px', fontWeight: 800 }}
           >
-            <Plus className="w-6 h-6 text-white" strokeWidth={3} />
+            Explore Destinations
           </button>
         </div>
-        <p className="font-script text-[#6B7280]" style={{ fontSize: '18px', fontWeight: 600 }}>Plan your perfect adventure</p>
       </div>
+    );
+  }
 
-      <div className="px-6 pt-6">
-        {trips.map((trip) => (
-          <div key={trip.id} className="bg-white rounded-3xl shadow-sm mb-4 overflow-hidden">
-            <div className="bg-gradient-to-r from-[#006FB4] to-[#FF7A00] px-6 py-5">
-              <div className="flex justify-between items-start mb-2">
-                <h2 className="text-white" style={{ fontSize: '22px', fontWeight: 800 }}>{trip.name}</h2>
-                <button className="p-2 bg-white/20 rounded-full backdrop-blur-sm">
-                  <Edit2 className="w-4 h-4 text-white" />
-                </button>
-              </div>
-              <div className="flex items-center gap-2 text-white/95">
-                <Calendar className="w-4 h-4" />
-                <span style={{ fontSize: '14px', fontWeight: 500 }}>{trip.startDate} - {trip.endDate}</span>
-              </div>
-            </div>
-
-            <div className="p-6">
-              {trip.days.map((day, dayIndex) => (
-                <div key={dayIndex} className="mb-6 last:mb-0">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#FF7A00] to-[#ff9940] rounded-2xl flex items-center justify-center text-white shadow-md" style={{ fontSize: '16px', fontWeight: 800 }}>
-                      {day.day}
-                    </div>
-                    <div>
-                      <h3 className="text-[#1A1A1A]" style={{ fontSize: '16px', fontWeight: 700 }}>Day {day.day}</h3>
-                      <p className="text-[#6B7280]" style={{ fontSize: '13px', fontWeight: 500 }}>{day.date}</p>
-                    </div>
-                  </div>
-
-                  <div className="ml-6 border-l-2 border-gray-200 pl-6 space-y-4">
-                    {day.activities.map((activity, actIndex) => (
-                      <div key={actIndex} className="relative">
-                        <div className="absolute -left-[27px] w-3 h-3 bg-[#006FB4] rounded-full border-2 border-white" />
-                        <div className="bg-[#F9F9FC] rounded-2xl p-4 hover:shadow-sm transition-shadow">
-                          <div className="flex justify-between items-start mb-2">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-2">
-                                <Clock className="w-4 h-4 text-[#FF7A00]" />
-                                <span className="text-[#FF7A00]" style={{ fontSize: '13px', fontWeight: 700 }}>{activity.time}</span>
-                              </div>
-                              <h4 className="text-[#1A1A1A]" style={{ fontSize: '15px', fontWeight: 700 }}>{activity.name}</h4>
-                            </div>
-                            <div className="flex gap-1">
-                              <button className="p-1.5 hover:bg-white rounded-lg transition-colors">
-                                <Edit2 className="w-4 h-4 text-[#6B7280]" />
-                              </button>
-                              <button className="p-1.5 hover:bg-red-50 rounded-lg transition-colors">
-                                <Trash2 className="w-4 h-4 text-red-500" />
-                              </button>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-1 text-[#6B7280] mb-1">
-                            <MapPin className="w-3.5 h-3.5" />
-                            <span style={{ fontSize: '13px' }}>{activity.location}</span>
-                          </div>
-                          <span className="text-[#6B7280]" style={{ fontSize: '12px' }}>Duration: {activity.duration}</span>
-                        </div>
-                      </div>
-                    ))}
-
-                    <button className="flex items-center gap-2 text-[#006FB4] px-4 py-2 rounded-2xl hover:bg-blue-50 transition-colors">
-                      <Plus className="w-4 h-4" />
-                      <span style={{ fontSize: '14px', fontWeight: 700 }}>Add Activity</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
-
-              <button className="w-full mt-4 py-4 border-2 border-dashed border-gray-300 rounded-2xl flex items-center justify-center gap-2 text-[#6B7280] hover:border-[#006FB4] hover:text-[#006FB4] transition-colors">
-                <Plus className="w-5 h-5" />
-                <span style={{ fontSize: '15px', fontWeight: 700 }}>Add Day</span>
+  return (
+    <div className="bg-[#F9F9FC] min-h-screen pb-24">
+      {/* Header */}
+      <div className="bg-white px-6 pt-6 pb-5 flex items-center justify-between border-b border-gray-50 sticky top-0 z-30">
+        <div className="flex items-center gap-4">
+          <button onClick={() => navigate(-1)} className="w-10 h-10 bg-[#F3F4F6] rounded-full flex items-center justify-center">
+            <ChevronLeft className="w-6 h-6 text-[#1A1A1A]" />
+          </button>
+          <h1 className="text-[#1A1A1A]" style={{ fontSize: '20px', fontWeight: 800 }}>My Itinerary</h1>
+        </div>
+        <div className="relative">
+          <button onClick={() => setShowMenu(!showMenu)} className="w-10 h-10 bg-[#F3F4F6] rounded-full flex items-center justify-center">
+            <MoreHorizontal className="w-5 h-5 text-[#1A1A1A]" />
+          </button>
+          {showMenu && (
+            <div className="absolute right-0 top-12 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 w-48 z-50">
+              <button onClick={() => { navigate("/app/search"); setShowMenu(false); }} className="w-full px-5 py-3 text-left hover:bg-gray-50 text-[#1A1A1A]" style={{ fontSize: '15px', fontWeight: 600 }}>
+                Add Destination
+              </button>
+              <button onClick={() => { clearAll(); setShowMenu(false); }} className="w-full px-5 py-3 text-left hover:bg-red-50 text-red-500" style={{ fontSize: '15px', fontWeight: 600 }}>
+                Clear All
               </button>
             </div>
-          </div>
-        ))}
-
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="w-full py-4 bg-white rounded-2xl shadow-sm flex items-center justify-center gap-3 text-[#006FB4] border-2 border-[#006FB4] hover:bg-blue-50 transition-colors mb-6"
-        >
-          <Plus className="w-6 h-6" />
-          <span style={{ fontSize: '16px', fontWeight: 700 }}>Create New Trip</span>
-        </button>
+          )}
+        </div>
       </div>
 
-      {showAddModal && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-6 z-50">
-          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl">
-            <h3 className="text-[#1A1A1A] mb-6" style={{ fontSize: '24px', fontWeight: 800 }}>Create New Trip</h3>
-            <div className="space-y-5">
-              <div>
-                <label className="block text-[#1A1A1A] mb-2" style={{ fontSize: '14px', fontWeight: 700 }}>Trip Name</label>
-                <input
-                  type="text"
-                  placeholder="e.g., Summer Getaway"
-                  className="w-full px-4 py-3 bg-[#F9F9FC] border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:border-transparent"
-                  style={{ fontSize: '15px' }}
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-[#1A1A1A] mb-2" style={{ fontSize: '14px', fontWeight: 700 }}>Start Date</label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 bg-[#F9F9FC] border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:border-transparent"
-                    style={{ fontSize: '14px' }}
-                  />
-                </div>
-                <div>
-                  <label className="block text-[#1A1A1A] mb-2" style={{ fontSize: '14px', fontWeight: 700 }}>End Date</label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 bg-[#F9F9FC] border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:border-transparent"
-                    style={{ fontSize: '14px' }}
-                  />
-                </div>
-              </div>
-              <div className="flex gap-3 pt-4">
+      {/* Trip Info Card */}
+      <div className="px-6 pt-6">
+        <div className="bg-white rounded-[28px] p-6 shadow-sm border border-gray-100 mb-6">
+          <div className="flex items-start justify-between mb-3">
+            <div>
+              <h2 className="text-[#1A1A1A] flex items-center gap-2" style={{ fontSize: '22px', fontWeight: 800 }}>
+                Mindanao Adventure <span style={{ fontSize: '20px' }}>🌴</span>
+              </h2>
+              <p className="text-[#6B7280] mt-1" style={{ fontSize: '14px', fontWeight: 600 }}>
+                {formatDateRange()}
+              </p>
+            </div>
+            <button className="w-10 h-10 bg-[#F3F4F6] rounded-xl flex items-center justify-center">
+              <Edit3 className="w-4 h-4 text-[#6B7280]" />
+            </button>
+          </div>
+
+          {/* Day Tabs */}
+          <div className="flex gap-2 mt-5 overflow-x-auto pb-1 no-scrollbar">
+            {itinerary.map((_, index) => {
+              const dayDate = getDayDate(index);
+              const isActive = index === activeDay;
+              return (
                 <button
-                  onClick={() => setShowAddModal(false)}
-                  className="flex-1 py-4 border-2 border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
-                  style={{ fontSize: '16px', fontWeight: 700 }}
+                  key={index}
+                  onClick={() => setActiveDay(index)}
+                  className={`flex flex-col items-center px-4 py-3 rounded-2xl min-w-[72px] transition-all ${
+                    isActive
+                      ? "bg-[#FF7A00] text-white shadow-lg shadow-[#FF7A00]/25"
+                      : "bg-[#F3F4F6] text-[#6B7280] hover:bg-gray-200"
+                  }`}
                 >
-                  Cancel
+                  <span style={{ fontSize: '13px', fontWeight: 800 }}>Day {index + 1}</span>
+                  <span style={{ fontSize: '11px', fontWeight: 600, opacity: isActive ? 0.9 : 0.7 }}>
+                    {formatDate(dayDate)}
+                  </span>
                 </button>
-                <button
-                  onClick={() => setShowAddModal(false)}
-                  className="flex-1 py-4 bg-[#FF7A00] text-white rounded-full shadow-lg shadow-orange-500/20 hover:shadow-orange-500/30 transition-shadow"
-                  style={{ fontSize: '16px', fontWeight: 700 }}
-                >
-                  Create
-                </button>
+              );
+            })}
+            <button
+              onClick={() => navigate("/app/search")}
+              className="flex items-center justify-center px-4 py-3 rounded-2xl min-w-[52px] border-2 border-dashed border-gray-200 text-[#6B7280] hover:border-[#FF7A00] hover:text-[#FF7A00] transition-all"
+            >
+              <Plus className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Timeline */}
+      {currentDest && (
+        <div className="px-6">
+          {/* Day destination header */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
+              <ImageWithFallback src={currentDest.image} alt={currentDest.name} className="w-full h-full object-cover" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-[#1A1A1A]" style={{ fontSize: '17px', fontWeight: 800 }}>{currentDest.name}</h3>
+              <div className="flex items-center gap-1 text-[#6B7280]">
+                <MapPin className="w-3 h-3" />
+                <span style={{ fontSize: '12px', fontWeight: 600 }}>{currentDest.location}</span>
               </div>
             </div>
+            <button
+              onClick={() => removeItem(currentDest.id)}
+              className="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center"
+            >
+              <Trash2 className="w-4 h-4 text-red-400" />
+            </button>
+          </div>
+
+          {/* Activity Timeline */}
+          <div className="relative">
+            {/* Vertical timeline line */}
+            <div className="absolute left-[59px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#FF7A00] via-[#006FB4] to-[#6B7280] rounded-full" />
+
+            <div className="space-y-1">
+              {activities.map((activity, index) => {
+                const Icon = activity.icon;
+                return (
+                  <div key={index} className="flex items-start gap-4 relative py-3">
+                    {/* Time */}
+                    <div className="w-[46px] flex-shrink-0 text-right pt-3">
+                      <span className="text-[#1A1A1A]" style={{ fontSize: '12px', fontWeight: 800 }}>
+                        {activity.time.split(" ")[0]}
+                      </span>
+                      <span className="text-[#9CA3AF] block" style={{ fontSize: '10px', fontWeight: 700 }}>
+                        {activity.time.split(" ")[1]}
+                      </span>
+                    </div>
+
+                    {/* Dot */}
+                    <div className="flex-shrink-0 relative z-10 pt-3">
+                      <div
+                        className="w-[26px] h-[26px] rounded-full flex items-center justify-center shadow-sm"
+                        style={{ backgroundColor: `${activity.color}20`, border: `2.5px solid ${activity.color}` }}
+                      >
+                        <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: activity.color }} />
+                      </div>
+                    </div>
+
+                    {/* Activity Card */}
+                    <div className="flex-1 bg-white rounded-[20px] p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                      <div className="flex items-center gap-3">
+                        {activity.image ? (
+                          <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 shadow-inner">
+                            <ImageWithFallback src={activity.image} alt={activity.title} className="w-full h-full object-cover" />
+                          </div>
+                        ) : (
+                          <div
+                            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+                            style={{ backgroundColor: `${activity.color}15` }}
+                          >
+                            <Icon className="w-6 h-6" style={{ color: activity.color }} />
+                          </div>
+                        )}
+                        <div className="flex-1">
+                          <h4 className="text-[#1A1A1A]" style={{ fontSize: '15px', fontWeight: 800 }}>
+                            {activity.title}
+                          </h4>
+                          <p className="text-[#6B7280]" style={{ fontSize: '13px', fontWeight: 600 }}>
+                            {activity.subtitle}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Book Now + Add Activity */}
+          <div className="mt-6 space-y-3 pb-4">
+            <button
+              onClick={() => navigate(`/app/book/${currentDest.id}`)}
+              className="w-full py-5 bg-[#FF7A00] text-white rounded-[20px] shadow-xl shadow-[#FF7A00]/25 active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
+              style={{ fontSize: '17px', fontWeight: 800 }}
+            >
+              <Sparkles className="w-5 h-5" />
+              Book This Destination
+            </button>
+
+            <button
+              onClick={() => navigate("/app/search")}
+              className="w-full py-4 border-2 border-dashed border-gray-200 rounded-[20px] flex items-center justify-center gap-2 text-[#6B7280] hover:border-[#FF7A00] hover:text-[#FF7A00] transition-all"
+            >
+              <Plus className="w-5 h-5" />
+              <span style={{ fontSize: '15px', fontWeight: 700 }}>Add Activity</span>
+            </button>
           </div>
         </div>
       )}
