@@ -4,14 +4,14 @@ import { ChevronLeft, X } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const photos = [
-  "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1553195027-5168a50283c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1605291210551-c670f48b274c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1760548759053-eae675d30efe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1521650559166-6b588715bc62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1759773533571-16c133e10ae8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1760548759043-44de2ad650c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-  "https://images.unsplash.com/photo-1760815153677-d7984323db5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+  "/Siargao/Siargao1.jpg",
+  "/boracay/boracay1.jpg",
+  "/mountapo/mountapo1.jpg",
+  "/elnido/elnido1.JPG",
+  "/dahicanbeach/dahicanbeach2.jpg",
+  "/enchanted river/EnchantedRiver1.jpg",
+  "/Tinuyanfalls/tinuyanfalls1.jpg",
+  "/chocolatehills/chocolatehills1.jpg",
 ];
 
 export function PhotoGallery() {

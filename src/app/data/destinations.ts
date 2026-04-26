@@ -19,13 +19,13 @@ export const allDestinations: Destination[] = [
     id: 1,
     name: "Siargao Cloud 9",
     location: "Siargao, Surigao del Norte",
-    image: "https://images.unsplash.com/photo-1572316197910-a32d5e5e8f75?auto=format&fit=crop&q=80&w=1080",
+    image: "/Siargao/Siargao1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1572316197910-a32d5e5e8f75?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1588167060649-746761c7423d?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1517400140228-5660882894f2?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1551167502-0e99d7554972?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080"
+      "/Siargao/Siargao1.jpg",
+      "/Siargao/Siargao2.jpg",
+      "/Siargao/Siargao3.jpg",
+      "/Siargao/Siargao4.jpg",
+      "/Siargao/Siargao5.jpg"
     ],
     rating: 4.9,
     price: "₱3,200",
@@ -40,13 +40,13 @@ export const allDestinations: Destination[] = [
     id: 2,
     name: "Enchanted River",
     location: "Hinatuan, Surigao del Sur",
-    image: "https://images.unsplash.com/photo-1585795361718-2141ba44cbe0?auto=format&fit=crop&q=80&w=1080",
+    image: "/enchanted river/EnchantedRiver1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1585795361718-2141ba44cbe0?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/enchanted river/EnchantedRiver1.jpg",
+      "/enchanted river/EnchantedRiver2.webp",
+      "/enchanted river/EnchantedRiver3.webp",
+      "/enchanted river/EnchantedRiver4.webp",
+      "/enchanted river/EnchantedRiver5.jpg"
     ],
     rating: 4.9,
     price: "₱1,800",
@@ -61,13 +61,13 @@ export const allDestinations: Destination[] = [
     id: 3,
     name: "Camiguin White Island",
     location: "Mambajao, Camiguin",
-    image: "https://images.unsplash.com/photo-1551521021-d929e606badc?auto=format&fit=crop&q=80&w=1080",
+    image: "/WhiteIslandCamiguin/White-Island-Camiguin-1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1551521021-d929e606badc?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/WhiteIslandCamiguin/White-Island-Camiguin-1.jpg",
+      "/WhiteIslandCamiguin/White-Island-Camiguin-2.jpg",
+      "/WhiteIslandCamiguin/White-Island-Camiguin-3.jpg",
+      "/WhiteIslandCamiguin/White-Island-Camiguin-4.jpg",
+      "/WhiteIslandCamiguin/White-Island-Camiguin-5.jpg"
     ],
     rating: 4.8,
     price: "₱2,000",
@@ -82,13 +82,13 @@ export const allDestinations: Destination[] = [
     id: 4,
     name: "Tinuy-an Falls",
     location: "Bislig, Surigao del Sur",
-    image: "https://images.unsplash.com/photo-1609930420316-72622d2db23d?auto=format&fit=crop&q=80&w=1080",
+    image: "/Tinuyanfalls/tinuyanfalls1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1609930420316-72622d2db23d?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/Tinuyanfalls/tinuyanfalls1.jpg",
+      "/Tinuyanfalls/tinuyanfalls2.jpg",
+      "/Tinuyanfalls/tinuyanfalls3.jpg",
+      "/Tinuyanfalls/tinuyansfalls4.jpg",
+      "/Tinuyanfalls/tinuyanfalls5.jpg"
     ],
     rating: 4.9,
     price: "₱1,500",
@@ -103,13 +103,13 @@ export const allDestinations: Destination[] = [
     id: 5,
     name: "Dahican Beach",
     location: "Mati, Davao Oriental",
-    image: "https://images.unsplash.com/photo-1725357347380-a07aaaa8527b?auto=format&fit=crop&q=80&w=1080",
+    image: "/dahicanbeach/dahicanbeach1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1725357347380-a07aaaa8527b?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1517400140228-5660882894f2?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080"
+      "/dahicanbeach/dahicanbeach1.jpg",
+      "/dahicanbeach/dahicanbeach2.jpg",
+      "/dahicanbeach/dahicanbeach3.jpeg",
+      "/dahicanbeach/dahicanbeach4.jpg",
+      "/dahicanbeach/dahicanbeach5.jpg"
     ],
     rating: 4.8,
     price: "₱2,200",
@@ -124,13 +124,13 @@ export const allDestinations: Destination[] = [
     id: 6,
     name: "Britania Islands",
     location: "San Agustin, Surigao del Sur",
-    image: "https://images.unsplash.com/photo-1760644328320-5e37dc6928d0?auto=format&fit=crop&q=80&w=1080",
+    image: "/britaniaisland/britaniaisland1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1760644328320-5e37dc6928d0?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/britaniaisland/britaniaisland1.jpg",
+      "/britaniaisland/britaniaisland2.jpg",
+      "/britaniaisland/britaniaisland3.JPG",
+      "/britaniaisland/britaniaisland4.JPG",
+      "/britaniaisland/britaniaisland5.JPG"
     ],
     rating: 4.9,
     price: "₱2,500",
@@ -145,13 +145,13 @@ export const allDestinations: Destination[] = [
     id: 7,
     name: "Batanes Basco",
     location: "Basco, Batanes",
-    image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080",
+    image: "/batanesbasco/batanesbasco1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1506197394121-e3073992d44e?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1080"
+      "/batanesbasco/batanesbasco1.jpg",
+      "/batanesbasco/batanesbasco2.jpg",
+      "/batanesbasco/batanesbasco3.jpg",
+      "/batanesbasco/batanesbasco4.jpg",
+      "/batanesbasco/batanesbasco5.jpg"
     ],
     rating: 4.9,
     price: "₱8,500",
@@ -166,13 +166,13 @@ export const allDestinations: Destination[] = [
     id: 8,
     name: "Lake Sebu",
     location: "South Cotabato",
-    image: "https://images.unsplash.com/photo-1767167649218-f8b03f66d28c?auto=format&fit=crop&q=80&w=1080",
+    image: "/lakesebu/lakesebu1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1767167649218-f8b03f66d28c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/lakesebu/lakesebu1.jpg",
+      "/lakesebu/lakesebu2.jpg",
+      "/lakesebu/lakesebu3.jpg",
+      "/lakesebu/lakesebu4.jpg",
+      "/lakesebu/lakesebu5.jpg"
     ],
     rating: 4.7,
     price: "₱1,200",
@@ -187,13 +187,13 @@ export const allDestinations: Destination[] = [
     id: 9,
     name: "Naked Island",
     location: "Siargao, Surigao del Norte",
-    image: "https://images.unsplash.com/photo-1736776256319-50153ce32dfc?auto=format&fit=crop&q=80&w=1080",
+    image: "/nakedisland/nakedisland1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1736776256319-50153ce32dfc?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/nakedisland/nakedisland1.jpg",
+      "/nakedisland/nakedisland2.jpg",
+      "/nakedisland/nakedisland3.jpg",
+      "/nakedisland/nakedisland4.jpg",
+      "/nakedisland/nakedisland5.jpg"
     ],
     rating: 4.8,
     price: "₱1,500",
@@ -208,13 +208,13 @@ export const allDestinations: Destination[] = [
     id: 10,
     name: "Boracay White Beach",
     location: "Malay, Aklan",
-    image: "https://images.unsplash.com/photo-1555931459-d2482358d04e?auto=format&fit=crop&q=80&w=1080",
+    image: "/boracay/boracay1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1555931459-d2482358d04e?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/boracay/boracay1.jpg",
+      "/boracay/boracay2.jpg",
+      "/boracay/boracay3.jpg",
+      "/boracay/boracay4.jpg",
+      "/boracay/boracay5.jpg"
     ],
     rating: 4.9,
     price: "₱4,500",
@@ -229,13 +229,13 @@ export const allDestinations: Destination[] = [
     id: 11,
     name: "Magpupungko Pools",
     location: "Pilar, Siargao",
-    image: "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080",
+    image: "/magpupungkopools/magpupungkopools1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/magpupungkopools/magpupungkopools1.jpg",
+      "/magpupungkopools/magpupungkopools2.jpeg",
+      "/magpupungkopools/magpupungkopools3.jpg",
+      "/magpupungkopools/magpupungkopools4.webp",
+      "/magpupungkopools/magpupungkopools5.jpeg"
     ],
     rating: 4.9,
     price: "₱1,200",
@@ -250,13 +250,13 @@ export const allDestinations: Destination[] = [
     id: 12,
     name: "Mantigue Island",
     location: "Camiguin",
-    image: "https://images.unsplash.com/photo-1768639400843-d604ccce9c3e?auto=format&fit=crop&q=80&w=1080",
+    image: "/mantigueislands/mantigueisland1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1768639400843-d604ccce9c3e?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/mantigueislands/mantigueisland1.jpg",
+      "/mantigueislands/mantigueisland2.jpg",
+      "/mantigueislands/mantigueisland3.jpg",
+      "/mantigueislands/mantigueisland4.jpg",
+      "/mantigueislands/mantigueisland5.jpg"
     ],
     rating: 4.7,
     price: "₱1,800",
@@ -271,13 +271,13 @@ export const allDestinations: Destination[] = [
     id: 13,
     name: "Mount Apo",
     location: "Davao Region",
-    image: "https://images.unsplash.com/photo-1767167648895-3e4a0ddf46ab?auto=format&fit=crop&q=80&w=1080",
+    image: "/mountapo/mountapo1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1767167648895-3e4a0ddf46ab?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/mountapo/mountapo1.jpg",
+      "/mountapo/mountapo2.jpg",
+      "/mountapo/mountapo3.webp",
+      "/mountapo/mountapo4.jpg",
+      "/mountapo/mountapo5.jpg"
     ],
     rating: 4.9,
     price: "₱5,500",
@@ -292,13 +292,13 @@ export const allDestinations: Destination[] = [
     id: 14,
     name: "Samal Island",
     location: "Davao del Norte",
-    image: "https://images.unsplash.com/photo-1565565915331-293fd8113954?auto=format&fit=crop&q=80&w=1080",
+    image: "/samalisland/samal1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1565565915331-293fd8113954?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/samalisland/samal1.jpg",
+      "/samalisland/samal2.jpg",
+      "/samalisland/samal3.jpg",
+      "/samalisland/samal4.jpg",
+      "/samalisland/samal5.webp"
     ],
     rating: 4.8,
     price: "₱2,500",
@@ -313,13 +313,13 @@ export const allDestinations: Destination[] = [
     id: 15,
     name: "El Nido Big Lagoon",
     location: "El Nido, Palawan",
-    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
+    image: "/elnido/elnido1.JPG",
     images: [
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/elnido/elnido1.JPG",
+      "/elnido/elnido2.jpg",
+      "/elnido/elnido3.jpg",
+      "/elnido/elnido4.jpg",
+      "/elnido/elnido5.webp"
     ],
     rating: 4.9,
     price: "₱4,800",
@@ -334,13 +334,13 @@ export const allDestinations: Destination[] = [
     id: 16,
     name: "Coron Kayangan Lake",
     location: "Coron, Palawan",
-    image: "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
+    image: "/coronkayanganlake/coronkayanganlake1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/coronkayanganlake/coronkayanganlake1.jpg",
+      "/coronkayanganlake/coronkayanganlake2.jpg",
+      "/coronkayanganlake/coronkayanganlake3.webp",
+      "/coronkayanganlake/coronkayanganlake4.webp",
+      "/coronkayanganlake/coronkayanganlake5.jpg"
     ],
     rating: 4.9,
     price: "₱4,200",
@@ -355,13 +355,13 @@ export const allDestinations: Destination[] = [
     id: 17,
     name: "Kawasan Falls",
     location: "Badian, Cebu",
-    image: "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
+    image: "/kawasanfalls/kawasanfalls1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/kawasanfalls/kawasanfalls1.jpg",
+      "/kawasanfalls/kawasanfalls2.jpg",
+      "/kawasanfalls/kawasanfalls3.jpg",
+      "/kawasanfalls/kawasaaanfalls4.jpg",
+      "/kawasanfalls/kawasanfalls5.jpg"
     ],
     rating: 4.8,
     price: "₱2,800",
@@ -376,13 +376,13 @@ export const allDestinations: Destination[] = [
     id: 18,
     name: "Aliwagwag Falls",
     location: "Cateel, Davao Oriental",
-    image: "https://images.unsplash.com/photo-1693571569894-e3a71ebc8535?auto=format&fit=crop&q=80&w=1080",
+    image: "/aliwagwagfalls/aliwagwagfalls1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1693571569894-e3a71ebc8535?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/aliwagwagfalls/aliwagwagfalls1.jpg",
+      "/aliwagwagfalls/aliwagwagfalls2.jpg",
+      "/aliwagwagfalls/aliwagwagfalls3.jpg",
+      "/aliwagwagfalls/aliwagwagfalls4.jpg",
+      "/aliwagwagfalls/aliwagwagfalls5.jpg"
     ],
     rating: 4.7,
     price: "₱1,500",
@@ -397,13 +397,13 @@ export const allDestinations: Destination[] = [
     id: 19,
     name: "Maria Cristina Falls",
     location: "Iligan City",
-    image: "https://images.unsplash.com/photo-1767167649496-b0945c77ac2d?auto=format&fit=crop&q=80&w=1080",
+    image: "/mariacristinafalls/mariacristinafalls1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1767167649496-b0945c77ac2d?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/mariacristinafalls/mariacristinafalls1.jpg",
+      "/mariacristinafalls/mariacristinafalls2.jpg",
+      "/mariacristinafalls/mariacristinafalls3.jpg",
+      "/mariacristinafalls/mariacristinafalls4.JPG",
+      "/mariacristinafalls/mariacristinafalls5.jpg"
     ],
     rating: 4.6,
     price: "₱1,200",
@@ -418,13 +418,13 @@ export const allDestinations: Destination[] = [
     id: 20,
     name: "Chocolate Hills",
     location: "Carmen, Bohol",
-    image: "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
+    image: "/chocolatehills/chocolatehills1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/chocolatehills/chocolatehills1.jpg",
+      "/chocolatehills/chocolatehills2.jpg",
+      "/chocolatehills/chocolatehills3.jpg",
+      "/chocolatehills/chocolatehills4.jpg",
+      "/chocolatehills/chocolatehills5.jpeg"
     ],
     rating: 4.9,
     price: "₱2,200",
@@ -439,13 +439,13 @@ export const allDestinations: Destination[] = [
     id: 21,
     name: "Calle Crisologo",
     location: "Vigan City",
-    image: "https://images.unsplash.com/photo-1540914124281-342729c4aa1f?auto=format&fit=crop&q=80&w=1080",
+    image: "/callecrisologo/callecrisologo1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1540914124281-342729c4aa1f?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/callecrisologo/callecrisologo1.jpg",
+      "/callecrisologo/callecrisologo2.jpg",
+      "/callecrisologo/callecrisologo3.jpg",
+      "/callecrisologo/callecrisologo4.jpg",
+      "/callecrisologo/callecrisologo5.jpg"
     ],
     rating: 4.9,
     price: "₱1,800",
@@ -460,13 +460,13 @@ export const allDestinations: Destination[] = [
     id: 22,
     name: "Katibawasan Falls",
     location: "Camiguin",
-    image: "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
+    image: "/katibawasanfalls/katibawasanfalls1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+      "/katibawasanfalls/katibawasanfalls1.jpg",
+      "/katibawasanfalls/katibawasanfalls2.jpg",
+      "/katibawasanfalls/katibawasanfalls3.jpg",
+      "/katibawasanfalls/katibawasanfalls4.jpg",
+      "/katibawasanfalls/katibawasanfalls5.jpg"
     ],
     rating: 4.6,
     price: "₱1,000",
@@ -481,13 +481,13 @@ export const allDestinations: Destination[] = [
     id: 23,
     name: "T'boli Living Museum",
     location: "Lake Sebu, South Cotabato",
-    image: "https://images.unsplash.com/photo-1563280583-7c6d205d1188?auto=format&fit=crop&q=80&w=1080",
+    image: "/tbolilivingmuseum/tbolilivingmuseum1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1563280583-7c6d205d1188?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/tbolilivingmuseum/tbolilivingmuseum1.jpg",
+      "/tbolilivingmuseum/tbolilivingmuseum2.jpg",
+      "/tbolilivingmuseum/tbolilivingmuseum3.jpg",
+      "/tbolilivingmuseum/tbolilivingmuseum4.jpg",
+      "/tbolilivingmuseum/tbolilivingmuseum5.jpg"
     ],
     rating: 4.8,
     price: "₱800",
@@ -502,13 +502,13 @@ export const allDestinations: Destination[] = [
     id: 24,
     name: "Fort Pilar",
     location: "Zamboanga City",
-    image: "https://images.unsplash.com/photo-1563280607-41c1f2406e54?auto=format&fit=crop&q=80&w=1080",
+    image: "/fortpillar/fortpillar1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1563280607-41c1f2406e54?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/fortpillar/fortpillar1.jpg",
+      "/fortpillar/fortpillar2.jpg",
+      "/fortpillar/fortpillar3.jpg",
+      "/fortpillar/fortpillar4.jpg",
+      "/fortpillar/fortpillar5.jpg"
     ],
     rating: 4.7,
     price: "₱1,200",
@@ -523,13 +523,13 @@ export const allDestinations: Destination[] = [
     id: 25,
     name: "Sumaguing Cave",
     location: "Sagada",
-    image: "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1080",
+    image: "/Sumanguingcave/Sumanguingcave1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1506197394121-e3073992d44e?auto=format&fit=crop&q=80&w=1080"
+      "/Sumanguingcave/Sumanguingcave1.jpg",
+      "/Sumanguingcave/Sumanguingcave2.jpg",
+      "/Sumanguingcave/Sumanguingcave3.jpg",
+      "/Sumanguingcave/Sumanguingcave4.jpg",
+      "/Sumanguingcave/Sumanguingcave5.jpg"
     ],
     rating: 4.8,
     price: "₱2,500",
@@ -544,13 +544,13 @@ export const allDestinations: Destination[] = [
     id: 26,
     name: "Kadayawan Festival",
     location: "Davao City",
-    image: "https://images.unsplash.com/photo-1661200797561-026c99863b2b?auto=format&fit=crop&q=80&w=1080",
+    image: "/kadayawan festival/kadayawan festival1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1661200797561-026c99863b2b?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/kadayawan festival/kadayawan festival1.jpg",
+      "/kadayawan festival/kadayawan festival2.JPG",
+      "/kadayawan festival/kadayawan festival3.jpeg",
+      "/kadayawan festival/kadayawan festival4.webp",
+      "/kadayawan festival/kadayawan festival5.webp"
     ],
     rating: 4.9,
     price: "₱0",
@@ -565,13 +565,13 @@ export const allDestinations: Destination[] = [
     id: 27,
     name: "Magsaysay Market",
     location: "Davao City",
-    image: "https://images.unsplash.com/photo-1774249447184-6000acf571cd?auto=format&fit=crop&q=80&w=1080",
+    image: "/magsaysaymarket/magsaysaymarket1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1774249447184-6000acf571cd?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/magsaysaymarket/magsaysaymarket1.jpg",
+      "/magsaysaymarket/magsaysaymarket2.JPG",
+      "/magsaysaymarket/magsaysaymarket3.jpg",
+      "/magsaysaymarket/magsaysaymarket4.jpg",
+      "/magsaysaymarket/magsaysaymarket5.jpg"
     ],
     rating: 4.7,
     price: "₱500",
@@ -586,13 +586,13 @@ export const allDestinations: Destination[] = [
     id: 28,
     name: "Roxas Night Market",
     location: "Davao City",
-    image: "https://images.unsplash.com/photo-1694134645469-5326b3a1f865?auto=format&fit=crop&q=80&w=1080",
+    image: "/roxasnightmarket/roxasnightmarket1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1694134645469-5326b3a1f865?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/roxasnightmarket/roxasnightmarket1.jpg",
+      "/roxasnightmarket/roxasnightmarket2.jpg",
+      "/roxasnightmarket/roxasnightmarket3.jpg",
+      "/roxasnightmarket/roxasnightmarket4.jpg",
+      "/roxasnightmarket/roxasnightmarket5.jpg"
     ],
     rating: 4.8,
     price: "₱300",
@@ -607,13 +607,13 @@ export const allDestinations: Destination[] = [
     id: 29,
     name: "Burnham Park",
     location: "Baguio City",
-    image: "https://images.unsplash.com/photo-1542640244-7e672d6cef21?auto=format&fit=crop&q=80&w=1080",
+    image: "/burnhampark/burnhampark1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1542640244-7e672d6cef21?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/burnhampark/burnhampark1.jpg",
+      "/burnhampark/burnhampark2.jpg",
+      "/burnhampark/burnhampark3.webp",
+      "/burnhampark/burnhampark4.jpg",
+      "/burnhampark/burnhampark5.jpg"
     ],
     rating: 4.7,
     price: "₱1,000",
@@ -628,13 +628,13 @@ export const allDestinations: Destination[] = [
     id: 30,
     name: "Taal Volcano",
     location: "Tagaytay",
-    image: "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1080",
+    image: "/taalvolcano/taalvolcano1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1506197394121-e3073992d44e?auto=format&fit=crop&q=80&w=1080"
+      "/taalvolcano/taalvolcano1.jpg",
+      "/taalvolcano/taalvolcano2.jpg",
+      "/taalvolcano/taalvolcano3.jpg",
+      "/taalvolcano/taalvolcano4.jpg",
+      "/taalvolcano/taalvolcano5.jpg"
     ],
     rating: 4.8,
     price: "₱3,500",
@@ -649,13 +649,13 @@ export const allDestinations: Destination[] = [
     id: 31,
     name: "Tuna Cuisine",
     location: "General Santos City",
-    image: "https://images.unsplash.com/photo-1537495988501-f9cd94a78f3e?auto=format&fit=crop&q=80&w=1080",
+    image: "/tunacuisine/tunacuisine1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1537495988501-f9cd94a78f3e?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+      "/tunacuisine/tunacuisine1.jpg",
+      "/tunacuisine/tunacuisine2.jpg",
+      "/tunacuisine/tunacuisine3.jpg",
+      "/tunacuisine/tunacuisine4.jpg",
+      "/tunacuisine/tunacuisine5.jpg"
     ],
     rating: 4.9,
     price: "₱1,500",
@@ -670,13 +670,13 @@ export const allDestinations: Destination[] = [
     id: 32,
     name: "Hundred Islands",
     location: "Alaminos, Pangasinan",
-    image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080",
+    image: "/hundredislands/hundredislands1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1506197394121-e3073992d44e?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1080",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1080"
+      "/hundredislands/hundredislands1.jpg",
+      "/hundredislands/hundredislands2.jpg",
+      "/hundredislands/hundredislands3.jpg",
+      "/hundredislands/hundredislands4.jpg",
+      "/hundredislands/hundredislands5.jpg"
     ],
     rating: 4.8,
     price: "₱2,800",

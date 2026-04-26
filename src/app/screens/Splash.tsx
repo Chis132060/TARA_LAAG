@@ -15,7 +15,7 @@ export function Splash() {
         style={{ aspectRatio: '3/4' }}
       >
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          src="/Siargao/Siargao1.jpg"
           alt="Philippines Beach"
           className="w-full h-full object-cover"
         />

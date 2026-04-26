@@ -18,7 +18,7 @@ export function BookingDetails() {
       <div className="p-6 space-y-6">
         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/elnido/elnido1.JPG"
             alt="El Nido"
             className="w-full h-48 object-cover"
           />

@@ -58,20 +58,32 @@ export function SearchResults() {
         </div>
       </div>
 
+      <div className="bg-white border-b border-gray-100 px-6 py-4">
+        <h3 className="text-[#1A1A1A] mb-4" style={{ fontSize: '16px', fontWeight: 800 }}>Categories</h3>
+        <div className="flex gap-2 flex-wrap mb-2 overflow-x-auto no-scrollbar">
+          {["All", "Beaches", "Mountains", "Waterfalls", "Culture", "Food"].map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2.5 rounded-xl transition-all whitespace-nowrap ${activeCategory === category ? "bg-[#FF7A00] text-white shadow-lg shadow-orange-500/20 scale-105" : "bg-[#F9F9FC] text-[#6B7280] border border-gray-100"}`}
+              style={{ fontSize: '14px', fontWeight: 700 }}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {showFilters && (
         <div className="bg-white border-b border-gray-100 px-6 py-6 animate-in slide-in-from-top duration-300">
-          <h3 className="text-[#1A1A1A] mb-4" style={{ fontSize: '16px', fontWeight: 800 }}>Categories</h3>
-          <div className="flex gap-2 flex-wrap mb-6">
-            {["All", "Beach", "Mountain", "Waterfall", "Culture", "Island"].map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-xl transition-all ${activeCategory === category ? "bg-[#FF7A00] text-white shadow-lg shadow-orange-500/20" : "bg-[#F9F9FC] text-[#6B7280] border border-gray-100"}`}
-                style={{ fontSize: '14px', fontWeight: 700 }}
-              >
-                {category}
-              </button>
-            ))}
+          {/* Advanced filters could go here */}
+          <div className="flex justify-between items-center">
+            <span className="text-[#6B7280]" style={{ fontSize: '14px', fontWeight: 600 }}>Sort by:</span>
+            <select className="bg-[#F9F9FC] border border-gray-100 rounded-lg px-3 py-1.5 text-sm font-semibold outline-none">
+              <option>Recommended</option>
+              <option>Price: Low to High</option>
+              <option>Rating: High to Low</option>
+            </select>
           </div>
         </div>
       )}

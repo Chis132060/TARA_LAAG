@@ -18,7 +18,7 @@ export function Login() {
     <div className="h-screen flex flex-col bg-white max-w-[390px] mx-auto overflow-auto">
       <div className="relative h-48 bg-gradient-to-br from-[#FF7A00] to-[#ff9940]">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          src="/dahicanbeach/dahicanbeach1.jpg"
           alt="Philippines Beach"
           className="w-full h-full object-cover opacity-30"
         />

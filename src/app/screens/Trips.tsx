@@ -17,8 +17,11 @@ const defaultActivities = [
 export function Trips() {
   const navigate = useNavigate();
   const [itinerary, setItinerary] = useLocalStorage<Destination[]>("itinerary", []);
+  const [tripName, setTripName] = useLocalStorage<string>("tripName", "Mindanao Adventure");
   const [activeDay, setActiveDay] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
+  const [isEditingName, setIsEditingName] = useState(false);
+  const [editNameValue, setEditNameValue] = useState(tripName);
 
   const removeItem = (id: number) => {
     setItinerary(itinerary.filter(item => item.id !== id));
@@ -31,11 +34,11 @@ export function Trips() {
   };
 
   // Generate trip dates starting from tomorrow
-  const tripStartDate = useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 7);
-    return d;
-  }, []);
+  const [storedStartDate, setStoredStartDate] = useLocalStorage<string>("tripStartDate", new Date(new Date().setDate(new Date().getDate() + 7)).toISOString());
+  const tripStartDate = useMemo(() => new Date(storedStartDate), [storedStartDate]);
+
+  const [isEditingDates, setIsEditingDates] = useState(false);
+  const [editDateValue, setEditDateValue] = useState(storedStartDate.split('T')[0]);
 
   const getDayDate = (dayIndex: number) => {
     const d = new Date(tripStartDate);
@@ -129,16 +132,57 @@ export function Trips() {
       <div className="px-6 pt-6">
         <div className="bg-white rounded-[28px] p-6 shadow-sm border border-gray-100 mb-6">
           <div className="flex items-start justify-between mb-3">
-            <div>
-              <h2 className="text-[#1A1A1A] flex items-center gap-2" style={{ fontSize: '22px', fontWeight: 800 }}>
-                Mindanao Adventure <span style={{ fontSize: '20px' }}>🌴</span>
-              </h2>
-              <p className="text-[#6B7280] mt-1" style={{ fontSize: '14px', fontWeight: 600 }}>
-                {formatDateRange()}
-              </p>
+            <div className="flex-1 mr-4">
+              {isEditingName ? (
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={editNameValue}
+                      onChange={(e) => setEditNameValue(e.target.value)}
+                      className="bg-gray-50 border border-[#FF7A00] rounded-xl px-4 py-2 w-full text-[#1A1A1A] focus:outline-none"
+                      style={{ fontSize: '18px', fontWeight: 800 }}
+                      autoFocus
+                    />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="date"
+                      value={editDateValue}
+                      onChange={(e) => setEditDateValue(e.target.value)}
+                      className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 w-full text-[#6B7280] focus:outline-none"
+                      style={{ fontSize: '14px', fontWeight: 600 }}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <h2 className="text-[#1A1A1A] flex items-center gap-2" style={{ fontSize: '22px', fontWeight: 800 }}>
+                    {tripName} <span style={{ fontSize: '20px' }}>🌴</span>
+                  </h2>
+                  <p className="text-[#6B7280] mt-1" style={{ fontSize: '14px', fontWeight: 600 }}>
+                    {formatDateRange()}
+                  </p>
+                </>
+              )}
             </div>
-            <button className="w-10 h-10 bg-[#F3F4F6] rounded-xl flex items-center justify-center">
-              <Edit3 className="w-4 h-4 text-[#6B7280]" />
+            <button 
+              onClick={() => {
+                if (isEditingName) {
+                  setTripName(editNameValue);
+                  if (editDateValue) {
+                    setStoredStartDate(new Date(editDateValue).toISOString());
+                  }
+                  setIsEditingName(false);
+                } else {
+                  setEditNameValue(tripName);
+                  setEditDateValue(storedStartDate.split('T')[0]);
+                  setIsEditingName(true);
+                }
+              }}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${isEditingName ? "bg-[#FF7A00] text-white shadow-lg shadow-[#FF7A00]/30" : "bg-[#F3F4F6] text-[#6B7280]"}`}
+            >
+              <Edit3 className="w-4 h-4" />
             </button>
           </div>
 

@@ -9,7 +9,7 @@ export function Onboarding() {
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1553195027-5168a50283c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image: "/boracay/boracay1.jpg",
       badge: "Explore",
       title: "Paradise Awaits",
       subtitle: "Discover Hidden Gems",
@@ -17,7 +17,7 @@ export function Onboarding() {
       scriptText: "Your journey starts here",
     },
     {
-      image: "https://images.unsplash.com/photo-1551677821-36cb8571bdfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image: "/mountapo/mountapo1.jpg",
       badge: "Plan",
       title: "Smart Itineraries",
       subtitle: "Personalized For You",
@@ -25,7 +25,7 @@ export function Onboarding() {
       scriptText: "Travel smarter, not harder",
     },
     {
-      image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image: "/elnido/elnido1.JPG",
       badge: "Book",
       title: "Seamless Booking",
       subtitle: "All In One Place",

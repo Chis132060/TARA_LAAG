@@ -11,7 +11,7 @@ const reviews = [
     date: "2 days ago",
     comment: "Absolutely breathtaking! The lagoons are even more beautiful in person. Our guide was knowledgeable and friendly. Highly recommend the island hopping tour.",
     helpful: 24,
-    images: ["https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"],
+    images: ["/Siargao/Siargao1.jpg"],
   },
   {
     id: 2,

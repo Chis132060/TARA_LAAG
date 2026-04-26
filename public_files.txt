@@ -1,0 +1,767 @@
+﻿
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        26/04/2026   2:17 pm                aliwagwagfalls                                                       
+d-----        26/04/2026   1:46 pm                batanesbasco                                                         
+d-----        26/04/2026   1:55 pm                boracay                                                              
+d-----        26/04/2026   1:44 pm                britaniaisland                                                       
+d-----        26/04/2026   2:42 pm                burnhampark                                                          
+d-----        26/04/2026   2:25 pm                callecrisologo                                                       
+d-----        26/04/2026   2:23 pm                chocolatehills                                                       
+d-----        26/04/2026   2:11 pm                coronkayanganlake                                                    
+d-----        26/04/2026   1:40 pm                dahicanbeach                                                         
+d-----        26/04/2026   2:07 pm                elnido                                                               
+d-----        26/04/2026   1:28 pm                enchanted river                                                      
+d-----        26/04/2026   2:31 pm                fortpillar                                                           
+d-----        26/04/2026   2:36 pm                hundredislands                                                       
+d-----        26/04/2026   2:45 pm                kadayawan festival                                                   
+d-----        26/04/2026   2:28 pm                katibawasanfalls                                                     
+d-----        26/04/2026   2:13 pm                kawasanfalls                                                         
+d-----        26/04/2026   1:48 pm                lakesebu                                                             
+d-----        26/04/2026   1:58 pm                magpupungkopools                                                     
+d-----        26/04/2026   2:47 pm                magsaysaymarket                                                      
+d-----        26/04/2026   2:01 pm                mantigueislands                                                      
+d-----        26/04/2026   2:18 pm                mariacristinafalls                                                   
+d-----        26/04/2026   2:04 pm                mountapo                                                             
+d-----        26/04/2026   1:51 pm                nakedisland                                                          
+d-----        26/04/2026   2:49 pm                roxasnightmarket                                                     
+d-----        26/04/2026   2:05 pm                samalisland                                                          
+d-----        26/04/2026   1:26 pm                Siargao                                                              
+d-----        26/04/2026   2:34 pm                Sumanguingcave                                                       
+d-----        26/04/2026   2:40 pm                taalvolcano                                                          
+d-----        26/04/2026   2:30 pm                tbolilivingmuseum                                                    
+d-----        26/04/2026   1:35 pm                Tinuyanfalls                                                         
+d-----        26/04/2026   2:38 pm                tunacuisine                                                          
+d-----        26/04/2026   1:31 pm                WhiteIslandCamiguin                                                  
+-a----        24/04/2026   2:21 pm         374614 logo.png                                                             
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\aliwagwagfalls
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:15 pm         726038 aliwagwagfalls1.jpg                                                  
+-a----        26/04/2026   2:15 pm          89179 aliwagwagfalls2.jpg                                                  
+-a----        26/04/2026   2:16 pm        2203685 aliwagwagfalls3.jpg                                                  
+-a----        26/04/2026   2:16 pm         192691 aliwagwagfalls4.jpg                                                  
+-a----        26/04/2026   2:17 pm        1076772 aliwagwagfalls5.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\batanesbasco
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:44 pm         127708 batanesbasco1.jpg                                                    
+-a----        26/04/2026   1:45 pm         135763 batanesbasco2.jpg                                                    
+-a----        26/04/2026   1:45 pm         197427 batanesbasco3.jpg                                                    
+-a----        26/04/2026   1:46 pm           9930 batanesbasco4.jpg                                                    
+-a----        26/04/2026   1:46 pm          12424 batanesbasco5.jpg                                                    
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\boracay
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:54 pm         519146 boracay1.jpg                                                         
+-a----        26/04/2026   1:54 pm         112303 boracay2.jpg                                                         
+-a----        26/04/2026   1:54 pm         242336 boracay3.jpg                                                         
+-a----        26/04/2026   1:55 pm         142119 boracay4.jpg                                                         
+-a----        26/04/2026   1:55 pm          59782 boracay5.jpg                                                         
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\britaniaisland
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:41 pm          69061 britaniaisland1.jpg                                                  
+-a----        26/04/2026   1:41 pm          60147 britaniaisland2.jpg                                                  
+-a----        26/04/2026   1:42 pm          93057 britaniaisland3.JPG                                                  
+-a----        26/04/2026   1:42 pm          84753 britaniaisland4.JPG                                                  
+-a----        26/04/2026   1:43 pm          90861 britaniaisland5.JPG                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\burnhampark
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:41 pm         281808 burnhampark1.jpg                                                     
+-a----        26/04/2026   2:41 pm         797885 burnhampark2.png                                                     
+-a----        26/04/2026   2:41 pm         769842 burnhampark33.jpg                                                    
+-a----        26/04/2026   2:42 pm        1189490 burnhampark4.jpg                                                     
+-a----        26/04/2026   2:42 pm        1160332 burnhampark5.webp                                                    
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\callecrisologo
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:24 pm         798281 callecrisologo1.jpg                                                  
+-a----        26/04/2026   2:24 pm         352353 callecrisologo2.jpg                                                  
+-a----        26/04/2026   2:24 pm         117507 callecrisologo3.jpg                                                  
+-a----        26/04/2026   2:25 pm          84337 callecrisologo4.jpg                                                  
+-a----        26/04/2026   2:25 pm         149306 callecrisologo5.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\chocolatehills
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:19 pm        1577598 chocolatehills1.jpg                                                  
+-a----        26/04/2026   2:19 pm         389757 chocolatehills2.jpg                                                  
+-a----        26/04/2026   2:23 pm         139518 chocolatehills3.jpg                                                  
+-a----        26/04/2026   2:23 pm         162228 chocolatehills4.jpg                                                  
+-a----        26/04/2026   2:23 pm         338050 chocolatehills5.jpeg                                                 
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\coronkayanganlake
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:11 pm        1550117 55-kawasan-falls-main-banner.jpg                                     
+-a----        26/04/2026   2:09 pm         584976 coronkayanganlake1.jpg                                               
+-a----        26/04/2026   2:09 pm        1280994 coronkayanganlake2.jpg                                               
+-a----        26/04/2026   2:10 pm         205702 coronkayanganlake3.webp                                              
+-a----        26/04/2026   2:10 pm        1306046 coronkayanganlake4.webp                                              
+-a----        26/04/2026   2:10 pm         352787 coronkayanganlake5.jpg                                               
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\dahicanbeach
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:38 pm         452862 dahicanbeach1.jpg                                                    
+-a----        26/04/2026   1:39 pm          51710 dahicanbeach2.jpg                                                    
+-a----        26/04/2026   1:39 pm          65145 dahicanbeach3.jpeg                                                   
+-a----        26/04/2026   1:40 pm          71320 dahicanbeach4.jpg                                                    
+-a----        26/04/2026   1:40 pm          75275 dahicanbeach5.jpg                                                    
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\elnido
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:06 pm         959024 elnido1.JPG                                                          
+-a----        26/04/2026   2:06 pm        1433344 elnido2.jpg                                                          
+-a----        26/04/2026   2:07 pm        2340827 elnido3.jpg                                                          
+-a----        26/04/2026   2:07 pm         228070 elnido4.jpg                                                          
+-a----        26/04/2026   2:07 pm         135898 elnido5.webp                                                         
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\enchanted river
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:24 pm        2330658 EnchantedRiver1.jpg                                                  
+-a----        26/04/2026   1:25 pm         181482 EnchantedRiver2.webp                                                 
+-a----        26/04/2026   1:26 pm         171248 EnchantedRiver3.webp                                                 
+-a----        26/04/2026   1:27 pm         146780 EnchantedRiver4.webp                                                 
+-a----        26/04/2026   1:28 pm         112346 EnchantedRiver5.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\fortpillar
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:31 pm          32520 fortpillar1.jpg                                                      
+-a----        26/04/2026   2:31 pm         141863 fortpillar2.jpg                                                      
+-a----        26/04/2026   2:31 pm         561274 fortpillar3.jpg                                                      
+-a----        26/04/2026   2:31 pm         126252 fortpillar4.jpg                                                      
+-a----        26/04/2026   2:31 pm         260983 fortpillar5.jpg                                                      
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\hundredislands
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:35 pm         991291 hundredislands1.jpg                                                  
+-a----        26/04/2026   2:35 pm        1237779 hundredislands2.jpg                                                  
+-a----        26/04/2026   2:36 pm         170516 hundredislands3.jpg                                                  
+-a----        26/04/2026   2:36 pm         702839 hundredislands4.jpg                                                  
+-a----        26/04/2026   2:36 pm         124988 hundredislands5.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\kadayawan festival
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:43 pm         230907 kadayawan festival1.jpg                                              
+-a----        26/04/2026   2:44 pm         921631 kadayawan festival2.JPG                                              
+-a----        26/04/2026   2:44 pm         236546 kadayawan festival3.jpeg                                             
+-a----        26/04/2026   2:45 pm         325482 kadayawan festival4.webp                                             
+-a----        26/04/2026   2:45 pm         441862 kadayawan festival5.webp                                             
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\katibawasanfalls
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:27 pm         490415 katibawasanfalls1.jpg                                                
+-a----        26/04/2026   2:27 pm         535818 katibawasanfalls2.jpg                                                
+-a----        26/04/2026   2:27 pm         914410 katibawasanfalls3.jpg                                                
+-a----        26/04/2026   2:27 pm         322535 katibawasanfalls4.jpg                                                
+-a----        26/04/2026   2:28 pm         166978 katibawasanfalls5.jpg                                                
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\kawasanfalls
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:13 pm         283761 kawasaaanfalls4.jpg                                                  
+-a----        26/04/2026   2:11 pm        1550117 kawasanfalls1.jpg                                                    
+-a----        26/04/2026   2:12 pm         798607 kawasanfalls2.jpg                                                    
+-a----        26/04/2026   2:12 pm         220914 kawasanfalls3.jpg                                                    
+-a----        26/04/2026   2:13 pm         174564 kawasanfalls5.jpg                                                    
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\lakesebu
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:47 pm         968864 lakesebu1.jpg                                                        
+-a----        26/04/2026   1:47 pm         609984 lakesebu2.jpg                                                        
+-a----        26/04/2026   1:47 pm         228296 lakesebu3.jpg                                                        
+-a----        26/04/2026   1:48 pm          30412 lakesebu4.jpg                                                        
+-a----        26/04/2026   1:48 pm          32001 lakesebu5.jpg                                                        
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\magpupungkopools
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:57 pm         145936 magpupungkopools1.jpg                                                
+-a----        26/04/2026   1:57 pm         284866 magpupungkopools2.jpeg                                               
+-a----        26/04/2026   1:58 pm        1079437 magpupungkopools3.jpg                                                
+-a----        26/04/2026   1:58 pm          55588 magpupungkopools4.webp                                               
+-a----        26/04/2026   1:58 pm         355843 magpupungkopools5.jpeg                                               
+-a----        26/04/2026   1:57 pm         375016 mapupungkopools.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\magsaysaymarket
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:46 pm         954813 magsaysaymarket1.jpg                                                 
+-a----        26/04/2026   2:46 pm         697430 magsaysaymarket2.JPG                                                 
+-a----        26/04/2026   2:47 pm          59300 magsaysaymarket3.jpg                                                 
+-a----        26/04/2026   2:47 pm         111922 magsaysaymarket4.jpg                                                 
+-a----        26/04/2026   2:47 pm          46901 magsaysaymarket5.jpg                                                 
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\mantigueislands
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:00 pm         464015 mantigueisland1.jpg                                                  
+-a----        26/04/2026   2:00 pm          98905 mantigueisland2.jpg                                                  
+-a----        26/04/2026   2:00 pm         587686 mantigueisland3.jpg                                                  
+-a----        26/04/2026   2:01 pm          67078 mantigueisland4.jpg                                                  
+-a----        26/04/2026   2:01 pm         638678 mantigueisland5.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\mariacristinafalls
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:18 pm         417916 mariacristinafalls1.jpg                                              
+-a----        26/04/2026   2:18 pm         198551 mariacristinafalls2.jpg                                              
+-a----        26/04/2026   2:18 pm        2305789 mariacristinafalls3.jpg                                              
+-a----        26/04/2026   2:18 pm        1263846 mariacristinafalls4.JPG                                              
+-a----        26/04/2026   2:18 pm         665060 mariacristinafalls5.jpg                                              
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\mountapo
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:04 pm         518832 malipano island samal davao del norte.jpg                            
+-a----        26/04/2026   2:03 pm          88750 mountapo1.jpg                                                        
+-a----        26/04/2026   2:03 pm          64345 mountapo2.jpg                                                        
+-a----        26/04/2026   2:03 pm          23604 mountapo3.webp                                                       
+-a----        26/04/2026   2:03 pm         125952 mountapo4.jpg                                                        
+-a----        26/04/2026   2:03 pm          60447 mountapo5.jpg                                                        
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\nakedisland
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:49 pm          52258 nakedisland1.jpg                                                     
+-a----        26/04/2026   1:49 pm          48094 nakedisland2.jpg                                                     
+-a----        26/04/2026   1:49 pm          84709 nakedisland3.jpg                                                     
+-a----        26/04/2026   1:49 pm          62797 nakedisland4.jpg                                                     
+-a----        26/04/2026   1:51 pm          66535 nakedisland5.jpg                                                     
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\roxasnightmarket
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:48 pm         122326 roxasnightmarket1.jpg                                                
+-a----        26/04/2026   2:48 pm          52365 roxasnightmarket2.jpg                                                
+-a----        26/04/2026   2:48 pm          47766 roxasnightmarket3.jpg                                                
+-a----        26/04/2026   2:49 pm          72626 roxasnightmarket4.jpg                                                
+-a----        26/04/2026   2:49 pm         119568 roxasnightmarket5.jpg                                                
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\samalisland
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:04 pm         518832 samal1.jpg                                                           
+-a----        26/04/2026   2:05 pm         390076 samal2.jpg                                                           
+-a----        26/04/2026   2:05 pm         259761 samal3.jpg                                                           
+-a----        26/04/2026   2:05 pm         226248 samal4.jpg                                                           
+-a----        26/04/2026   2:05 pm         296384 samal5.webp                                                          
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\Siargao
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026  12:46 pm          92710 Siargao1.jpg                                                         
+-a----        26/04/2026  12:47 pm          91772 Siargao2.jpg                                                         
+-a----        26/04/2026  12:48 pm          98844 Siargao3.jpg                                                         
+-a----        26/04/2026  12:48 pm         134127 Siargao4.jpg                                                         
+-a----        26/04/2026  12:48 pm         112105 Siargao5.jpg                                                         
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\Sumanguingcave
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:33 pm         108358 Sumanguingcave1.jpg                                                  
+-a----        26/04/2026   2:33 pm         206913 Sumanguingcave2.jpg                                                  
+-a----        26/04/2026   2:33 pm          39603 Sumanguingcave3.jpg                                                  
+-a----        26/04/2026   2:34 pm         716564 Sumanguingcave4.jpg                                                  
+-a----        26/04/2026   2:33 pm          38531 Sumanguingcave5.jpg                                                  
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\taalvolcano
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:39 pm         376363 taalvolcano1.jpg                                                     
+-a----        26/04/2026   2:39 pm         534072 taalvolcano1.webp                                                    
+-a----        26/04/2026   2:40 pm         647162 taalvolcano2.jpg                                                     
+-a----        26/04/2026   2:40 pm         193667 taalvolcano3.jpg                                                     
+-a----        26/04/2026   2:40 pm         146776 taalvolcano4.jpg                                                     
+-a----        26/04/2026   2:40 pm         483015 taalvolcano5.jpg                                                     
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\tbolilivingmuseum
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        26/04/2026   2:30 pm                tbolilivingmuseum4_files                                             
+-a----        26/04/2026   2:29 pm         174340 tbolilivingmuseum1.jpg                                               
+-a----        26/04/2026   2:29 pm         229760 tbolilivingmuseum2.jpg                                               
+-a----        26/04/2026   2:29 pm          66330 tbolilivingmuseum3.jpg                                               
+-a----        26/04/2026   2:30 pm        1051291 tbolilivingmuseum4.html                                              
+-a----        26/04/2026   2:30 pm         395747 tbolilivingmuseum4.jpg                                               
+-a----        26/04/2026   2:30 pm         113840 tbolilivingmuseum5.jpg                                               
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\tbolilivingmuseum\tbolilivingmuseum4_files
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:30 pm            317 -A5v-hTPFRzEXEMXLO7124F8nt0.svg                                      
+-a----        26/04/2026   2:30 pm            470 0NkXKkaVkOi7zqIYRQQ-JN2ZMRk.br.js.download                           
+-a----        26/04/2026   2:29 pm            451 0WKY0ny-iWR3yYCvsD6MQVMjVbw.svg                                      
+-a----        26/04/2026   2:30 pm           2781 1hGciYbPE6ALKVPnmrkw4Pko3GI.br.js.download                           
+-a----        26/04/2026   2:30 pm            451 1L93TsCjxRt6RY7EoEoEa7937NA.br.js.download                           
+-a----        26/04/2026   2:30 pm           1291 1YhPsbfyL21332neAsex_IeehLU.br.js.download                           
+-a----        26/04/2026   2:29 pm            927 3pOqOoohWwtHPg-vnhNBGY5yHHI.br.css                                   
+-a----        26/04/2026   2:30 pm           1920 3U4MuSTuHs_9JKfRazSxuXeJlv4.br.js.download                           
+-a----        26/04/2026   2:30 pm            738 4A9D07RlW6M7gPmPQQydX3khDJc.svg                                      
+-a----        26/04/2026   2:30 pm          13876 4B8ctbhBsKi3JICaGSTfB893Nvc.br.js.download                           
+-a----        26/04/2026   2:29 pm           1101 4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg                                      
+-a----        26/04/2026   2:30 pm           4505 4XhNiFLBac8W4P-lZmslgZDf000.br.js.download                           
+-a----        26/04/2026   2:30 pm           1772 5FbVcVko_TuW5Y8VB4_bHoFuDm8.br.js.download                           
+-a----        26/04/2026   2:30 pm           5000 5jOFZTRZRQNYEniUpjuVlRlTSUA.br.js.download                           
+-a----        26/04/2026   2:30 pm           1725 5L3iD467J3iJWEPwIjxlK0MMDpY.br.js.download                           
+-a----        26/04/2026   2:30 pm            979 5vFSQCRSrpDcq3eta_XSlrn9ECQ.br.js.download                           
+-a----        26/04/2026   2:29 pm            517 5yVAKe18OXFf_XvuMPJO61GQVsc.svg                                      
+-a----        26/04/2026   2:30 pm           1107 7-J2RHYGGYSSYur9SUNcAJ6V57w.br.js.download                           
+-a----        26/04/2026   2:30 pm          23381 70rhlhm1764HLXYuwL6dxslNwPk.br.js.download                           
+-a----        26/04/2026   2:30 pm            552 71mLq5OSx9PI8jgeJllXdk39KxM.br.js.download                           
+-a----        26/04/2026   2:30 pm            962 75SIhjT7cikNAal0FuI8WHdzWa8.br.js.download                           
+-a----        26/04/2026   2:29 pm            738 7oG-Ji9mObOzUoeus7A7UlcJDIs.br.css                                   
+-a----        26/04/2026   2:30 pm         304555 8446932885_b4d5a67699_z.jpg                                          
+-a----        26/04/2026   2:30 pm           6409 88F_WFp57AEhbuX2xUzJp0yKLEM.br.js.download                           
+-a----        26/04/2026   2:30 pm           4462 8BLbyUK5EaqCuzmCEcf9-meevmE.br.js.download                           
+-a----        26/04/2026   2:30 pm           2415 8M5_rpcxUUkVgUBFJV_AP7Ut3ds.br.js.download                           
+-a----        26/04/2026   2:30 pm           1106 8_l7FdkTEeUdq3709l0ZIjUaFso.br.js.download                           
+-a----        26/04/2026   2:30 pm           1970 910ptS3pcIDQ7a5acMaHuQliuN0.br.js.download                           
+-a----        26/04/2026   2:30 pm            235 9g2uGVRiVEp1Z6NEnafRTzu39z4.br.js.download                           
+-a----        26/04/2026   2:29 pm            841 9mM--t8iClqcK4e1MHzNovhHkVA.svg                                      
+-a----        26/04/2026   2:30 pm           6859 9n9MM1SvuYswYf8FiJ4LwfPRnjI.br.js.download                           
+-a----        26/04/2026   2:30 pm          34738 9Z2GyyGvsKSVNrmOMrTfcv8z_yQ.br.js.download                           
+-a----        26/04/2026   2:30 pm         158033 AlZ2sswxAQ4Q7UFsdy4GhX407fw.br.js.download                           
+-a----        26/04/2026   2:30 pm            438 Ass0FROa2e9YKJimHNSYJXacvKI.br.js.download                           
+-a----        26/04/2026   2:30 pm            361 b0FwJOyobV6NnXq4XV6y--Iohrc.png                                      
+-a----        26/04/2026   2:30 pm          15153 b1xhc3Vl3_FhS-lf4VS_IJJoJF8.br.js.download                           
+-a----        26/04/2026   2:30 pm            850 BCVDUNfeZ7tQ2QpI_u5lZbww3VY.br.js.download                           
+-a----        26/04/2026   2:30 pm          35859 BQz5zlvR0anI6RXKJA08af4fV8U.br.js.download                           
+-a----        26/04/2026   2:29 pm            189 bSmUb4SdiINJy0O6_CJPQxImT6o.svg                                      
+-a----        26/04/2026   2:30 pm            308 bWBJ7MKIOg3qs13dXIBmHzsBR3M.br.js.download                           
+-a----        26/04/2026   2:30 pm           4484 c662_JIRtrk_PS2cDdfzRDiKHsg.br.css                                   
+-a----        26/04/2026   2:30 pm            560 cfKt7bw67nxWZkkgOIRReDE3rQI.br.js.download                           
+-a----        26/04/2026   2:30 pm            332 Ci6Xzu7lUfNYtt_LRbzVQ2-kSew.br.js.download                           
+-a----        26/04/2026   2:30 pm           2138 ClBkzRTD0QLpIATX2q7eWktfr_k.br.js.download                           
+-a----        26/04/2026   2:30 pm         374789 DmYomXZ0p9--syG1mm6CnQwvRHg.br.js.download                           
+-a----        26/04/2026   2:30 pm           1264 dTR8g_w1JyjkycsHAwG_b2BGs0o.br.js.download                           
+-a----        26/04/2026   2:30 pm           2562 DVAuwtqd1nRcTCF3ZCHWFi09ARI.br.js.download                           
+-a----        26/04/2026   2:30 pm          15513 e5L7vKbubPSU1bqZ4-OGMj8wr3o.br.js.download                           
+-a----        26/04/2026   2:29 pm            448 e7qg7cbQkMD6ZlpuYCqAK_iAwxw.br.css                                   
+-a----        26/04/2026   2:30 pm           2044 EAI2MpbgpapWy3f5CJ0mQ55YzkI.br.js.download                           
+-a----        26/04/2026   2:30 pm           2683 eKvcHdnNwo1WcxoSioV4ztnfZk8.br.js.download                           
+-a----        26/04/2026   2:30 pm            252 EmbwE8rah_7zdUQkosWSw-5nAPY.br.js.download                           
+-a----        26/04/2026   2:29 pm           6719 eONVEA3w40AuXT8urmfzc7DGNg8.br.css                                   
+-a----        26/04/2026   2:30 pm            518 eyf7iYpkU1E7D0Itcc4XVcbdbLc.css                                      
+-a----        26/04/2026   2:30 pm           2170 f14sYkAoIbYUnR0EQpMSkaGmmiI.br.css                                   
+-a----        26/04/2026   2:30 pm           6301 F6F2TFC8wCHiTA8V0d64bx8w7rw.br.js.download                           
+-a----        26/04/2026   2:30 pm          21078 FATdvfhSB-vJrkLn-dkWzqdRSDU.br.js.download                           
+-a----        26/04/2026   2:29 pm            671 fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg                                      
+-a----        26/04/2026   2:30 pm         132235 fkV2phn5hNjk58vu2qQJ6LfuRiY.br.js.download                           
+-a----        26/04/2026   2:30 pm            156 Flag_Feedback.png                                                    
+-a----        26/04/2026   2:30 pm            289 fRSNKQanUHk53F1a1Bi8UA71Qt4.br.js.download                           
+-a----        26/04/2026   2:29 pm            282 Fsa_OI0AplCnVoXGca8ALOo0S0s.svg                                      
+-a----        26/04/2026   2:29 pm            369 gIoKmeHMJx2_2nng59mskaI57bg.br.css                                   
+-a----        26/04/2026   2:30 pm         170817 Gono-Bong-at-the-Lake-Sebu-School-of-Living-Traditions.jpeg          
+-a----        26/04/2026   2:30 pm            229 GSNeCa5XvtoP6jz0k5V172vRaQ8.br.js.download                           
+-a----        26/04/2026   2:30 pm            508 gt_BPWEDS-wwbfDJPqvgRPUD4cI.br.js.download                           
+-a----        26/04/2026   2:30 pm           1274 Gyuq2bqitqDJM0BeAkbKXGlQXNw.br.js.download                           
+-a----        26/04/2026   2:30 pm            462 hEqFKjQayMY_lHvLB2LmW1vKiD4.br.js.download                           
+-a----        26/04/2026   2:30 pm          22257 Hlxod2HjXBRmUQXC-oLI2O_MpO4.br.js.download                           
+-a----        26/04/2026   2:30 pm          10680 HNNKn1EcNi8BDw7yV2hflYD_CeM.br.js.download                           
+-a----        26/04/2026   2:30 pm           3135 hSAjq6w-jLSduDuFCKOr-TOJIA4.br.js.download                           
+-a----        26/04/2026   2:30 pm            703 hSC2A2u1nPLBLKtx9YeXrNrijSw.br.js.download                           
+-a----        26/04/2026   2:30 pm           3230 i5N4s2ROMVJIxdoq6CxpAEaDtfM.br.js.download                           
+-a----        26/04/2026   2:30 pm           2301 IdIIMW5cXdGZk9qTTc_cPi77pMI.br.js.download                           
+-a----        26/04/2026   2:30 pm            821 inKqjZb7BBrOYwHLzCiWzAwJAZs.css                                      
+-a----        26/04/2026   2:30 pm            979 iWvFSvKqX_lsNKysouDrh1hlrF8.br.js.download                           
+-a----        26/04/2026   2:30 pm           2087 JGmTj76FhGsk-L6oOi3ert6BeoQ.br.js.download                           
+-a----        26/04/2026   2:30 pm           8079 jXNwtGSsRRQ_YtowiJWIGYMzAV4.br.js.download                           
+-a----        26/04/2026   2:30 pm            669 kCUpM11UAm_OYWzgyOYxVXT4Ij4.br.js.download                           
+-a----        26/04/2026   2:30 pm           7180 KLrSbzDKMog0mCiPcB9iwoEvlE4.br.js.download                           
+-a----        26/04/2026   2:29 pm            711 kxTm6_yMJSr-Au_oSrzcrpJm2mY.svg                                      
+-a----        26/04/2026   2:30 pm            242 K_V1CARn2Q2lTs5njJKUvUkHyi4.br.js.download                           
+-a----        26/04/2026   2:30 pm          35466 LaftB1cnl_lPhId8HuPff7WLEdU.js.download                              
+-a----        26/04/2026   2:30 pm           2003 lcZUQ5dyBbr5Tcsch2u_vENiSgM.br.css                                   
+-a----        26/04/2026   2:30 pm           3390 LDPtmbi_w4y1oa90D_hi6HqB1QI.br.js.download                           
+-a----        26/04/2026   2:30 pm         198689 Lks94sRsdVtbuF4IeWF2rzAMGAA.br.js.download                           
+-a----        26/04/2026   2:30 pm            429 lwgCOY8rCo0Ub0btSshwRlT9HWI.br.js.download                           
+-a----        26/04/2026   2:30 pm            338 lyKaxu_gNU_cPWIclldAukh4pCo.br.js.download                           
+-a----        26/04/2026   2:30 pm            536 m1vn4oW_kU4X5wJTHMjFCXq8Xj4.br.js.download                           
+-a----        26/04/2026   2:30 pm            748 Mb809aw4VSMcuGQ4dq7jeph9Rjg.br.js.download                           
+-a----        26/04/2026   2:30 pm          10438 MFCea3lBZtF5AAN0Slj6qpivo78.br.js.download                           
+-a----        26/04/2026   2:30 pm          13409 MicXn58E9O2d9myy2AkyWVxfKMM.br.js.download                           
+-a----        26/04/2026   2:30 pm            938 MjkKTrIX9w2UKVd1W1WV1Gj2zWM.br.js.download                           
+-a----        26/04/2026   2:30 pm           1589 n21aGRCN5EKHB3qObygw029dyNU.br.js.download                           
+-a----        26/04/2026   2:30 pm          12895 n23ANye7L3wtUcgKxoGHb7_ezc4.br.js.download                           
+-a----        26/04/2026   2:30 pm            288 NNcPWELs37mjrTd4McRPz8yoC_E.br.js.download                           
+-a----        26/04/2026   2:30 pm           4871 noviXekWbIEiww0Q05yqGO7ZChU.br.js.download                           
+-a----        26/04/2026   2:30 pm            606 nt6a1ZR520utsLoZmSYgwxdOPgI.js.download                              
+-a----        26/04/2026   2:30 pm            196 ODF(1).sU83tBtBMnl5iFCsV9vEKA                                        
+-a----        26/04/2026   2:30 pm           1565 ODF(2).sU83tBtBMnl5iFCsV9vEKA                                        
+-a----        26/04/2026   2:30 pm            166 ODF(3).GQldA6DUZ4yhSd31vAyCCA                                        
+-a----        26/04/2026   2:30 pm            168 ODF(4).bdoMxu2ZIUaE3OMYz4RRCw                                        
+-a----        26/04/2026   2:30 pm            180 ODF(5).upbz41c_KipiKBx1ceCVcg                                        
+-a----        26/04/2026   2:30 pm            222 ODF(6).ac-tR9lZkEu6l91_V4Ho9w                                        
+-a----        26/04/2026   2:30 pm            174 ODF(7).MrzzDTMlZsq_k5DWWmv7Hw                                        
+-a----        26/04/2026   2:30 pm            208 ODF(8).4_mohk_0Er8pVd3PAfvJuA                                        
+-a----        26/04/2026   2:30 pm            112 ODF.0CBizvuiIpLNCJabHjgUmQ                                           
+-a----        26/04/2026   2:30 pm            226 ODF.11Mc9b2_dosqX9n1BRcXWA                                           
+-a----        26/04/2026   2:30 pm            216 ODF.3KcVrokRFXD62qOC0RTeSQ                                           
+-a----        26/04/2026   2:30 pm            226 ODF.3rTFPQpe8it1sbugA4e8Kg                                           
+-a----        26/04/2026   2:30 pm            208 ODF.4_mohk_0Er8pVd3PAfvJuA                                           
+-a----        26/04/2026   2:30 pm            244 ODF.5YpV6WsieaUW9zA4xE-NCQ                                           
+-a----        26/04/2026   2:30 pm            224 ODF.7IaGNopWit74qwjANsBggg                                           
+-a----        26/04/2026   2:30 pm            192 ODF.7nrWo_9VWkUp1qwuy6DD3A                                           
+-a----        26/04/2026   2:30 pm            254 ODF.9CNsQpNBqvR9PepxjSoEiQ                                           
+-a----        26/04/2026   2:30 pm            222 ODF.ac-tR9lZkEu6l91_V4Ho9w                                           
+-a----        26/04/2026   2:30 pm            168 ODF.bdoMxu2ZIUaE3OMYz4RRCw                                           
+-a----        26/04/2026   2:30 pm            246 ODF.CQCgL_rIqI2ePahPgUJ3Og                                           
+-a----        26/04/2026   2:30 pm            146 ODF.dqQGw1O_N7pFJaz4OFU5Lw                                           
+-a----        26/04/2026   2:30 pm            150 ODF.FgCmk_1K1yiaeGdGrcApRQ                                           
+-a----        26/04/2026   2:30 pm            192 ODF.g4OFm4Mz-ioLQNHPilrnlw                                           
+-a----        26/04/2026   2:30 pm            256 ODF.ghHc7yvlUTj_1O4R-I6Hjg                                           
+-a----        26/04/2026   2:30 pm            166 ODF.GQldA6DUZ4yhSd31vAyCCA                                           
+-a----        26/04/2026   2:30 pm            194 ODF.HZSNl39eV6TzHE4jDWuHWA                                           
+-a----        26/04/2026   2:30 pm             88 ODF.iWU3YXYoP2oEux28yJeeEQ                                           
+-a----        26/04/2026   2:30 pm            106 ODF.j7MfCSLPu3wkJAhS4_GwAA                                           
+-a----        26/04/2026   2:30 pm            256 ODF.K-Jy-O96VQfoE1_cX4v5jQ                                           
+-a----        26/04/2026   2:30 pm            174 ODF.MrzzDTMlZsq_k5DWWmv7Hw                                           
+-a----        26/04/2026   2:30 pm            228 ODF.ogQuRWzB-1KvDXXBLLwLdA                                           
+-a----        26/04/2026   2:30 pm            214 ODF.Rf7CJWaP5LS0Bw9FpAt3Gw                                           
+-a----        26/04/2026   2:30 pm            118 ODF.s43f71hNrks9kpQuP9HCOA                                           
+-a----        26/04/2026   2:30 pm            196 ODF.sU83tBtBMnl5iFCsV9vEKA                                           
+-a----        26/04/2026   2:30 pm            200 ODF.t2T8Gd1trRYkqKovycXkzw                                           
+-a----        26/04/2026   2:30 pm            132 ODF.T9QKrgfPUJoHSAJeDoVN1Q                                           
+-a----        26/04/2026   2:30 pm            152 ODF.TGueNDgbc2Hca6l76a17Ng                                           
+-a----        26/04/2026   2:30 pm            156 ODF.uCn4lvxOcaw6sSHgE3kzFg                                           
+-a----        26/04/2026   2:30 pm            186 ODF.UF_wdz1jsbvCi9tL3VSXjw                                           
+-a----        26/04/2026   2:30 pm            180 ODF.upbz41c_KipiKBx1ceCVcg                                           
+-a----        26/04/2026   2:30 pm            226 ODF.W_-bOJe2k26b6Sv0-FuGRg                                           
+-a----        26/04/2026   2:30 pm            154 ODF.yA3YBqLn_R39sskZzeDbcA                                           
+-a----        26/04/2026   2:30 pm            138 ODF.yvBtUmI7U646F20VvnKCKg                                           
+-a----        26/04/2026   2:30 pm            238 ODF.zCRN_zN5ILYFFHtveQX99g                                           
+-a----        26/04/2026   2:30 pm            158 ODF.Zqg_WaiyYAd_68E39tYMmg                                           
+-a----        26/04/2026   2:30 pm           3598 OHA5u4HW70mLbGkOE41WRDXcYTY.svg                                      
+-a----        26/04/2026   2:30 pm           3698 OIP(1).6rrV_MDa95lzVbca00hhfAHaEK                                    
+-a----        26/04/2026   2:30 pm          17122 OIP(2).InBSCGGRSYP_4cEdlMtJOgHaFE                                    
+-a----        26/04/2026   2:30 pm          24846 OIP(3).Cuf4zY05L0L9Y_w89szBGAHaEK                                    
+-a----        26/04/2026   2:30 pm           2832 OIP(4).P1HgVm1-fGB23UVXXcNiSQHaFL                                    
+-a----        26/04/2026   2:30 pm           2690 OIP(5).O-v1CAw3yo7cNeDP4eWLbgHaJQ                                    
+-a----        26/04/2026   2:30 pm           2688 OIP(6).bEapRMcpLHihqEMJVHbloAHaJQ                                    
+-a----        26/04/2026   2:30 pm           3398 OIP(7).xMLiwyidGaqf72CqI_qwSAHaGh                                    
+-a----        26/04/2026   2:30 pm          14536 OIP(8).P1HgVm1-fGB23UVXXcNiSQHaFL                                    
+-a----        26/04/2026   2:30 pm          11134 OIP.13bQkEgvLop1Zk16kLkcTAHaFj                                       
+-a----        26/04/2026   2:30 pm           8882 OIP.1fLnMpYjxFNwdO6nz5IvtwHaE8                                       
+-a----        26/04/2026   2:30 pm          12002 OIP.2Zbjog9nPLPtzAM3naEGqgAAAA                                       
+-a----        26/04/2026   2:30 pm          16220 OIP.2zDW6gnvEdgLd3Dh0H1DugHaFC                                       
+-a----        26/04/2026   2:30 pm          28768 OIP.56-Msk7NFTamX6S2LYZdcQHaE8                                       
+-a----        26/04/2026   2:30 pm           7946 OIP.6BThQtj9YpfMZL1z3QQEogHaEK                                       
+-a----        26/04/2026   2:30 pm          13230 OIP.6rrV_MDa95lzVbca00hhfAHaEK                                       
+-a----        26/04/2026   2:30 pm           4620 OIP.73nboGh3Effz9xVz1mGROAHaJ5                                       
+-a----        26/04/2026   2:30 pm          14006 OIP.78HnYdn-KhWOPIjYFOBtYQHaD4                                       
+-a----        26/04/2026   2:30 pm          22066 OIP.9sks5eF8GfCQYH26ePNEVAHaD4                                       
+-a----        26/04/2026   2:30 pm          16288 OIP.aFwKxEBo3pqGAUzsFcgEIQHaFj                                       
+-a----        26/04/2026   2:30 pm          16522 OIP.ANGa2g88s542wqxKD1a5dAHaFj                                       
+-a----        26/04/2026   2:30 pm          10082 OIP.aX-UsEttpyKtGeb2A-SrKQHaE6                                       
+-a----        26/04/2026   2:30 pm          21102 OIP.b5GYd3gi6hm10nHaA2Lk0wHaFA                                       
+-a----        26/04/2026   2:30 pm           4986 OIP.bEapRMcpLHihqEMJVHbloAHaJQ                                       
+-a----        26/04/2026   2:30 pm          10320 OIP.bJawJbqq-qxmuH2s_XtrtgHaEK                                       
+-a----        26/04/2026   2:30 pm           8070 OIP.BJQrhOjJ7xqneGxDaOERCAHaE7                                       
+-a----        26/04/2026   2:30 pm          12548 OIP.bPIdsyYLXbWApUbdjJfLwgAAAA                                       
+-a----        26/04/2026   2:30 pm          10918 OIP.bshJE3ZgxSbG0I2kdIBq_QAAAA                                       
+-a----        26/04/2026   2:30 pm          10268 OIP.BykLGUR6lY7kL5zDcAnTvgHaEK                                       
+-a----        26/04/2026   2:30 pm          14350 OIP.b_UaqcMY7P3iXPpWduft-gHaFk                                       
+-a----        26/04/2026   2:30 pm          14948 OIP.ceDBN4KU2t92ptJvTudRlAHaE8                                       
+-a----        26/04/2026   2:30 pm           5462 OIP.cFEhe-jekWhg68uhY3Y4XgHaFj                                       
+-a----        26/04/2026   2:30 pm           5866 OIP.Cuf4zY05L0L9Y_w89szBGAHaEK                                       
+-a----        26/04/2026   2:30 pm          15498 OIP.CuGVk5euZWmg-MPGgjj9UgHaE6                                       
+-a----        26/04/2026   2:30 pm           1692 OIP.Dgy59ZVhUhnoHHtImhc-EAHaEN                                       
+-a----        26/04/2026   2:30 pm          24584 OIP.DUW-ZAlZhg6NPNwxU7x_DQHaE8                                       
+-a----        26/04/2026   2:30 pm          11912 OIP.EcYc8o5WRMLY1XHffgSmgAHaJ4                                       
+-a----        26/04/2026   2:30 pm          21244 OIP.EDIteWb3FAjLJt0D-TpkngHaFj                                       
+-a----        26/04/2026   2:30 pm          13314 OIP.F5sEu0XY5a_7WPErZOBr1QHaFj                                       
+-a----        26/04/2026   2:30 pm          31070 OIP.FaJoQ4Ewi8hD6xk8Fkti2gAAAA                                       
+-a----        26/04/2026   2:30 pm          22604 OIP.FqfBROeXgGkx9OeEtq_PEwHaJ4                                       
+-a----        26/04/2026   2:30 pm          19806 OIP.FsnPGrmO5fO4-8Xnnh1kuwHaFV                                       
+-a----        26/04/2026   2:30 pm          11856 OIP.fYEswHeAeQq_aXS0VL5krgHaFj                                       
+-a----        26/04/2026   2:30 pm          12202 OIP.FzkxLuxFUt2EGu7NZmfEsAHaER                                       
+-a----        26/04/2026   2:30 pm          11308 OIP.GFx0x4xjjj8OpMrpfQa34gHaFj                                       
+-a----        26/04/2026   2:30 pm           4226 OIP.hf16pKKTCiLozcoDLuP2xAHaJ3                                       
+-a----        26/04/2026   2:30 pm           9808 OIP.hhrmGqTqk3NVSZ8gbWDC3wHaEj                                       
+-a----        26/04/2026   2:30 pm          16724 OIP.HJzxoUt6P_6F-dqPOq7YPwHaE6                                       
+-a----        26/04/2026   2:30 pm           2730 OIP.homRlQBH65qmju4NTv5cewHaD3                                       
+-a----        26/04/2026   2:30 pm          32940 OIP.HUYMfhQPpDTYCRnjRAegJAAAAA                                       
+-a----        26/04/2026   2:30 pm          10952 OIP.hvmck2bh-AcknT2duc7YBwAAAA                                       
+-a----        26/04/2026   2:30 pm          17848 OIP.i3MdqrV5jTh04oR3AOt0jAHaD4                                       
+-a----        26/04/2026   2:30 pm          11302 OIP.IcQnfGiE4JE2vKfWNdezuwHaE8                                       
+-a----        26/04/2026   2:30 pm           4964 OIP.InBSCGGRSYP_4cEdlMtJOgHaFE                                       
+-a----        26/04/2026   2:30 pm           5458 OIP.j8_h60-_Iw0JrVHULNTv6AHaIf                                       
+-a----        26/04/2026   2:30 pm           4624 OIP.JOSaStSMQwReehq1yrC2xgHaD4                                       
+-a----        26/04/2026   2:30 pm           7640 OIP.JvlRo4z57KUqYstxg63ulQHaEK                                       
+-a----        26/04/2026   2:30 pm          11790 OIP.L2g9EeD_YJld_rjsrqKi7QHaE8                                       
+-a----        26/04/2026   2:30 pm           4890 OIP.m8ddE-yXnN3XQhM6NVyLpAHaHk                                       
+-a----        26/04/2026   2:30 pm           4992 OIP.mu1MOmJlDJ4JnT7TMJexPgHaE5                                       
+-a----        26/04/2026   2:30 pm          22902 OIP.mx-B3Ktu58AfQxVLoySxeQHaE8                                       
+-a----        26/04/2026   2:30 pm          12670 OIP.NCuCxW5JPQWG5fPQ-87yrQHaE5                                       
+-a----        26/04/2026   2:30 pm          13112 OIP.NddRqxrH-mPTn0q8D5qrLAHaJk                                       
+-a----        26/04/2026   2:30 pm          23546 OIP.ne0iehyu1ADS_ViLpOmrPQHaEK                                       
+-a----        26/04/2026   2:30 pm           5132 OIP.O-v1CAw3yo7cNeDP4eWLbgHaJQ                                       
+-a----        26/04/2026   2:30 pm           3990 OIP.OlDIF4k2x3Ymne_qdBfLRQHaE8                                       
+-a----        26/04/2026   2:30 pm          20602 OIP.P1HgVm1-fGB23UVXXcNiSQHaFL                                       
+-a----        26/04/2026   2:30 pm           3490 OIP.p7GqNx-_7F8Ri0aCZg7nfAHaE6                                       
+-a----        26/04/2026   2:30 pm           3458 OIP.pVhNEpvDTCd9v-7qFCx6uwHaFj                                       
+-a----        26/04/2026   2:30 pm           9080 OIP.RbVUSU0BFDn_MZfYudEFOgHaHa                                       
+-a----        26/04/2026   2:30 pm          16128 OIP.RCChFgqlcVVYIDKKWNRr4gHaEK                                       
+-a----        26/04/2026   2:30 pm          17496 OIP.ReyHEf2xlyvTmnYBe9fBsQHaE7                                       
+-a----        26/04/2026   2:30 pm          13978 OIP.Rj-knAKlQG-SpxKwhKgjNQHaE7                                       
+-a----        26/04/2026   2:30 pm          12938 OIP.sofa2KfQTTJZMOs7R-qWGAHaE8                                       
+-a----        26/04/2026   2:30 pm           8296 OIP.sQgHex_3KoQZ-ski6RsocQHaE7                                       
+-a----        26/04/2026   2:30 pm           8976 OIP.T8AKUW_n-xlmU8PrX95K1QHaE8                                       
+-a----        26/04/2026   2:30 pm          11060 OIP.taVYchZCiTwGMlzg7A8vbAHaE8                                       
+-a----        26/04/2026   2:30 pm          18578 OIP.TBzpCYv9OqaQnx8HUE-Y5QHaD4                                       
+-a----        26/04/2026   2:30 pm          12218 OIP.tE6uRnvKfqnGYrR3QSWJ-QAAAA                                       
+-a----        26/04/2026   2:30 pm           5308 OIP.UpvgluT3i0gntd8o5AWBdQHaE5                                       
+-a----        26/04/2026   2:30 pm          14800 OIP.u_t2hk243mZksoLajmuJfwHaFj                                       
+-a----        26/04/2026   2:30 pm          18414 OIP.VIsDV1WNZNcBXvoYGSD3wgAAAA                                       
+-a----        26/04/2026   2:30 pm           5092 OIP.WE8QzJz_7t3T2cPKr-fYGwHaD4                                       
+-a----        26/04/2026   2:30 pm          13462 OIP.WIALtdSCF3Sse5u1ERs5wgHaFn                                       
+-a----        26/04/2026   2:30 pm          23500 OIP.WrweWJ8maCMZ6qz-DLzpgQHaE7                                       
+-a----        26/04/2026   2:30 pm          16984 OIP.X-djC73VwlZcs5csEwKvcwHaFN                                       
+-a----        26/04/2026   2:30 pm          15466 OIP.xEr0dMmzyWHnqXlFiirX7AHaFj                                       
+-a----        26/04/2026   2:30 pm           9722 OIP.XI34asOOxOc6fuqW115MuAHaEr                                       
+-a----        26/04/2026   2:30 pm          24666 OIP.xMLiwyidGaqf72CqI_qwSAHaGh                                       
+-a----        26/04/2026   2:30 pm           8488 OIP.YTKR2_zlFkCBD8aSm-KxLwHaE8                                       
+-a----        26/04/2026   2:30 pm          24738 OIP.zcWauhJi7Xd8GzorUiPlzgHaE5                                       
+-a----        26/04/2026   2:30 pm           9356 OIP.ZJKpAUTPsGH1-nhBJ4sWywHaEK                                       
+-a----        26/04/2026   2:30 pm           9904 OIP._yhC6z2jnuCKKamYKJnCfQAAAA                                       
+-a----        26/04/2026   2:29 pm           4338 Pay4yaPOiUAvZS2FdTZQjeCxe84.br.css                                   
+-a----        26/04/2026   2:30 pm           1060 psgXZvzYJMEW2ydikIk493Va1d4.br.js.download                           
+-a----        26/04/2026   2:30 pm           1621 ptVvjrnZKORL95SGnJCYqA5BJKw.br.js.download                           
+-a----        26/04/2026   2:30 pm            677 Q5BJPjebyYN5QiqznkcMQmLrF9U.svg                                      
+-a----        26/04/2026   2:30 pm           1537 qi9Bm_IYxbXnj0KXk4SBGNjT3cc.br.js.download                           
+-a----        26/04/2026   2:30 pm           7079 QJqGLsBFcEKpkrfBOmzWq24KeKk.br.js.download                           
+-a----        26/04/2026   2:30 pm            280 qwce00QJxdHzNxXh5H1mBc8QgBU.br.js.download                           
+-a----        26/04/2026   2:29 pm           1111 r31GrT0Eaf_5sPyu1TswcyPA8VI.svg                                      
+-a----        26/04/2026   2:30 pm           4093 raY7i09EhP1dcnxIV0f_2Qc45Q4.br.js.download                           
+-a----        26/04/2026   2:30 pm            837 RBARmUXLe8rKWg9gEFXYysn3nEg.br.css                                   
+-a----        26/04/2026   2:30 pm            849 rHEuoibmyxFGY3AaVM2-pUPbxT4.br.js.download                           
+-a----        26/04/2026   2:30 pm           1038 rRq_wl5pFjuswQTmZNb3ETdg7dQ.br.js.download                           
+-a----        26/04/2026   2:30 pm            710 RxnQtSv3YDXTp2Pi1BT-ojVQhss.css                                      
+-a----        26/04/2026   2:30 pm            149 saved_resource(1).html                                               
+-a----        26/04/2026   2:30 pm        2045560 saved_resource.html                                                  
+-a----        26/04/2026   2:30 pm           7545 SbEaBPxwr-A3hRWok8eu5vVVg5o.br.js.download                           
+-a----        26/04/2026   2:30 pm            589 SfJ6raSq1fhuhhfFXPVdwEdJvkY.css                                      
+-a----        26/04/2026   2:30 pm           4534 sGLGWS22Xd3xpXONLKYyCIR-XiA.br.js.download                           
+-a----        26/04/2026   2:30 pm          32540 SrvaUqZtL_vR9qeh52VSOhF_plE.br.js.download                           
+-a----        26/04/2026   2:30 pm         130985 Tboli-Dream-Weavers-1.jpg                                            
+-a----        26/04/2026   2:30 pm           1116 th                                                                   
+-a----        26/04/2026   2:30 pm            890 th(1)                                                                
+-a----        26/04/2026   2:30 pm           1780 th(10)                                                               
+-a----        26/04/2026   2:30 pm           1684 th(11)                                                               
+-a----        26/04/2026   2:30 pm           1506 th(12)                                                               
+-a----        26/04/2026   2:30 pm           1646 th(13)                                                               
+-a----        26/04/2026   2:30 pm           1994 th(14)                                                               
+-a----        26/04/2026   2:30 pm           1316 th(15)                                                               
+-a----        26/04/2026   2:30 pm           1792 th(16)                                                               
+-a----        26/04/2026   2:30 pm           1792 th(17)                                                               
+-a----        26/04/2026   2:30 pm           1304 th(18)                                                               
+-a----        26/04/2026   2:30 pm           1144 th(19)                                                               
+-a----        26/04/2026   2:30 pm           1164 th(2)                                                                
+-a----        26/04/2026   2:30 pm           1792 th(20)                                                               
+-a----        26/04/2026   2:30 pm           3640 th(21)                                                               
+-a----        26/04/2026   2:30 pm           6638 th(22)                                                               
+-a----        26/04/2026   2:30 pm           2624 th(23)                                                               
+-a----        26/04/2026   2:30 pm           9070 th(24)                                                               
+-a----        26/04/2026   2:30 pm           7982 th(25)                                                               
+-a----        26/04/2026   2:30 pm           3758 th(26)                                                               
+-a----        26/04/2026   2:30 pm          10598 th(27)                                                               
+-a----        26/04/2026   2:30 pm           6504 th(28)                                                               
+-a----        26/04/2026   2:30 pm           6892 th(29)                                                               
+-a----        26/04/2026   2:30 pm           1038 th(3)                                                                
+-a----        26/04/2026   2:30 pm           8100 th(30)                                                               
+-a----        26/04/2026   2:30 pm           7840 th(31)                                                               
+-a----        26/04/2026   2:30 pm           9070 th(32)                                                               
+-a----        26/04/2026   2:30 pm           4380 th(33)                                                               
+-a----        26/04/2026   2:30 pm           4440 th(34)                                                               
+-a----        26/04/2026   2:30 pm           1304 th(35)                                                               
+-a----        26/04/2026   2:30 pm           8596 th(36)                                                               
+-a----        26/04/2026   2:30 pm           9070 th(37)                                                               
+-a----        26/04/2026   2:30 pm           6308 th(38)                                                               
+-a----        26/04/2026   2:30 pm           5918 th(39)                                                               
+-a----        26/04/2026   2:30 pm           1108 th(4)                                                                
+-a----        26/04/2026   2:30 pm          10776 th(40)                                                               
+-a----        26/04/2026   2:30 pm          10448 th(41)                                                               
+-a----        26/04/2026   2:30 pm           6206 th(42)                                                               
+-a----        26/04/2026   2:30 pm           6182 th(43)                                                               
+-a----        26/04/2026   2:30 pm           4598 th(44)                                                               
+-a----        26/04/2026   2:30 pm           5230 th(45)                                                               
+-a----        26/04/2026   2:30 pm           4092 th(46)                                                               
+-a----        26/04/2026   2:30 pm           4320 th(47)                                                               
+-a----        26/04/2026   2:30 pm           6430 th(48)                                                               
+-a----        26/04/2026   2:30 pm           8170 th(49)                                                               
+-a----        26/04/2026   2:30 pm           1154 th(5)                                                                
+-a----        26/04/2026   2:30 pm           4818 th(50)                                                               
+-a----        26/04/2026   2:30 pm           8170 th(51)                                                               
+-a----        26/04/2026   2:30 pm           5904 th(52)                                                               
+-a----        26/04/2026   2:30 pm           8170 th(53)                                                               
+-a----        26/04/2026   2:30 pm            908 th(6)                                                                
+-a----        26/04/2026   2:30 pm           1200 th(7)                                                                
+-a----        26/04/2026   2:30 pm           1200 th(8)                                                                
+-a----        26/04/2026   2:30 pm           1684 th(9)                                                                
+-a----        26/04/2026   2:30 pm            371 ulJ3ckR0YcGpvIX6xhO4prJhEQQ.br.js.download                           
+-a----        26/04/2026   2:29 pm            544 UusW4P7f5q9mXctgEuZhyIziufA.svg                                      
+-a----        26/04/2026   2:30 pm           2206 UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg                                      
+-a----        26/04/2026   2:30 pm            177 v2.html                                                              
+-a----        26/04/2026   2:29 pm         269789 widget.js.download                                                   
+-a----        26/04/2026   2:30 pm            544 wNhUjm3kl_kvyfrio44J6j1zdYo.br.js.download                           
+-a----        26/04/2026   2:30 pm            433 wZxQYdP5UmelV7Q7YBZxc_a0ypQ.br.js.download                           
+-a----        26/04/2026   2:29 pm            459 XhuulIbo88eLoQSXNdexXtHhacY.svg                                      
+-a----        26/04/2026   2:30 pm           1279 XszfaRNIszDJ1EChA9cAyiLcvBg.br.js.download                           
+-a----        26/04/2026   2:30 pm          12929 yKh0uqkIwSUyvehcKw9OqkTv4cU.br.js.download                           
+-a----        26/04/2026   2:30 pm           7146 YOfvioAlqeLJzUxJ3VRDJvFPi5Q.br.js.download                           
+-a----        26/04/2026   2:29 pm            664 yQzL_mYdyQfAEdw601f8HBLgQqA.br.css                                   
+-a----        26/04/2026   2:30 pm            687 zU-wzeTci_PmsyatZvTRjj8U0as.br.js.download                           
+-a----        26/04/2026   2:29 pm           2206 zYRmeqAEd4Z0yDRz8nuL0syHMEI.svg                                      
+-a----        26/04/2026   2:30 pm           4136 z_rOe0VUiazlym4ZI_NlUTCO0ok.br.js.download                           
+-a----        26/04/2026   2:30 pm            622 _2I169N92jVtSc_VEsV0nma5sRY.br.js.download                           
+-a----        26/04/2026   2:30 pm           1454 _C-vnoEigkuMwoQZNefrC-Z99WU.br.js.download                           
+-a----        26/04/2026   2:30 pm           6316 _PpjHPLE00RMQhOidDFILB8vY0I.br.js.download                           
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\Tinuyanfalls
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:34 pm        3042364 tinuyanfalls1.jpg                                                    
+-a----        26/04/2026   1:35 pm        3557815 tinuyanfalls2.jpg                                                    
+-a----        26/04/2026   1:35 pm        1657746 tinuyanfalls3.jpg                                                    
+-a----        26/04/2026   1:35 pm         968537 tinuyanfalls5.jpg                                                    
+-a----        26/04/2026   1:35 pm        1124375 tinuyansfalls4.jpg                                                   
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\tunacuisine
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   2:38 pm          90247 tunacuisine1.jpg                                                     
+-a----        26/04/2026   2:38 pm          89698 tunacuisine2.jpg                                                     
+-a----        26/04/2026   2:38 pm          43131 tunacuisine3.jpg                                                     
+-a----        26/04/2026   2:38 pm          45639 tunacuisine4.jpg                                                     
+-a----        26/04/2026   2:38 pm          79678 tunacuisine5.jpg                                                     
+
+
+    Directory: C:\Side_Projects\GalaGuide\Travel App UI_UX Design (1)\public\WhiteIslandCamiguin
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        26/04/2026   1:29 pm         170640 White-Island-Camiguin-1.jpg                                          
+-a----        26/04/2026   1:30 pm         163117 White-Island-Camiguin-2.jpg                                          
+-a----        26/04/2026   1:30 pm         169850 White-Island-Camiguin-3.jpg                                          
+-a----        26/04/2026   1:30 pm         169800 White-Island-Camiguin-4.jpg                                          
+-a----        26/04/2026   1:31 pm        2951315 White-Island-Camiguin-5.jpg                                          
+
+
