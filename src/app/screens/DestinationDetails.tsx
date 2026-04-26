@@ -78,7 +78,7 @@ export function DestinationDetails() {
         </div>
       </div>
 
-      <div className="bg-white rounded-t-[32px] -mt-6 relative z-10 min-h-[40vh] pb-32">
+      <div className="bg-white rounded-t-[32px] -mt-6 relative z-10 min-h-[40vh] pb-80">
         <div className="px-6 pt-8">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-2">
@@ -105,10 +105,14 @@ export function DestinationDetails() {
               </button>
             </div>
             <div className="grid grid-cols-2 gap-2">
-              <ImageWithFallback src={destination.image} alt={destination.name} className="w-full h-32 object-cover rounded-xl" />
-              <ImageWithFallback src={destination.image} alt={destination.name} className="w-full h-32 object-cover rounded-xl" />
-              <ImageWithFallback src={destination.image} alt={destination.name} className="w-full h-32 object-cover rounded-xl" />
-              <ImageWithFallback src={destination.image} alt={destination.name} className="w-full h-32 object-cover rounded-xl" />
+              {destination.images?.slice(0, 4).map((img, index) => (
+                <ImageWithFallback 
+                  key={index}
+                  src={img} 
+                  alt={`${destination.name} gallery ${index + 1}`} 
+                  className="w-full h-32 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity" 
+                />
+              ))}
             </div>
           </div>
 
@@ -171,18 +175,18 @@ export function DestinationDetails() {
           </div>
         </div>
 
-        <div className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-gray-100 p-5 max-w-[448px] mx-auto z-30">
-          <div className="flex gap-4">
+        <div className="fixed bottom-[88px] left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-gray-100 p-5 max-w-[448px] mx-auto z-[2500] shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+          <div className="flex flex-col gap-3">
             <button 
               onClick={addToTrip}
-              className="flex-1 bg-white border-2 border-[#FF7A00] text-[#FF7A00] py-4 rounded-2xl transition-all active:scale-95" 
+              className="w-full bg-white border-2 border-[#FF7A00] text-[#FF7A00] py-4 rounded-2xl transition-all active:scale-95 shadow-sm" 
               style={{ fontSize: '16px', fontWeight: 700 }}
             >
               Add to Trip
             </button>
             <button 
               onClick={bookNow}
-              className="flex-1 bg-[#FF7A00] text-white py-4 rounded-2xl shadow-lg shadow-[#FF7A00]/30 transition-all active:scale-95" 
+              className="w-full bg-[#FF7A00] text-white py-4 rounded-2xl shadow-lg shadow-[#FF7A00]/30 transition-all active:scale-95" 
               style={{ fontSize: '16px', fontWeight: 700 }}
             >
               Book Now

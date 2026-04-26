@@ -29,9 +29,9 @@ export function Splash() {
         className="flex-1 flex flex-col items-center px-8 -mt-60 relative z-10"
       >
         <div className="w-40 h-40 bg-white rounded-full flex items-center justify-center shadow-2xl mb-4 p-4">
-          <img 
-            src="/logo.png" 
-            alt="GalaGuide Logo" 
+          <img
+            src="/logo.png"
+            alt="GalaGuide Logo"
             className="w-full h-full object-contain"
           />
         </div>

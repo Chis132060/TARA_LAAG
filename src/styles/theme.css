@@ -121,10 +121,7 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
+  /* Global border-border removed to prevent unwanted lines across the UI */
   body {
     @apply bg-background text-foreground;
   }

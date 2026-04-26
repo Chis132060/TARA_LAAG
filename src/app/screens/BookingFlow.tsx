@@ -72,7 +72,7 @@ export function BookingFlow() {
   };
 
   return (
-    <div className="bg-[#F9F9FC] min-h-screen pb-32">
+    <div className="bg-[#F9F9FC] min-h-screen pb-10">
       <div className="bg-white p-5 sticky top-0 z-20 border-b border-gray-100 flex items-center gap-4">
         <button onClick={() => navigate(-1)} className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center">
           <ChevronLeft className="w-6 h-6 text-[#1A1A1A]" />
@@ -176,34 +176,35 @@ export function BookingFlow() {
             Free cancellation until 48 hours before check-in. Instant confirmation.
           </p>
         </div>
-      </div>
-
-      <div className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-gray-100 p-6 max-w-[448px] mx-auto z-30">
-        <div className="flex items-center justify-between mb-4 px-2">
-          <div>
-            <span className="text-[#6B7280] block" style={{ fontSize: '14px', fontWeight: 600 }}>Total Price</span>
-            <span className="text-[#00C851]" style={{ fontSize: '24px', fontWeight: 800 }}>₱{calculateTotal().toLocaleString()}</span>
-          </div>
-          <div className="flex flex-col items-end">
-            <div className="flex items-center gap-1.5 text-[#00C851]">
-              <ShieldCheck className="w-4 h-4" />
-              <span style={{ fontSize: '12px', fontWeight: 700 }}>BEST PRICE</span>
+        {/* Total Price and Confirm Booking Card */}
+        <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 space-y-6">
+          <div className="flex items-center justify-between px-2">
+            <div>
+              <span className="text-[#6B7280] block" style={{ fontSize: '14px', fontWeight: 600 }}>Total Price</span>
+              <span className="text-[#00C851]" style={{ fontSize: '24px', fontWeight: 800 }}>₱{calculateTotal().toLocaleString()}</span>
             </div>
-            <span className="text-[#6B7280]" style={{ fontSize: '11px' }}>Tax & fees included</span>
+            <div className="flex flex-col items-end">
+              <div className="flex items-center gap-1.5 text-[#00C851]">
+                <ShieldCheck className="w-4 h-4" />
+                <span style={{ fontSize: '12px', fontWeight: 700 }}>BEST PRICE</span>
+              </div>
+              <span className="text-[#6B7280]" style={{ fontSize: '11px' }}>Tax & fees included</span>
+            </div>
           </div>
+          
+          <button 
+            onClick={handleBooking}
+            disabled={isSubmitting}
+            className={`w-full py-5 rounded-[24px] text-white shadow-xl flex items-center justify-center gap-3 transition-all active:scale-95 ${isSubmitting ? 'bg-gray-400' : 'bg-[#FF7A00] shadow-orange-500/30'}`}
+            style={{ fontSize: '18px', fontWeight: 800 }}
+          >
+            {isSubmitting ? (
+              <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              "Confirm Booking"
+            )}
+          </button>
         </div>
-        <button 
-          onClick={handleBooking}
-          disabled={isSubmitting}
-          className={`w-full py-5 rounded-[24px] text-white shadow-xl flex items-center justify-center gap-3 transition-all active:scale-95 ${isSubmitting ? 'bg-gray-400' : 'bg-[#FF7A00] shadow-orange-500/30'}`}
-          style={{ fontSize: '18px', fontWeight: 800 }}
-        >
-          {isSubmitting ? (
-            <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin" />
-          ) : (
-            "Confirm Booking"
-          )}
-        </button>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ export interface Destination {
   name: string;
   location: string;
   image: string;
+  images: string[];
   rating: number;
   price: string;
   entranceFee: string;
@@ -18,7 +19,14 @@ export const allDestinations: Destination[] = [
     id: 1,
     name: "Siargao Cloud 9",
     location: "Siargao, Surigao del Norte",
-    image: "https://images.unsplash.com/photo-1572316197910-a32d5e5e8f75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1572316197910-a32d5e5e8f75?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1572316197910-a32d5e5e8f75?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1588167060649-746761c7423d?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1517400140228-5660882894f2?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1551167502-0e99d7554972?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.9,
     price: "₱3,200",
     entranceFee: "₱150",
@@ -32,7 +40,14 @@ export const allDestinations: Destination[] = [
     id: 2,
     name: "Enchanted River",
     location: "Hinatuan, Surigao del Sur",
-    image: "https://images.unsplash.com/photo-1585795361718-2141ba44cbe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1585795361718-2141ba44cbe0?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1585795361718-2141ba44cbe0?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.9,
     price: "₱1,800",
     entranceFee: "₱100",
@@ -46,7 +61,14 @@ export const allDestinations: Destination[] = [
     id: 3,
     name: "Camiguin White Island",
     location: "Mambajao, Camiguin",
-    image: "https://images.unsplash.com/photo-1551521021-d929e606badc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1551521021-d929e606badc?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1551521021-d929e606badc?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.8,
     price: "₱2,000",
     entranceFee: "₱50",
@@ -60,7 +82,14 @@ export const allDestinations: Destination[] = [
     id: 4,
     name: "Tinuy-an Falls",
     location: "Bislig, Surigao del Sur",
-    image: "https://images.unsplash.com/photo-1609930420316-72622d2db23d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1609930420316-72622d2db23d?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1609930420316-72622d2db23d?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1516190882359-396457152063?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.9,
     price: "₱1,500",
     entranceFee: "₱50",
@@ -74,7 +103,14 @@ export const allDestinations: Destination[] = [
     id: 5,
     name: "Dahican Beach",
     location: "Mati, Davao Oriental",
-    image: "https://images.unsplash.com/photo-1725357347380-a07aaaa8527b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1725357347380-a07aaaa8527b?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1725357347380-a07aaaa8527b?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1517400140228-5660882894f2?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1622481227477-8db839366177?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.8,
     price: "₱2,200",
     entranceFee: "₱100",
@@ -88,7 +124,14 @@ export const allDestinations: Destination[] = [
     id: 6,
     name: "Britania Islands",
     location: "San Agustin, Surigao del Sur",
-    image: "https://images.unsplash.com/photo-1760644328320-5e37dc6928d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1760644328320-5e37dc6928d0?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1760644328320-5e37dc6928d0?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1536704689578-8eff5322b70c?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.9,
     price: "₱2,500",
     entranceFee: "₱250",
@@ -102,7 +145,14 @@ export const allDestinations: Destination[] = [
     id: 7,
     name: "Batanes Basco",
     location: "Basco, Batanes",
-    image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080",
+    images: [
+      "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1506197394121-e3073992d44e?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1080",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1080"
+    ],
     rating: 4.9,
     price: "₱8,500",
     entranceFee: "₱300",
