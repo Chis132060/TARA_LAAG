@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { ChevronLeft, Star, ThumbsUp } from "lucide-react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const reviews = [
   {
@@ -115,7 +116,7 @@ export function Reviews() {
             {review.images && (
               <div className="flex gap-2 mb-3">
                 {review.images.map((img, i) => (
-                  <img key={i} src={img} alt="" className="w-20 h-20 object-cover rounded-lg" />
+                  <ImageWithFallback key={i} src={img} alt="" className="w-20 h-20 object-cover rounded-lg" />
                 ))}
               </div>
             )}
