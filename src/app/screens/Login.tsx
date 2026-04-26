@@ -16,22 +16,17 @@ export function Login() {
 
   return (
     <div className="h-screen flex flex-col bg-white max-w-[390px] mx-auto overflow-auto">
-      <div className="relative h-48 bg-gradient-to-br from-[#FF7A00] to-[#ff9940]">
-        <ImageWithFallback
-          src="/dahicanbeach/dahicanbeach1.jpg"
-          alt="Philippines Beach"
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-              <MapPin className="w-7 h-7 text-white" strokeWidth={2.5} />
-            </div>
-            <h1 className="text-white" style={{ fontSize: '28px', fontWeight: 700 }}>
-              GalaGuide PH
-            </h1>
-          </div>
+      <div className="relative h-56 w-full bg-gradient-to-br from-[#FF7A00]/5 to-[#ff9940]/10 flex flex-col items-center justify-center border-b border-gray-100">
+        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg p-3 mb-3">
+          <ImageWithFallback
+            src="/logo.png"
+            alt="GalaGuide PH Logo"
+            className="w-full h-full object-contain"
+          />
         </div>
+        <h1 className="text-[#FF7A00]" style={{ fontSize: '24px', fontWeight: 800 }}>
+          GalaGuidePH
+        </h1>
       </div>
 
       <div className="flex-1 px-6 py-8">

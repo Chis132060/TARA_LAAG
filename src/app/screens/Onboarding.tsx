@@ -17,11 +17,11 @@ export function Onboarding() {
       scriptText: "Your journey starts here",
     },
     {
-      image: "/mountapo/mountapo1.jpg",
-      badge: "Plan",
+      image: "/callecrisologo/callecrisologo1.jpg",
+      badge: "Itenary",
       title: "Smart Itineraries",
       subtitle: "Personalized For You",
-      description: "Create day-by-day plans with AI-powered suggestions tailored to your travel style",
+      description: "Create day-by-day plans",
       scriptText: "Travel smarter, not harder",
     },
     {

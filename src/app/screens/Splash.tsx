@@ -15,8 +15,8 @@ export function Splash() {
         style={{ aspectRatio: '3/4' }}
       >
         <ImageWithFallback
-          src="/Siargao/Siargao1.jpg"
-          alt="Philippines Beach"
+          src="/splashscreeen.png"
+          alt="Philippines Beautiful Scenery"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />

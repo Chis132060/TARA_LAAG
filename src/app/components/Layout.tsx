@@ -35,20 +35,17 @@ export function Layout() {
               <button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className={`flex flex-col items-center gap-1.5 py-2 px-3 min-w-[64px] rounded-2xl transition-all ${
-                  active ? "bg-orange-50" : ""
-                }`}
+                className={`flex flex-col items-center gap-1.5 py-2 px-3 min-w-[64px] rounded-2xl transition-all ${active ? "bg-orange-50" : ""
+                  }`}
               >
                 <Icon
-                  className={`w-6 h-6 ${
-                    active ? "text-[#FF7A00]" : "text-[#6B7280]"
-                  }`}
+                  className={`w-6 h-6 ${active ? "text-[#FF7A00]" : "text-[#6B7280]"
+                    }`}
                   strokeWidth={active ? 2.5 : 2}
                 />
                 <span
-                  className={`${
-                    active ? "text-[#FF7A00]" : "text-[#6B7280]"
-                  }`}
+                  className={`${active ? "text-[#FF7A00]" : "text-[#6B7280]"
+                    }`}
                   style={{ fontSize: '11px', fontWeight: active ? 700 : 500 }}
                 >
                   {item.label}
