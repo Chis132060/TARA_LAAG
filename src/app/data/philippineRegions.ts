@@ -11,6 +11,8 @@ export interface PlannerSpot {
   image: string;
   rating: number;
   suggestedDuration: number; // minutes
+  startDate?: string;
+  endDate?: string;
 }
 
 export interface Region {
@@ -155,5 +157,5 @@ export function estimateTravelMinutes(a: [number, number], b: [number, number]):
 }
 
 export function formatFee(amount: number): string {
-  return \`₱\${amount.toLocaleString()}\`;
+  return `₱${amount.toLocaleString()}`;
 }

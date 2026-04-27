@@ -17,6 +17,8 @@ import { BookingConfirmation } from "./screens/BookingConfirmation";
 import { MapExplore } from "./screens/MapExplore";
 import { Profile } from "./screens/Profile";
 import { CategoryListing } from "./screens/CategoryListing";
+import { ItineraryPlanner } from "./screens/ItineraryPlanner";
+import { ItineraryMap } from "./screens/ItineraryMap";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +54,8 @@ export const router = createBrowserRouter([
       { path: "booking-confirmation/:id", element: <BookingConfirmation /> },
       { path: "map", element: <MapExplore /> },
       { path: "profile", element: <Profile /> },
+      { path: "planner", element: <ItineraryPlanner /> },
+      { path: "itinerary-map", element: <ItineraryMap /> },
     ],
   },
 ]);

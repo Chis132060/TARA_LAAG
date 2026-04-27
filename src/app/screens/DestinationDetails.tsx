@@ -10,7 +10,7 @@ export function DestinationDetails() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('about');
   const [showToast, setShowToast] = useState(false);
-  
+
   const destination = allDestinations.find(d => d.id.toString() === id) || allDestinations[0];
   const [itinerary, setItinerary] = useLocalStorage<Destination[]>("itinerary", []);
 
@@ -29,20 +29,20 @@ export function DestinationDetails() {
     <div className="bg-white min-h-screen">
       {/* 1. FULL-SCREEN SCROLLABLE PAGE */}
       <div className="overflow-y-auto h-screen no-scrollbar">
-        
+
         {/* 2. HERO IMAGE SECTION */}
         <div className="relative w-full h-[45vh]">
-          <ImageWithFallback 
-            src={destination.image} 
-            alt={destination.name} 
-            className="w-full h-full object-cover" 
+          <ImageWithFallback
+            src={destination.image}
+            alt={destination.name}
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-          
+
           {/* Top Overlay Buttons */}
           <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-20">
-            <button 
-              onClick={() => navigate(-1)} 
+            <button
+              onClick={() => navigate(-1)}
               className="w-11 h-11 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -72,7 +72,7 @@ export function DestinationDetails() {
 
         {/* 3. DETAILS CONTAINER (SCROLLABLE CARD) */}
         <div className="bg-white rounded-t-[32px] -mt-8 relative z-10 p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] min-h-[50vh]">
-          
+
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-2 bg-[#FFF7F0] px-4 py-2 rounded-2xl">
               <Star className="w-5 h-5 fill-[#FF7A00] text-[#FF7A00]" />
@@ -95,10 +95,10 @@ export function DestinationDetails() {
             <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
               {destination.images?.map((img, index) => (
                 <div key={index} className="flex-shrink-0 w-64 h-40">
-                  <ImageWithFallback 
-                    src={img} 
-                    alt={`${destination.name} gallery ${index + 1}`} 
-                    className="w-full h-full object-cover rounded-[24px]" 
+                  <ImageWithFallback
+                    src={img}
+                    alt={`${destination.name} gallery ${index + 1}`}
+                    className="w-full h-full object-cover rounded-[24px]"
                   />
                 </div>
               ))}
@@ -118,7 +118,7 @@ export function DestinationDetails() {
                 </button>
               ))}
             </div>
-            
+
             <div className="min-h-[120px]">
               {activeTab === 'about' && (
                 <p className="text-[#4B5563] leading-relaxed" style={{ fontSize: '16px' }}>{destination.description}</p>
@@ -150,14 +150,14 @@ export function DestinationDetails() {
 
           {/* 4. ACTION BUTTON SECTION (PILL SHAPE, INSIDE SCROLL) */}
           <div className="pt-4 space-y-4 mb-8">
-            <button 
+            <button
               onClick={addToTrip}
               className="w-full py-4.5 rounded-full border-2 border-[#FF7A00] text-[#FF7A00] transition-all active:scale-95 flex items-center justify-center gap-2"
               style={{ fontSize: '17px', fontWeight: 700 }}
             >
               Add to Trip
             </button>
-            <button 
+            <button
               onClick={bookNow}
               className="w-full py-4.5 rounded-full bg-[#FF7A00] text-white shadow-lg shadow-orange-500/30 transition-all active:scale-95 flex items-center justify-center gap-2"
               style={{ fontSize: '17px', fontWeight: 700 }}
@@ -165,7 +165,7 @@ export function DestinationDetails() {
               Book Now
             </button>
           </div>
-          
+
           <p className="text-center text-[#9CA3AF] pb-8" style={{ fontSize: '13px' }}>
             Prices may vary based on your selection
           </p>
