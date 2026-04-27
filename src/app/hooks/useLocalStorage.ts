@@ -21,13 +21,19 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   // persists the new value to localStorage.
   const setValue = (value: T | ((val: T) => T)) => {
     try {
-      // Allow value to be a function so we have same API as useState
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-      
-      // Dispatch a custom event so other components using the same hook can sync
-      window.dispatchEvent(new Event("local-storage-update"));
+      if (value instanceof Function) {
+        // Use functional setState to get the latest value and avoid stale closures
+        setStoredValue((prevStored) => {
+          const valueToStore = value(prevStored);
+          window.localStorage.setItem(key, JSON.stringify(valueToStore));
+          window.dispatchEvent(new Event("local-storage-update"));
+          return valueToStore;
+        });
+      } else {
+        setStoredValue(value);
+        window.localStorage.setItem(key, JSON.stringify(value));
+        window.dispatchEvent(new Event("local-storage-update"));
+      }
     } catch (error) {
       console.error(`Error setting localStorage key "${key}":`, error);
     }

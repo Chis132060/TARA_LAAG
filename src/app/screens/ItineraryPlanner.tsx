@@ -62,12 +62,14 @@ export function ItineraryPlanner() {
     return results;
   }, [searchQuery]);
 
-  const currentRegion = itinerary.selectedRegion ? philippineRegions[itinerary.selectedRegion] : null;
-
   const filteredSpots = useMemo(() => {
-    if (!currentRegion) return [];
-    return currentRegion.spots.filter(s => !catFilter || s.category === catFilter);
-  }, [currentRegion, catFilter]);
+    if (!itinerary.selectedRegions || itinerary.selectedRegions.length === 0) return [];
+    const combinedSpots = itinerary.selectedRegions.flatMap(regionName => {
+      const region = philippineRegions[regionName];
+      return region ? region.spots : [];
+    });
+    return combinedSpots.filter(s => !catFilter || s.category === catFilter);
+  }, [itinerary.selectedRegions, catFilter]);
 
   const spotFee = (s: PlannerSpot) => s.tourismFee + s.environmentalFee + s.entryFee;
 
@@ -96,7 +98,7 @@ export function ItineraryPlanner() {
         </div>
         <div className="px-6 pt-6">
           <h3 className="text-[#1A1A1A] mb-4" style={{ fontSize: "18px", fontWeight: 800 }}>
-            {searchQuery ? "Search Results" : "🇵🇭 Philippine Regions"}
+            {searchQuery ? "Search Results" : "Philippine Regions"}
           </h3>
           <div className="space-y-4">
             {searchResults.length === 0 && (
@@ -108,17 +110,31 @@ export function ItineraryPlanner() {
               return (
                 <div key={regionName} className="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
                   <button
-                    onClick={() => { itinerary.setSelectedRegion(regionName); setStep("select"); }}
-                    className="w-full p-4 flex items-center gap-4 hover:bg-gray-50 transition-all group"
+                    onClick={() => {
+                      const regions = itinerary.selectedRegions || [];
+                      if (regions.includes(regionName)) {
+                        itinerary.setSelectedRegions(regions.filter(r => r !== regionName));
+                      } else {
+                        itinerary.setSelectedRegions([...regions, regionName]);
+                      }
+                    }}
+                    className={`w-full p-4 flex items-center gap-4 transition-all group ${itinerary.selectedRegions?.includes(regionName) ? "bg-[#006FB4]/5 border-2 border-[#006FB4]" : "hover:bg-gray-50 border-2 border-transparent"}`}
                   >
-                    <div className="w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 shadow-inner">
+                    <div className="w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 shadow-inner relative">
                       <ImageWithFallback src={region.spots[0]?.image || ""} alt={regionName} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                      {itinerary.selectedRegions?.includes(regionName) && (
+                        <div className="absolute inset-0 bg-[#006FB4]/20 flex items-center justify-center">
+                          <CheckCircle2 className="w-6 h-6 text-white drop-shadow-md" />
+                        </div>
+                      )}
                     </div>
                     <div className="flex-1 text-left">
                       <h4 className="text-[#1A1A1A]" style={{ fontSize: "17px", fontWeight: 800 }}>{regionName}</h4>
                       <p className="text-[#6B7280]" style={{ fontSize: "13px", fontWeight: 600 }}>{spotCount} attractions</p>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-[#006FB4] group-hover:translate-x-1 transition-transform" />
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${itinerary.selectedRegions?.includes(regionName) ? "border-[#006FB4] bg-[#006FB4]" : "border-gray-300"}`}>
+                      {itinerary.selectedRegions?.includes(regionName) && <CheckCircle2 className="w-4 h-4 text-white" />}
+                    </div>
                   </button>
 
                   {matchingSpots.length > 0 && searchQuery && (
@@ -140,20 +156,28 @@ export function ItineraryPlanner() {
             })}
           </div>
         </div>
+
+        {itinerary.selectedRegions && itinerary.selectedRegions.length > 0 && (
+          <div className="fixed bottom-20 left-1/2 -translate-x-1/2 w-full max-w-[448px] px-6 pb-4 pt-3 z-40">
+            <button onClick={() => setStep("select")} className="w-full py-5 bg-[#FF7A00] text-white rounded-[20px] shadow-2xl shadow-[#FF7A00]/40 active:scale-[0.98] transition-transform flex items-center justify-center gap-3" style={{ fontSize: "17px", fontWeight: 800 }}>
+              Continue ({itinerary.selectedRegions.length} region{itinerary.selectedRegions.length > 1 ? 's' : ''}) <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
     );
   }
 
   // STEP: Select Destinations
-  if (step === "select" && currentRegion) {
-    const cats = [...new Set(currentRegion.spots.map(s => s.category))];
+  if (step === "select" && itinerary.selectedRegions && itinerary.selectedRegions.length > 0) {
+    const cats = [...new Set(filteredSpots.map(s => s.category))];
     return (
       <div className="bg-[#F9F9FC] min-h-screen pb-40">
         <div className="sticky top-0 z-30 bg-white border-b border-gray-100 px-6 py-5 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
             <button onClick={() => { setStep("search"); itinerary.clearAll(); }} className="w-10 h-10 bg-[#F3F4F6] rounded-full flex items-center justify-center"><X className="w-5 h-5 text-[#1A1A1A]" /></button>
             <div className="flex-1">
-              <h2 className="text-[#1A1A1A]" style={{ fontSize: "20px", fontWeight: 800 }}>{currentRegion.name}</h2>
+              <h2 className="text-[#1A1A1A]" style={{ fontSize: "20px", fontWeight: 800 }}>{itinerary.selectedRegions.length > 1 ? "Multiple Regions" : itinerary.selectedRegions[0]}</h2>
               <p className="text-[#6B7280]" style={{ fontSize: "13px" }}>{itinerary.selectedSpots.length} selected</p>
             </div>
             {itinerary.selectedSpots.length > 0 && (
@@ -174,7 +198,7 @@ export function ItineraryPlanner() {
           <span className="text-[#6B7280]" style={{ fontSize: "14px", fontWeight: 600 }}>
             {itinerary.selectedSpots.length} spots selected
           </span>
-          <button 
+          <button
             onClick={() => {
               const unselectedInView = filteredSpots.filter(s => !itinerary.isSelected(s.id));
               if (unselectedInView.length > 0) {
@@ -351,7 +375,7 @@ export function ItineraryPlanner() {
           <div className="flex items-center justify-between mb-5">
             <button onClick={() => setStep("duration")} className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center"><X className="w-5 h-5 text-white" /></button>
             <h2 className="text-white" style={{ fontSize: "18px", fontWeight: 800 }}>Your Itinerary</h2>
-            <button onClick={() => navigate("/app/itinerary-map", { state: { plan: itinerary.generatedPlan, region: itinerary.selectedRegion, from: "/app/planner" } })} className="w-10 h-10 bg-[#FF7A00] rounded-full flex items-center justify-center shadow-lg">
+            <button onClick={() => navigate("/app/itinerary-map", { state: { plan: itinerary.generatedPlan, region: itinerary.selectedRegions?.join(', ') || "Multiple Regions", from: "/app/planner" } })} className="w-10 h-10 bg-[#FF7A00] rounded-full flex items-center justify-center shadow-lg">
               <Navigation className="w-5 h-5 text-white" />
             </button>
           </div>
@@ -431,7 +455,7 @@ export function ItineraryPlanner() {
                                 {((activeDay * Math.ceil(itinerary.selectedSpots.length / itinerary.dayCount)) + i) < itinerary.selectedSpots.length - 1 && (
                                   <button onClick={() => itinerary.moveSpot((activeDay * Math.ceil(itinerary.selectedSpots.length / itinerary.dayCount)) + i, (activeDay * Math.ceil(itinerary.selectedSpots.length / itinerary.dayCount)) + i + 1)} className="p-1 hover:bg-gray-100 rounded-lg text-gray-400"><ChevronDown className="w-4 h-4" /></button>
                                 )}
-                                <button 
+                                <button
                                   onClick={() => itinerary.removeSpot(ev.spot.id)}
                                   className="p-1 hover:bg-red-50 rounded-lg text-red-400 transition-colors"
                                 >
@@ -475,7 +499,7 @@ export function ItineraryPlanner() {
               storedTrips.push(newTrip);
               localStorage.setItem("itineraries", JSON.stringify(storedTrips));
               localStorage.setItem("activeTripId", newTrip.id);
-              
+
               itinerary.clearAll();
               setStep("search");
               setActiveDay(0);
@@ -486,7 +510,7 @@ export function ItineraryPlanner() {
             <Sparkles className="w-5 h-5" />Confirm Itinerary
           </button>
 
-          <button onClick={() => navigate("/app/itinerary-map", { state: { plan: itinerary.generatedPlan, region: itinerary.selectedRegion, from: "/app/planner" } })} className="w-full py-4 bg-white border border-gray-200 text-[#006FB4] rounded-[20px] shadow-sm active:scale-[0.98] transition-transform flex items-center justify-center gap-3" style={{ fontSize: "16px", fontWeight: 700 }}>
+          <button onClick={() => navigate("/app/itinerary-map", { state: { plan: itinerary.generatedPlan, region: itinerary.selectedRegions?.join(', ') || "Multiple Regions", from: "/app/planner" } })} className="w-full py-4 bg-white border border-gray-200 text-[#006FB4] rounded-[20px] shadow-sm active:scale-[0.98] transition-transform flex items-center justify-center gap-3" style={{ fontSize: "16px", fontWeight: 700 }}>
             <Navigation className="w-5 h-5" />View on Map
           </button>
         </div>

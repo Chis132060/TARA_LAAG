@@ -157,8 +157,8 @@ export function Trips() {
               key={trip.id}
               onClick={() => { setActiveTripId(trip.id); setActiveDay(0); }}
               className={`flex-shrink-0 px-5 py-2.5 rounded-full transition-all border-2 ${activeTrip?.id === trip.id
-                  ? "bg-[#006FB4]/5 border-[#006FB4] text-[#006FB4]"
-                  : "bg-white border-transparent shadow-sm text-[#6B7280]"
+                ? "bg-[#006FB4]/5 border-[#006FB4] text-[#006FB4]"
+                : "bg-white border-transparent shadow-sm text-[#6B7280]"
                 }`}
               style={{ fontSize: "14px", fontWeight: 700 }}
             >
@@ -249,8 +249,8 @@ export function Trips() {
                         key={index}
                         onClick={() => setActiveDay(index)}
                         className={`flex flex-col items-center px-4 py-3 rounded-2xl min-w-[72px] transition-all ${isActive
-                            ? "bg-[#FF7A00] text-white shadow-lg shadow-[#FF7A00]/25"
-                            : "bg-[#F3F4F6] text-[#6B7280] hover:bg-gray-200"
+                          ? "bg-[#FF7A00] text-white shadow-lg shadow-[#FF7A00]/25"
+                          : "bg-[#F3F4F6] text-[#6B7280] hover:bg-gray-200"
                           }`}
                       >
                         <span style={{ fontSize: '13px', fontWeight: 800 }}>Day {dayPlan.day}</span>
@@ -383,30 +383,6 @@ export function Trips() {
                     </div>
                   ))}
                 </div>
-                <button 
-                  onClick={() => {
-                    if (activeTrip) {
-                      // Restore this trip's data to the planner's persistence layer
-                      localStorage.setItem("planner_step", JSON.stringify("itinerary"));
-                      localStorage.setItem("planner_region", JSON.stringify(activeTrip.destination));
-                      
-                      const allSpots = activeTrip.activities.flatMap((d: any) => d.events.map((e: any) => e.spot));
-                      localStorage.setItem("planner_spots", JSON.stringify(allSpots));
-                      localStorage.setItem("planner_plan", JSON.stringify(activeTrip.activities));
-                      localStorage.setItem("planner_active_day", JSON.stringify(activeDay));
-                      localStorage.setItem("planner_start_date", JSON.stringify(activeTrip.startDate));
-                      localStorage.setItem("planner_end_date", JSON.stringify(activeTrip.endDate));
-                      
-                      // Trigger storage event so the planner picks it up if already open
-                      window.dispatchEvent(new Event('local-storage-update'));
-                    }
-                    navigate("/app/planner");
-                  }}
-                  className="mt-6 ml-[59px] w-[calc(100%-59px)] py-4 border-2 border-dashed border-gray-200 rounded-[20px] text-[#6B7280] flex items-center justify-center gap-2 hover:border-[#006FB4] hover:text-[#006FB4] transition-all bg-white/50 active:scale-95"
-                  style={{ fontSize: "14px", fontWeight: 700 }}
-                >
-                  <Plus className="w-4 h-4" /> Add Activity
-                </button>
               </div>
             </div>
           )}
@@ -420,7 +396,7 @@ export function Trips() {
                     const existingBookings = JSON.parse(localStorage.getItem('user_bookings') || '[]');
                     const allSpots = activeTrip?.activities.flatMap((d: any) => d.events.map((e: any) => e.spot)) || [];
                     const newBookings = allSpots.filter((spot: any) => !existingBookings.some((b: any) => b.id === spot.id));
-                    
+
                     if (newBookings.length > 0) {
                       const updatedBookings = [...existingBookings, ...newBookings];
                       localStorage.setItem('user_bookings', JSON.stringify(updatedBookings));
@@ -437,9 +413,9 @@ export function Trips() {
                   <Ticket className="w-5 h-5" />
                   Book This Destination
                 </button>
-                <button 
-                  onClick={() => navigate("/app/itinerary-map", { state: { plan: activeTrip?.activities, region: activeTrip?.destination, from: "/app/trips" } })} 
-                  className="w-full py-4 bg-white border border-gray-200 text-[#006FB4] rounded-[20px] shadow-sm active:scale-[0.98] transition-transform flex items-center justify-center gap-3" 
+                <button
+                  onClick={() => navigate("/app/itinerary-map", { state: { plan: activeTrip?.activities, region: activeTrip?.destination, from: "/app/trips" } })}
+                  className="w-full py-4 bg-white border border-gray-200 text-[#006FB4] rounded-[20px] shadow-sm active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
                   style={{ fontSize: "16px", fontWeight: 700 }}
                 >
                   <Navigation className="w-5 h-5" />View on Map
