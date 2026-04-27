@@ -155,8 +155,8 @@ export function MapExplore() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat === 'All' ? null : cat)}
                 className={`px-5 py-2.5 rounded-full whitespace-nowrap transition-all duration-300 ${(cat === 'All' && !selectedCategory) || selectedCategory === cat
-                    ? 'bg-[#006FB4] text-white shadow-lg shadow-blue-200 ring-2 ring-blue-50'
-                    : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+                  ? 'bg-[#006FB4] text-white shadow-lg shadow-blue-200 ring-2 ring-blue-50'
+                  : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
                   }`}
                 style={{ fontSize: '14px', fontWeight: 600 }}
               >
