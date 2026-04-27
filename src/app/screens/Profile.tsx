@@ -9,8 +9,11 @@ export function Profile() {
   const navigate = useNavigate();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   
-  const [itinerary] = useLocalStorage<Destination[]>("itinerary", []);
-  const [bookings] = useLocalStorage<any[]>("bookings", []);
+  const [itineraryData] = useLocalStorage<Destination[]>("itinerary", []);
+  const [bookingsData] = useLocalStorage<any[]>("bookings", []);
+
+  const itinerary = itineraryData || [];
+  const bookings = bookingsData || [];
 
   const menuItems = [
     { icon: Calendar, label: "My Itinerary", path: "/app/trips", count: itinerary.length },
