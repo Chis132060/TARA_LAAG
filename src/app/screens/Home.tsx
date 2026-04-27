@@ -10,7 +10,6 @@ const categories = [
   { name: "Mountains", icon: "⛰️", color: "#00C851" },
   { name: "Waterfalls", icon: "💧", color: "#006FB4" },
   { name: "Culture", icon: "🏛️", color: "#FF7A00" },
-  { name: "Food", icon: "🍜", color: "#FF7A00" },
 ];
 
 export function Home() {
@@ -46,7 +45,7 @@ export function Home() {
             <h1 className="font-extrabold tracking-tight" style={{ fontSize: '28px' }}>
               <span className="text-[#006FB4]">GalaGuide</span> <span className="text-[#FF7A00]">PH</span>
             </h1>
-            <p className="text-[#6B7280]" style={{ fontSize: '13px', fontWeight: 500 }}>Explore the Beauty of PH 🇵🇭</p>
+            <p className="text-[#6B7280]" style={{ fontSize: '13px', fontWeight: 500 }}>Explore the Beauty of PH </p>
           </div>
           <button className="relative w-12 h-12 bg-[#F9F9FC] rounded-2xl flex items-center justify-center border border-gray-100 shadow-sm transition-all active:scale-90">
             <Bell className="w-6 h-6 text-[#1A1A1A]" />
@@ -193,7 +192,7 @@ export function Home() {
                       <span style={{ fontSize: '13px', fontWeight: 600 }}>{dest.location}</span>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <span className="text-[#006FB4]" style={{ fontSize: '18px', fontWeight: 800 }}>{dest.entranceFee}<span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>/entry</span></span>
                     <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100">
@@ -253,19 +252,19 @@ export function Home() {
 }
 
 const ChevronRight = ({ className, ...props }: any) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="3" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
     {...props}
   >
-    <path d="m9 18 6-6-6-6"/>
+    <path d="m9 18 6-6-6-6" />
   </svg>
 );

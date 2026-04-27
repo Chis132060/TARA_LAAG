@@ -17,7 +17,6 @@ export function CategoryListing() {
     mountains: "Mountains",
     waterfalls: "Waterfalls",
     culture: "Culture",
-    food: "Food",
   };
 
   return (

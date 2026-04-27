@@ -561,48 +561,7 @@ export const allDestinations: Destination[] = [
     lat: 7.0707,
     lng: 125.6092
   },
-  {
-    id: 27,
-    name: "Magsaysay Market",
-    location: "Davao City",
-    image: "/magsaysaymarket/magsaysaymarket1.jpg",
-    images: [
-      "/magsaysaymarket/magsaysaymarket1.jpg",
-      "/magsaysaymarket/magsaysaymarket2.JPG",
-      "/magsaysaymarket/magsaysaymarket3.jpg",
-      "/magsaysaymarket/magsaysaymarket4.jpg",
-      "/magsaysaymarket/magsaysaymarket5.jpg"
-    ],
-    rating: 4.7,
-    price: "₱500",
-    entranceFee: "₱0",
-    description: "The best place to buy fresh durian and other local fruits in Davao. A vibrant hub of local trade and food.",
-    category: "Food",
-    color: "#FF7A00",
-    lat: 7.0736,
-    lng: 125.6167
-  },
-  {
-    id: 28,
-    name: "Roxas Night Market",
-    location: "Davao City",
-    image: "/roxasnightmarket/roxasnightmarket1.jpg",
-    images: [
-      "/roxasnightmarket/roxasnightmarket1.jpg",
-      "/roxasnightmarket/roxasnightmarket2.jpg",
-      "/roxasnightmarket/roxasnightmarket3.jpg",
-      "/roxasnightmarket/roxasnightmarket4.jpg",
-      "/roxasnightmarket/roxasnightmarket5.jpg"
-    ],
-    rating: 4.8,
-    price: "₱300",
-    entranceFee: "₱0",
-    description: "A popular night spot for street food, massage services, and thrift shopping. A must-experience for foodies.",
-    category: "Food",
-    color: "#FF7A00",
-    lat: 7.0700,
-    lng: 125.6100
-  },
+
   {
     id: 29,
     name: "Burnham Park",
@@ -645,27 +604,7 @@ export const allDestinations: Destination[] = [
     lat: 14.0113,
     lng: 120.9977
   },
-  {
-    id: 31,
-    name: "Tuna Cuisine",
-    location: "General Santos City",
-    image: "/tunacuisine/tunacuisine1.jpg",
-    images: [
-      "/tunacuisine/tunacuisine1.jpg",
-      "/tunacuisine/tunacuisine2.jpg",
-      "/tunacuisine/tunacuisine3.jpg",
-      "/tunacuisine/tunacuisine4.jpg",
-      "/tunacuisine/tunacuisine5.jpg"
-    ],
-    rating: 4.9,
-    price: "₱1,500",
-    entranceFee: "₱0",
-    description: "Experience the freshest tuna in the Tuna Capital of the Philippines. From sashimi to grilled panga.",
-    category: "Food",
-    color: "#FF7A00",
-    lat: 6.1133,
-    lng: 125.1719
-  },
+
   {
     id: 32,
     name: "Hundred Islands",

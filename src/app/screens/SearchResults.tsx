@@ -12,8 +12,8 @@ export function SearchResults() {
 
   const filteredResults = useMemo(() => {
     return allDestinations.filter(dest => {
-      const matchesQuery = dest.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          dest.location.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesQuery = dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        dest.location.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = activeCategory === "All" || dest.category === activeCategory;
       return matchesQuery && matchesCategory;
     });
@@ -43,7 +43,7 @@ export function SearchResults() {
             )}
           </div>
         </div>
-        
+
         <div className="flex items-center justify-between">
           <p className="text-[#6B7280]" style={{ fontSize: '14px', fontWeight: 600 }}>
             {filteredResults.length} destinations found
@@ -61,7 +61,7 @@ export function SearchResults() {
       <div className="bg-white border-b border-gray-100 px-6 py-4">
         <h3 className="text-[#1A1A1A] mb-4" style={{ fontSize: '16px', fontWeight: 800 }}>Categories</h3>
         <div className="flex gap-2 flex-wrap mb-2 overflow-x-auto no-scrollbar">
-          {["All", "Beaches", "Mountains", "Waterfalls", "Culture", "Food"].map((category) => (
+          {["All", "Beaches", "Mountains", "Waterfalls", "Culture"].map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
@@ -131,9 +131,9 @@ export function SearchResults() {
                     <span className="text-[#006FB4] bg-[#E7F3FF] px-2 py-0.5 rounded-md" style={{ fontSize: '11px', fontWeight: 800 }}>{dest.category}</span>
                   </div>
                 </div>
-                
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="text-[#006FB4]" style={{ fontSize: '20px', fontWeight: 800 }}>{dest.entranceFee}<span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>/entry</span></span>
+
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-[#006FB4]" style={{ fontSize: '20px', fontWeight: 800 }}>{dest.entranceFee}<span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>/entry</span></span>
                   <div className="w-9 h-9 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100 group-hover:bg-[#006FB4] group-hover:border-[#006FB4] transition-all">
                     <ChevronRight className="w-5 h-5 text-[#006FB4] group-hover:text-white" />
                   </div>
@@ -148,19 +148,19 @@ export function SearchResults() {
 }
 
 const ChevronRight = ({ className, ...props }: any) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="3" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
     {...props}
   >
-    <path d="m9 18 6-6-6-6"/>
+    <path d="m9 18 6-6-6-6" />
   </svg>
 );
