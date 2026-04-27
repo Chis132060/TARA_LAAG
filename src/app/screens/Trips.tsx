@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { ChevronLeft, Plus, MapPin, MoreHorizontal, Edit3, Sparkles, Route, Clock, DollarSign, X, Ticket, Navigation } from "lucide-react";
+import { ChevronLeft, Plus, MapPin, MoreHorizontal, Edit3, Sparkles, Route, Clock, DollarSign, X, Ticket, Navigation, Calendar } from "lucide-react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { MapContainer, TileLayer, Marker, Polyline, useMap, Popup } from "react-leaflet";
@@ -52,6 +52,7 @@ export function Trips() {
   const [activeDay, setActiveDay] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
   const [isEditingName, setIsEditingName] = useState(false);
+  const [showSchedule, setShowSchedule] = useState(false);
 
   const [editNameValue, setEditNameValue] = useState(activeTrip?.destination ? `${activeTrip.destination} Adventure` : "Plan Your Adventure");
 
@@ -393,25 +394,52 @@ export function Trips() {
               <>
                 <button
                   onClick={() => {
-                    const existingBookings = JSON.parse(localStorage.getItem('user_bookings') || '[]');
-                    const allSpots = activeTrip?.activities.flatMap((d: any) => d.events.map((e: any) => e.spot)) || [];
-                    const newBookings = allSpots.filter((spot: any) => !existingBookings.some((b: any) => b.id === spot.id));
+                    if (!activeTrip) return;
+                    const existingBookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                    const allSpots: any[] = (activeTrip.activities || []).flatMap((d: any) => (d.events || []).map((e: any) => e.spot));
+                    // De-duplicate spots
+                    const seen = new Set<string>();
+                    const uniqueSpots = allSpots.filter((s: any) => { if (!s || seen.has(s.id)) return false; seen.add(s.id); return true; });
+                    // Filter out already-booked spots
+                    const newSpots = uniqueSpots.filter((spot: any) => !existingBookings.some((b: any) => b.id === spot.id));
 
-                    if (newBookings.length > 0) {
+                    if (newSpots.length > 0) {
+                      const newBookings = newSpots.map((spot: any) => {
+                        const fee = (spot.tourismFee || 0) + (spot.environmentalFee || 0) + (spot.entryFee || 0);
+                        return {
+                          id: spot.id,
+                          destinationId: spot.id,
+                          destinationName: spot.name,
+                          image: spot.image,
+                          checkIn: spot.startDate || activeTrip.startDate || new Date().toISOString(),
+                          checkOut: spot.endDate || activeTrip.endDate || new Date().toISOString(),
+                          guests: 1,
+                          totalPrice: `₱${fee.toLocaleString()}`,
+                          status: 'confirmed' as const,
+                          bookingDate: new Date().toISOString(),
+                        };
+                      });
                       const updatedBookings = [...existingBookings, ...newBookings];
-                      localStorage.setItem('user_bookings', JSON.stringify(updatedBookings));
+                      localStorage.setItem('bookings', JSON.stringify(updatedBookings));
                       window.dispatchEvent(new Event('local-storage-update'));
-                      alert(`Successfully added ${allSpots.length} new spots to your bookings!`);
+                      alert(`✅ Successfully booked ${newSpots.length} spot${newSpots.length > 1 ? 's' : ''}!`);
                     } else {
-                      alert("All spots are already in your bookings!");
+                      alert("All spots are already booked!");
                     }
-                    navigate(`/app/bookings`);
+                    navigate('/app/bookings');
                   }}
                   className="w-full py-5 bg-[#FF7A00] text-white rounded-[20px] shadow-xl shadow-[#FF7A00]/25 active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
                   style={{ fontSize: '17px', fontWeight: 800 }}
                 >
                   <Ticket className="w-5 h-5" />
                   Book This Destination
+                </button>
+                <button
+                  onClick={() => setShowSchedule(true)}
+                  className="w-full py-4 bg-[#006FB4] text-white rounded-[20px] shadow-lg shadow-[#006FB4]/25 active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
+                  style={{ fontSize: "16px", fontWeight: 700 }}
+                >
+                  <Calendar className="w-5 h-5" />View Schedule
                 </button>
                 <button
                   onClick={() => navigate("/app/itinerary-map", { state: { plan: activeTrip?.activities, region: activeTrip?.destination, from: "/app/trips" } })}
@@ -425,6 +453,111 @@ export function Trips() {
           </div>
         </>
       )}
+
+      {/* View Schedule Modal — read-only, no map */}
+      {showSchedule && activeTrip && (() => {
+        const allSpots: any[] = (activeTrip.activities || []).flatMap((d: any) => (d.events || []).map((e: any) => e.spot));
+        const seen = new Set<string>();
+        const spots = allSpots.filter((s: any) => { if (!s || seen.has(s.id)) return false; seen.add(s.id); return true; });
+        const totalFees = spots.reduce((sum: number, s: any) => sum + (s.tourismFee || 0) + (s.environmentalFee || 0) + (s.entryFee || 0), 0);
+        const fmtDate = (d: string) => {
+          if (!d) return "—";
+          try { return new Date(d).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
+          catch { return d; }
+        };
+
+        return (
+          <div className="fixed inset-0 z-[10000] flex items-center justify-center" onClick={() => setShowSchedule(false)}>
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+            <div className="relative bg-[#F9F9FC] rounded-[28px] w-[92%] max-w-[420px] max-h-[82vh] overflow-hidden shadow-2xl flex flex-col" onClick={(e) => e.stopPropagation()}>
+
+              {/* Blue Gradient Header */}
+              <div className="bg-gradient-to-br from-[#006FB4] to-[#0091EA] px-6 pt-6 pb-5 text-white flex-shrink-0">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 style={{ fontSize: "22px", fontWeight: 800 }}>📋 Your Schedule</h3>
+                  <button onClick={() => setShowSchedule(false)} className="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">
+                    <X className="w-4 h-4 text-white" />
+                  </button>
+                </div>
+                <p className="text-white/80 mb-4" style={{ fontSize: "13px", fontWeight: 600 }}>{activeTrip.destination || "Adventure"}</p>
+                <div className="flex gap-3">
+                  <div className="flex-1 bg-white/15 rounded-xl py-2.5 text-center backdrop-blur-sm">
+                    <span className="block text-white" style={{ fontSize: "18px", fontWeight: 800 }}>{spots.length}</span>
+                    <span className="text-white/70" style={{ fontSize: "10px", fontWeight: 600 }}>Spots</span>
+                  </div>
+                  <div className="flex-1 bg-white/15 rounded-xl py-2.5 text-center backdrop-blur-sm">
+                    <span className="block text-white" style={{ fontSize: "18px", fontWeight: 800 }}>{daysArray.length}</span>
+                    <span className="text-white/70" style={{ fontSize: "10px", fontWeight: 600 }}>Days</span>
+                  </div>
+                  <div className="flex-1 bg-white/15 rounded-xl py-2.5 text-center backdrop-blur-sm">
+                    <span className="block text-white" style={{ fontSize: "18px", fontWeight: 800 }}>₱{totalFees}</span>
+                    <span className="text-white/70" style={{ fontSize: "10px", fontWeight: 600 }}>Total Fees</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Scrollable Spots List */}
+              <div className="flex-1 overflow-y-auto px-5 py-5">
+                <h4 className="text-[#6B7280] mb-4 flex items-center gap-2" style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                  <MapPin className="w-3.5 h-3.5" /> Planned Spots
+                </h4>
+
+                {spots.length === 0 ? (
+                  <div className="text-center py-10">
+                    <span style={{ fontSize: "36px" }}>📭</span>
+                    <p className="text-[#6B7280] mt-3" style={{ fontSize: "14px", fontWeight: 600 }}>No spots scheduled yet.</p>
+                  </div>
+                ) : (
+                  spots.map((spot: any, i: number) => {
+                    const fee = (spot.tourismFee || 0) + (spot.environmentalFee || 0) + (spot.entryFee || 0);
+                    const catColor = categoryColors[spot.category] || "#006FB4";
+                    return (
+                      <div key={spot.id + "-" + i} className="relative mb-4 last:mb-0">
+                        {i < spots.length - 1 && (
+                          <div className="absolute left-[19px] top-[48px] bottom-[-16px] w-[2px] bg-gradient-to-b from-[#006FB4]/30 to-transparent z-0" />
+                        )}
+                        <div className="relative z-10 bg-white rounded-[18px] p-4 border border-gray-100 shadow-sm">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${catColor}15`, border: `2.5px solid ${catColor}` }}>
+                              <span style={{ fontSize: "14px", fontWeight: 900, color: catColor }}>{i + 1}</span>
+                            </div>
+                            <div className="w-11 h-11 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+                              <ImageWithFallback src={spot.image} alt={spot.name} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-[#1A1A1A] truncate" style={{ fontSize: "15px", fontWeight: 800 }}>{spot.name}</h4>
+                              <div className="flex items-center gap-2 mt-1">
+                                <span className="px-2 py-0.5 rounded-md text-white" style={{ fontSize: "9px", fontWeight: 800, backgroundColor: catColor }}>{spot.category}</span>
+                                {fee > 0 && <span className="text-[#FF7A00]" style={{ fontSize: "11px", fontWeight: 700 }}>₱{fee}</span>}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex gap-2 ml-[52px]">
+                            <div className="flex-1 bg-[#F3F4F6] rounded-lg px-3 py-2">
+                              <span className="text-[#9CA3AF] block" style={{ fontSize: "9px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>From</span>
+                              <span className="text-[#1A1A1A]" style={{ fontSize: "12px", fontWeight: 700 }}>{fmtDate(spot.startDate || activeTrip.startDate || "")}</span>
+                            </div>
+                            <div className="flex items-center text-[#9CA3AF]" style={{ fontSize: "12px" }}>→</div>
+                            <div className="flex-1 bg-[#F3F4F6] rounded-lg px-3 py-2">
+                              <span className="text-[#9CA3AF] block" style={{ fontSize: "9px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>To</span>
+                              <span className="text-[#1A1A1A]" style={{ fontSize: "12px", fontWeight: 700 }}>{fmtDate(spot.endDate || activeTrip.endDate || "")}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+
+              {/* Close Footer */}
+              <div className="px-5 pb-5 pt-2 flex-shrink-0">
+                <button onClick={() => setShowSchedule(false)} className="w-full py-3.5 bg-[#F3F4F6] text-[#6B7280] rounded-2xl active:scale-[0.98] transition-transform" style={{ fontSize: "15px", fontWeight: 700 }}>Close</button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

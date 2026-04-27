@@ -148,9 +148,11 @@ export function useItinerary() {
         dayCount - 1
       ));
 
-      // Place the spot on its start day only (not spread across multiple days)
-      if (!daySpotsMap[startDayIndex]) daySpotsMap[startDayIndex] = [];
-      daySpotsMap[startDayIndex].push(spot);
+      // Place the spot on ALL days it covers (from start to end)
+      for (let d = startDayIndex; d <= endDayIndex; d++) {
+        if (!daySpotsMap[d]) daySpotsMap[d] = [];
+        daySpotsMap[d].push(spot);
+      }
     });
 
     // 2. Distribute spots without specific dates into days with fewer spots
