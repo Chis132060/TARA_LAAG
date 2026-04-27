@@ -33,6 +33,36 @@ export function ItineraryPlanner() {
     }
   }, [step, itinerary.generatedPlan, itinerary.selectedSpots, itinerary.generateItinerary]);
 
+  // Auto-select region & spot when coming from "Add to Trip" on destination details
+  useEffect(() => {
+    const autoRegion = localStorage.getItem("planner_auto_region");
+    const autoSpot = localStorage.getItem("planner_auto_spot");
+    if (autoRegion && autoSpot) {
+      const regionName = JSON.parse(autoRegion) as string;
+      const spotId = JSON.parse(autoSpot) as string;
+      // Clean up so it doesn't re-trigger
+      localStorage.removeItem("planner_auto_region");
+      localStorage.removeItem("planner_auto_spot");
+
+      // Select the region
+      if (!itinerary.selectedRegions.includes(regionName)) {
+        itinerary.setSelectedRegions([...itinerary.selectedRegions, regionName]);
+      }
+
+      // Toggle the spot
+      const region = philippineRegions[regionName];
+      if (region) {
+        const spot = region.spots.find(s => s.id === spotId);
+        if (spot && !itinerary.isSelected(spotId)) {
+          itinerary.toggleSpot(spot);
+        }
+      }
+
+      // Go to the select step to show the spot list
+      setStep("select");
+    }
+  }, []);
+
   // Search logic to match region name OR spot name
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) {

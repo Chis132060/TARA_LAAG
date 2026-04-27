@@ -4,6 +4,7 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState, useMemo } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { allDestinations, Destination } from "../data/destinations";
+import { philippineRegions } from "../data/philippineRegions";
 
 export function DestinationDetails() {
   const { id } = useParams();
@@ -15,10 +16,35 @@ export function DestinationDetails() {
   const [itinerary, setItinerary] = useLocalStorage<Destination[]>("itinerary", []);
 
   const addToTrip = () => {
-    if (itinerary.some(item => item.id === destination.id)) return;
-    setItinerary([...itinerary, destination]);
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
+    // Find the matching planner spot by name (fuzzy match)
+    let matchedRegion = "";
+    let matchedSpotId = "";
+    const destNameLower = destination.name.toLowerCase();
+
+    for (const [regionName, region] of Object.entries(philippineRegions)) {
+      for (const spot of region.spots) {
+        const spotNameLower = spot.name.toLowerCase();
+        // Check if destination name contains spot name or vice versa
+        if (destNameLower.includes(spotNameLower) || spotNameLower.includes(destNameLower) ||
+            destNameLower.replace(/\s+/g, '').includes(spotNameLower.replace(/\s+/g, '')) ||
+            spotNameLower.replace(/\s+/g, '').includes(destNameLower.replace(/\s+/g, ''))) {
+          matchedRegion = regionName;
+          matchedSpotId = spot.id;
+          break;
+        }
+      }
+      if (matchedRegion) break;
+    }
+
+    if (matchedRegion && matchedSpotId) {
+      // Pre-select the region and spot in the planner
+      localStorage.setItem("planner_auto_region", JSON.stringify(matchedRegion));
+      localStorage.setItem("planner_auto_spot", JSON.stringify(matchedSpotId));
+      navigate("/app/planner");
+    } else {
+      // No match found — just go to planner
+      navigate("/app/planner");
+    }
   };
 
   const bookNow = () => {
