@@ -152,26 +152,25 @@ export function Trips() {
 
       {/* Trip Selector Tabs */}
       <div className="px-6 pt-6 pb-2">
-        <div className="flex gap-3 overflow-x-auto no-scrollbar">
-          {allTrips.map((trip: any) => (
+        <div className="flex gap-3 overflow-x-auto no-scrollbar items-center">
+          {allTrips.map((trip: any, index: number) => (
             <button
               key={trip.id}
               onClick={() => { setActiveTripId(trip.id); setActiveDay(0); }}
-              className={`flex-shrink-0 px-5 py-2.5 rounded-full transition-all border-2 ${activeTrip?.id === trip.id
-                ? "bg-[#006FB4]/5 border-[#006FB4] text-[#006FB4]"
-                : "bg-white border-transparent shadow-sm text-[#6B7280]"
+              className={`flex-shrink-0 w-12 h-12 rounded-full transition-all flex items-center justify-center ${activeTrip?.id === trip.id
+                ? "bg-[#006FB4] text-white shadow-lg shadow-[#006FB4]/30 scale-105"
+                : "bg-white border-2 border-gray-200 text-[#6B7280] shadow-sm"
                 }`}
-              style={{ fontSize: "14px", fontWeight: 700 }}
+              style={{ fontSize: "16px", fontWeight: 800 }}
             >
-              {trip.destination}
+              {index + 1}
             </button>
           ))}
           <button
             onClick={() => navigate("/app/planner")}
-            className="flex-shrink-0 px-5 py-2.5 bg-white border-2 border-dashed border-gray-300 rounded-full text-[#6B7280] flex items-center gap-2 hover:border-[#FF7A00] hover:text-[#FF7A00] transition-all"
-            style={{ fontSize: "14px", fontWeight: 700 }}
+            className="flex-shrink-0 w-12 h-12 bg-white border-2 border-dashed border-gray-300 rounded-full text-[#6B7280] flex items-center justify-center hover:border-[#FF7A00] hover:text-[#FF7A00] transition-all"
           >
-            <Plus className="w-4 h-4" /> New Trip
+            <Plus className="w-5 h-5" />
           </button>
         </div>
       </div>
@@ -215,9 +214,6 @@ export function Trips() {
                       <h2 className="text-[#1A1A1A] flex items-center gap-2" style={{ fontSize: '22px', fontWeight: 800 }}>
                         {editNameValue} <span style={{ fontSize: '20px' }}>🌴</span>
                       </h2>
-                      <p className="text-[#6B7280] mt-1" style={{ fontSize: '14px', fontWeight: 600 }}>
-                        {formatDateRange()}
-                      </p>
                     </>
                   )}
                 </div>
@@ -249,15 +245,12 @@ export function Trips() {
                       <button
                         key={index}
                         onClick={() => setActiveDay(index)}
-                        className={`flex flex-col items-center px-4 py-3 rounded-2xl min-w-[72px] transition-all ${isActive
+                        className={`flex flex-col items-center justify-center px-4 py-3 rounded-2xl min-w-[72px] transition-all ${isActive
                           ? "bg-[#FF7A00] text-white shadow-lg shadow-[#FF7A00]/25"
                           : "bg-[#F3F4F6] text-[#6B7280] hover:bg-gray-200"
                           }`}
                       >
-                        <span style={{ fontSize: '13px', fontWeight: 800 }}>Day {dayPlan.day}</span>
-                        <span style={{ fontSize: '11px', fontWeight: 600, opacity: isActive ? 0.9 : 0.7 }}>
-                          {formatDate(dayDate)}
-                        </span>
+                        <span style={{ fontSize: '14px', fontWeight: 800 }}>Day {dayPlan.day}</span>
                       </button>
                     );
                   })}
