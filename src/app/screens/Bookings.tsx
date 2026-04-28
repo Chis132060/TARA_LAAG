@@ -8,8 +8,7 @@ interface Booking {
   destinationId: number;
   destinationName: string;
   image: string;
-  checkIn: string;
-  checkOut: string;
+  date: string;
   guests: number;
   totalPrice: string;
   status: 'confirmed' | 'pending' | 'cancelled';
@@ -86,10 +85,10 @@ export function Bookings() {
 
                     <div className="grid grid-cols-2 gap-4 border-t border-gray-50 pt-3">
                       <div>
-                        <span className="text-[#6B7280] block" style={{ fontSize: '10px', fontWeight: 700 }}>CHECK-IN</span>
+                        <span className="text-[#6B7280] block" style={{ fontSize: '10px', fontWeight: 700 }}>DATE</span>
                         <div className="flex items-center gap-1 text-[#1A1A1A]">
                           <Calendar className="w-3.5 h-3.5 text-[#006FB4]" />
-                          <span style={{ fontSize: '13px', fontWeight: 700 }}>{new Date(booking.checkIn).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                          <span style={{ fontSize: '13px', fontWeight: 700 }}>{new Date(booking.date || (booking as any).checkIn || new Date()).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                         </div>
                       </div>
                       <div>

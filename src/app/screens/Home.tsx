@@ -194,7 +194,7 @@ export function Home() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-[#006FB4]" style={{ fontSize: '18px', fontWeight: 800 }}>{dest.entranceFee}<span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>/entry</span></span>
+                    <span className="text-[#006FB4]" style={{ fontSize: '18px', fontWeight: 800 }}>{dest.entranceFee} <span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>Entrance Fee</span></span>
                     <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100">
                       <ChevronRight className="w-5 h-5 text-[#006FB4]" />
                     </div>

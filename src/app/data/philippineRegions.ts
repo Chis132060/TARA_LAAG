@@ -33,7 +33,7 @@ export const philippineRegions: Record<string, Region> = {
       { id: "si-3", name: "Magpupungko Rock Pools", region: "Siargao", description: "Natural tidal pools with crystal-clear water among stunning rock formations.", category: "Nature", gps: [9.878, 126.109], tourismFee: 50, environmentalFee: 0, entryFee: 50, image: "/magpupungkopools/magpupungkopools1.jpg", rating: 4.9, suggestedDuration: 120 },
       { id: "si-4", name: "Naked Island", region: "Siargao", description: "A bare white sandbar in the middle of the Pacific—nothing but sand and sea.", category: "Beach", gps: [9.771, 126.117], tourismFee: 0, environmentalFee: 0, entryFee: 0, image: "/nakedisland/nakedisland1.jpg", rating: 4.8, suggestedDuration: 60 },
       { id: "si-5", name: "Daku Island", region: "Siargao", description: "Largest of the three islands, with coconut palms and local food stalls.", category: "Beach", gps: [9.795, 126.120], tourismFee: 50, environmentalFee: 0, entryFee: 0, image: "/Siargao/Siargao3.jpg", rating: 4.7, suggestedDuration: 90 },
-      { id: "si-6", name: "Sohoton Cove", region: "Siargao", description: "A hidden lagoon with jellyfish sanctuary and dramatic cave formations.", category: "Adventure", gps: [9.870, 125.980], tourismFee: 100, environmentalFee: 100, entryFee: 0, image: "/Siargao/Siargao4.jpg", rating: 4.8, suggestedDuration: 180 },
+      { id: "si-6", name: "Sohoton Cove", region: "Siargao", description: "A hidden lagoon with jellyfish sanctuary and dramatic cave formations.", category: "Adventure", gps: [9.870, 125.980], tourismFee: 100, environmentalFee: 100, EntranceFee: 0, image: "/Siargao/Siargao4.jpg", rating: 4.8, suggestedDuration: 180 },
     ]
   },
   "Surigao": {

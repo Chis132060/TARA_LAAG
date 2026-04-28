@@ -61,7 +61,7 @@ export function CategoryListing() {
                   <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                   <span className="text-[#1A1A1A]" style={{ fontSize: '14px', fontWeight: 600 }}>{dest.rating}</span>
                 </div>
-                <span className="text-[#00C851]" style={{ fontSize: '13px', fontWeight: 700 }}>{dest.entranceFee}<span style={{ fontSize: '10px', opacity: 0.8 }}>/entry</span></span>
+                <span className="text-[#00C851]" style={{ fontSize: '13px', fontWeight: 700 }}>{dest.entranceFee} <span style={{ fontSize: '10px', opacity: 0.8 }}>Entrance Fee</span></span>
               </div>
             </div>
           </button>

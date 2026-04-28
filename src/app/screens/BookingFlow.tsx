@@ -10,8 +10,7 @@ interface Booking {
   destinationId: number;
   destinationName: string;
   image: string;
-  checkIn: string;
-  checkOut: string;
+  date: string;
   guests: number;
   totalPrice: string;
   status: 'confirmed' | 'pending' | 'cancelled';
@@ -28,8 +27,7 @@ export function BookingFlow() {
   }, [id]);
 
   const [formData, setFormData] = useState({
-    checkIn: new Date().toISOString().split('T')[0],
-    checkOut: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
+    date: new Date().toISOString().split('T')[0],
     guests: 2,
     fullName: "",
     email: "",
@@ -56,8 +54,7 @@ export function BookingFlow() {
       destinationId: destination.id,
       destinationName: destination.name,
       image: destination.image,
-      checkIn: formData.checkIn,
-      checkOut: formData.checkOut,
+      date: formData.date,
       guests: formData.guests,
       totalPrice: `₱${calculateTotal().toLocaleString()}`,
       status: 'confirmed',
@@ -98,32 +95,17 @@ export function BookingFlow() {
         <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 space-y-5">
           <h3 className="text-[#1A1A1A]" style={{ fontSize: '18px', fontWeight: 800 }}>Stay Details</h3>
           
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <label className="text-[#6B7280] block" style={{ fontSize: '12px', fontWeight: 700 }}>CHECK-IN</label>
-              <div className="relative">
-                <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#006FB4]" />
-                <input 
-                  type="date" 
-                  value={formData.checkIn}
-                  onChange={e => setFormData({...formData, checkIn: e.target.value})}
-                  className="w-full pl-10 pr-4 py-3 bg-[#F9F9FC] border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#006FB4]"
-                  style={{ fontSize: '14px' }}
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-[#6B7280] block" style={{ fontSize: '12px', fontWeight: 700 }}>CHECK-OUT</label>
-              <div className="relative">
-                <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#006FB4]" />
-                <input 
-                  type="date" 
-                  value={formData.checkOut}
-                  onChange={e => setFormData({...formData, checkOut: e.target.value})}
-                  className="w-full pl-10 pr-4 py-3 bg-[#F9F9FC] border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#006FB4]"
-                  style={{ fontSize: '14px' }}
-                />
-              </div>
+          <div className="space-y-2">
+            <label className="text-[#6B7280] block" style={{ fontSize: '12px', fontWeight: 700 }}>DATE</label>
+            <div className="relative">
+              <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#006FB4]" />
+              <input 
+                type="date" 
+                value={formData.date}
+                onChange={e => setFormData({...formData, date: e.target.value})}
+                className="w-full pl-10 pr-4 py-3 bg-[#F9F9FC] border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#006FB4]"
+                style={{ fontSize: '14px' }}
+              />
             </div>
           </div>
 

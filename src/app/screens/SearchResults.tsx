@@ -133,7 +133,7 @@ export function SearchResults() {
                 </div>
 
                 <div className="flex items-center justify-between mt-4">
-                  <span className="text-[#006FB4]" style={{ fontSize: '20px', fontWeight: 800 }}>{dest.entranceFee}<span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>/entry</span></span>
+                  <span className="text-[#006FB4]" style={{ fontSize: '20px', fontWeight: 800 }}>{dest.entranceFee} <span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>Entrance Fee</span></span>
                   <div className="w-9 h-9 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100 group-hover:bg-[#006FB4] group-hover:border-[#006FB4] transition-all">
                     <ChevronRight className="w-5 h-5 text-[#006FB4] group-hover:text-white" />
                   </div>
