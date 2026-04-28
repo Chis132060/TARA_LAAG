@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import { Search, Bell, Star, MapPin, TrendingUp, Mountain, UtensilsCrossed, Landmark, Sparkles, Navigation } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { SuggestedItineraries } from "../components/SuggestedItineraries";
 import { allDestinations } from "../data/destinations";
 
 const categories = [
@@ -153,6 +154,8 @@ export function Home() {
             ))}
           </div>
         </div>
+
+        <SuggestedItineraries />
 
         <div className="mb-10">
           <div className="flex justify-between items-center mb-6">
