@@ -114,8 +114,13 @@ export function Onboarding() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-[#38BDF8] mb-4 drop-shadow-md"
-              style={{ fontSize: '20px', fontWeight: 800, textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}
+              className="text-[#00D1FF] mb-4 drop-shadow-xl"
+              style={{ 
+                fontSize: '24px', 
+                fontWeight: 800, 
+                textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)',
+                letterSpacing: '0.01em'
+              }}
             >
               {slide.subtitle}
             </motion.p>
