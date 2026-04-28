@@ -438,7 +438,7 @@ export function Trips() {
                   className="w-full py-4 bg-white border border-gray-200 text-[#006FB4] rounded-[20px] shadow-sm active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
                   style={{ fontSize: "16px", fontWeight: 700 }}
                 >
-                  <Navigation className="w-5 h-5" />View on Map
+                  <Route className="w-5 h-5" />Explore Full Trip Route
                 </button>
               </>
             )}

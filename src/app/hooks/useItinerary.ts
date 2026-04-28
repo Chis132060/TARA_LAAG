@@ -19,6 +19,14 @@ export interface DayPlan {
   totalFees: number;
 }
 
+// Per-spot stay configuration
+export interface SpotStayConfig {
+  spotId: string;
+  daysToStay: number;
+  startTime: string; // e.g. "08:00"
+  endTime: string; // e.g. "17:00"
+}
+
 function formatTime(hour: number, minute: number): string {
   const h = hour % 12 || 12;
   const ampm = hour < 12 ? "AM" : "PM";
@@ -36,6 +44,39 @@ export function useItinerary() {
   const [endDate, setEndDate] = useLocalStorage<string>("planner_end_date", defaultEnd);
   const [isOptimized, setIsOptimized] = useLocalStorage("planner_is_optimized", false);
   const [generatedPlan, setGeneratedPlan] = useLocalStorage<DayPlan[] | null>("planner_plan", null);
+
+  // Per-spot stay configurations
+  const [spotStayConfigs, setSpotStayConfigs] = useLocalStorage<SpotStayConfig[]>("planner_spot_stay_configs", []);
+
+  const getSpotStayConfig = useCallback((spotId: string): SpotStayConfig => {
+    const found = spotStayConfigs.find(c => c.spotId === spotId);
+    return found || { spotId, daysToStay: 1, startTime: "08:00", endTime: "17:00" };
+  }, [spotStayConfigs]);
+
+  const updateSpotStayConfig = useCallback((spotId: string, updates: Partial<SpotStayConfig>) => {
+    setSpotStayConfigs(prev => {
+      const exists = prev.find(c => c.spotId === spotId);
+      if (exists) {
+        return prev.map(c => c.spotId === spotId ? { ...c, ...updates } : c);
+      }
+      return [...prev, { spotId, daysToStay: 1, startTime: "08:00", endTime: "17:00", ...updates }];
+    });
+    setGeneratedPlan(null);
+  }, []);
+
+  // Total days calculated from all spot stay configs
+  const totalTripDays = useMemo(() => {
+    if (selectedSpots.length === 0) return 1;
+    // Sum up all days, but spots on the same day share that day
+    // Simple approach: total days = max of cumulative days
+    let total = 0;
+    selectedSpots.forEach(spot => {
+      if (!spot || !spot.id) return;
+      const config = getSpotStayConfig(spot.id);
+      total += config.daysToStay;
+    });
+    return Math.max(total, 1);
+  }, [selectedSpots, spotStayConfigs, getSpotStayConfig]);
 
   const toggleSpot = useCallback((spot: PlannerSpot) => {
     setSelectedSpots((prev) => {
@@ -64,6 +105,7 @@ export function useItinerary() {
 
   const removeSpot = useCallback((spotId: string) => {
     setSelectedSpots(prev => prev.filter(s => s.id !== spotId));
+    setSpotStayConfigs(prev => prev.filter(c => c.spotId !== spotId));
     setGeneratedPlan(null);
   }, []);
 
@@ -95,11 +137,8 @@ export function useItinerary() {
   }, [startDate, endDate, selectedSpots]);
 
   const dayCount = useMemo(() => {
-    const { earliest, latest } = tripDateRange;
-    const diffTime = Math.abs(latest.getTime() - earliest.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return Math.max(diffDays + 1, 1);
-  }, [tripDateRange]);
+    return totalTripDays;
+  }, [totalTripDays]);
 
   const optimizeSpots = useCallback(() => {
     setSelectedSpots((prev) => optimizeRoute(prev));
@@ -125,53 +164,26 @@ export function useItinerary() {
     const days: DayPlan[] = [];
     const tripStart = tripDateRange.earliest;
 
-    // Group spots by day
+    // Build day assignments based on spotStayConfigs
+    // Each spot gets assigned to consecutive days based on its daysToStay
+    let currentDayIndex = 0;
     const daySpotsMap: Record<number, PlannerSpot[]> = {};
 
-    // 1. Place each spot on the day(s) matching its startDate
-    const spotsWithDates = selectedSpots.filter(s => s.startDate);
-    const spotsWithoutDates = selectedSpots.filter(s => !s.startDate);
+    selectedSpots.forEach(spot => {
+      const config = getSpotStayConfig(spot.id);
+      const stayDays = config.daysToStay;
 
-    spotsWithDates.forEach(spot => {
-      const spotStart = new Date(spot.startDate!);
-      const spotEnd = spot.endDate ? new Date(spot.endDate!) : spotStart;
-
-      // Calculate the day index for the start date
-      const startDayIndex = Math.max(0, Math.min(
-        Math.floor((spotStart.getTime() - tripStart.getTime()) / (1000 * 60 * 60 * 24)),
-        dayCount - 1
-      ));
-
-      // Calculate the day index for the end date
-      const endDayIndex = Math.max(0, Math.min(
-        Math.floor((spotEnd.getTime() - tripStart.getTime()) / (1000 * 60 * 60 * 24)),
-        dayCount - 1
-      ));
-
-      // Place the spot on ALL days it covers (from start to end)
-      for (let d = startDayIndex; d <= endDayIndex; d++) {
-        if (!daySpotsMap[d]) daySpotsMap[d] = [];
-        daySpotsMap[d].push(spot);
+      for (let d = 0; d < stayDays; d++) {
+        const dayIdx = currentDayIndex + d;
+        if (!daySpotsMap[dayIdx]) daySpotsMap[dayIdx] = [];
+        daySpotsMap[dayIdx].push(spot);
       }
+      currentDayIndex += stayDays;
     });
 
-    // 2. Distribute spots without specific dates into days with fewer spots
-    spotsWithoutDates.forEach(spot => {
-      let bestDay = 0;
-      let minSpots = Infinity;
-      for (let i = 0; i < dayCount; i++) {
-        const count = (daySpotsMap[i]?.length || 0);
-        if (count < minSpots) {
-          minSpots = count;
-          bestDay = i;
-        }
-      }
-      if (!daySpotsMap[bestDay]) daySpotsMap[bestDay] = [];
-      daySpotsMap[bestDay].push(spot);
-    });
+    const totalDays = currentDayIndex || 1;
 
-    // 3. Generate the actual DayPlan objects
-    for (let d = 0; d < dayCount; d++) {
+    for (let d = 0; d < totalDays; d++) {
       const daySpots = daySpotsMap[d] || [];
 
       let currentHour = 8;
@@ -193,6 +205,14 @@ export function useItinerary() {
           currentMinute += travelMin;
           currentHour += Math.floor(currentMinute / 60);
           currentMinute = currentMinute % 60;
+        }
+
+        // Parse start time from config
+        const config = getSpotStayConfig(spot.id);
+        if (i === 0 && config.startTime) {
+          const [h, m] = config.startTime.split(':').map(Number);
+          if (!isNaN(h)) currentHour = h;
+          if (!isNaN(m)) currentMinute = m;
         }
 
         events.push({
@@ -225,12 +245,13 @@ export function useItinerary() {
     }
 
     setGeneratedPlan(days);
-  }, [selectedSpots, dayCount, tripDateRange]);
+  }, [selectedSpots, tripDateRange, getSpotStayConfig]);
 
   const clearAll = useCallback(() => {
     setSelectedSpots([]);
     setGeneratedPlan(null);
     setIsOptimized(false);
+    setSpotStayConfigs([]);
   }, []);
 
   return {
@@ -244,5 +265,8 @@ export function useItinerary() {
     optimizeSpots, moveSpot, removeSpot,
     generateItinerary, generatedPlan,
     clearAll,
+    // New stay config methods
+    spotStayConfigs, getSpotStayConfig, updateSpotStayConfig, totalTripDays,
+    selectedRegion: selectedRegions?.join(', ') || "Multiple Regions",
   };
 }
