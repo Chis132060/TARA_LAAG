@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router";
 import useEmblaCarousel from "embla-carousel-react";
-import { Search, Bell, Star, MapPin, TrendingUp, Mountain, UtensilsCrossed, Landmark, Sparkles, Navigation } from "lucide-react";
+import { Search, Bell, Star, MapPin, TrendingUp, Sparkles, Navigation, Calendar } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { SuggestedItineraries } from "../components/SuggestedItineraries";
 import { allDestinations } from "../data/destinations";
+import { addToTrip } from "../utils/tripPlannerUtils";
 
 const categories = [
   { name: "Beaches", icon: "🏖️", color: "#006FB4" },
@@ -107,7 +108,13 @@ export function Home() {
                       <Star className="w-4 h-4 text-white fill-white" />
                       <span className="text-white" style={{ fontSize: '14px', fontWeight: 800 }}>{dest.rating}</span>
                     </div>
-                    <span className="text-white" style={{ fontSize: '14px', fontWeight: 600 }}>Explore Now →</span>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); addToTrip(dest.name, navigate, dest.id); }}
+                      className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-3 py-1.5 rounded-xl flex items-center gap-1.5 active:scale-95 transition-transform"
+                    >
+                      <Calendar className="w-4 h-4" />
+                      <span style={{ fontSize: '13px', fontWeight: 700 }}>Trip</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -181,7 +188,7 @@ export function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex-1 py-4 pr-6 pl-1 text-left flex flex-col justify-between">
+                <div className="flex-1 py-4 pr-4 pl-1 text-left flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start mb-1">
                       <h4 style={{ fontSize: '17px', fontWeight: 800 }} className="text-[#1A1A1A]">{dest.name}</h4>
@@ -197,10 +204,14 @@ export function Home() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-[#006FB4]" style={{ fontSize: '18px', fontWeight: 800 }}>{dest.entranceFee} <span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>Entrance Fee</span></span>
-                    <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100">
-                      <ChevronRight className="w-5 h-5 text-[#006FB4]" />
-                    </div>
+                    <span className="text-[#006FB4]" style={{ fontSize: '16px', fontWeight: 800 }}>{dest.entranceFee} <span className="text-[#9CA3AF]" style={{ fontSize: '11px', fontWeight: 500 }}>Entry</span></span>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); addToTrip(dest.name, navigate, dest.id); }}
+                      className="bg-[#FF7A00]/10 text-[#FF7A00] px-3 py-1.5 rounded-xl flex items-center gap-1.5 active:scale-95 transition-transform"
+                    >
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span style={{ fontSize: '12px', fontWeight: 700 }}>Trip</span>
+                    </button>
                   </div>
                 </div>
               </button>
@@ -238,12 +249,19 @@ export function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="px-4 pb-5 pt-1">
+                <div className="px-4 pb-4 pt-1">
                   <h4 style={{ fontSize: '15px', fontWeight: 800 }} className="mb-1 line-clamp-1 text-[#1A1A1A]">{gem.name}</h4>
-                  <div className="flex items-center gap-1 text-[#6B7280]">
+                  <div className="flex items-center gap-1 text-[#6B7280] mb-3">
                     <MapPin className="w-3 h-3" />
                     <span style={{ fontSize: '12px', fontWeight: 600 }} className="line-clamp-1">{gem.location}</span>
                   </div>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); addToTrip(gem.name, navigate, gem.id); }}
+                    className="w-full bg-[#FF7A00]/10 text-[#FF7A00] py-2 rounded-xl flex items-center justify-center gap-1.5 active:scale-95 transition-transform"
+                  >
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span style={{ fontSize: '12px', fontWeight: 700 }}>Add to Trip</span>
+                  </button>
                 </div>
               </button>
             ))}

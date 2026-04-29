@@ -1,8 +1,9 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router";
-import { ChevronLeft, SlidersHorizontal, Star, MapPin, Search, X, Sparkles } from "lucide-react";
+import { ChevronLeft, SlidersHorizontal, Star, MapPin, Search, X, Sparkles, Calendar } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { allDestinations } from "../data/destinations";
+import { addToTrip } from "../utils/tripPlannerUtils";
 
 export function SearchResults() {
   const navigate = useNavigate();
@@ -113,7 +114,7 @@ export function SearchResults() {
                   />
                 </div>
               </div>
-              <div className="flex-1 py-5 pr-6 pl-1 text-left flex flex-col justify-between">
+              <div className="flex-1 py-5 pr-4 pl-1 text-left flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-1">
                     <h3 style={{ fontSize: '18px', fontWeight: 800 }} className="text-[#1A1A1A]">{dest.name}</h3>
@@ -133,10 +134,14 @@ export function SearchResults() {
                 </div>
 
                 <div className="flex items-center justify-between mt-4">
-                  <span className="text-[#006FB4]" style={{ fontSize: '20px', fontWeight: 800 }}>{dest.entranceFee} <span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>Entrance Fee</span></span>
-                  <div className="w-9 h-9 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100 group-hover:bg-[#006FB4] group-hover:border-[#006FB4] transition-all">
-                    <ChevronRight className="w-5 h-5 text-[#006FB4] group-hover:text-white" />
-                  </div>
+                  <span className="text-[#006FB4]" style={{ fontSize: '18px', fontWeight: 800 }}>{dest.entranceFee} <span className="text-[#9CA3AF]" style={{ fontSize: '12px', fontWeight: 500 }}>Entrance Fee</span></span>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); addToTrip(dest.name, navigate, dest.id); }}
+                    className="bg-[#FF7A00]/10 text-[#FF7A00] px-3 py-1.5 rounded-xl flex items-center gap-1.5 active:scale-95 transition-transform"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span style={{ fontSize: '13px', fontWeight: 700 }}>Trip</span>
+                  </button>
                 </div>
               </div>
             </button>
@@ -147,20 +152,3 @@ export function SearchResults() {
   );
 }
 
-const ChevronRight = ({ className, ...props }: any) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="3"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    {...props}
-  >
-    <path d="m9 18 6-6-6-6" />
-  </svg>
-);

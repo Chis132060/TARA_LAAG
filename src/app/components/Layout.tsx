@@ -34,7 +34,21 @@ export function Layout() {
             return (
               <button
                 key={item.path}
-                onClick={() => navigate(item.path)}
+                onClick={() => {
+                  if (item.path === "/app") {
+                    // Clear planner state when going home
+                    const plannerKeys = [
+                      "planner_regions",
+                      "planner_spots",
+                      "planner_step",
+                      "planner_plan",
+                      "planner_active_day",
+                      "planner_spot_stay_configs"
+                    ];
+                    plannerKeys.forEach(key => localStorage.removeItem(key));
+                  }
+                  navigate(item.path);
+                }}
                 className={`flex flex-col items-center gap-1.5 py-2 px-3 min-w-[64px] rounded-2xl transition-all ${active ? "bg-orange-50" : ""
                   }`}
               >

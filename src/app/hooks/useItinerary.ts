@@ -23,6 +23,7 @@ export interface DayPlan {
 export interface SpotStayConfig {
   spotId: string;
   daysToStay: number;
+  dayIndex?: number; // Manual assignment to a specific day (0-indexed)
   startTime: string; // e.g. "08:00"
   endTime: string; // e.g. "17:00"
 }
@@ -158,30 +159,77 @@ export function useItinerary() {
 
 
 
-  const generateItinerary = useCallback(() => {
+  const generateItinerary = useCallback((distributeOverDays?: number) => {
     if (selectedSpots.length < 1) return;
 
     const days: DayPlan[] = [];
     const tripStart = tripDateRange.earliest;
-
-    // Build day assignments based on spotStayConfigs
-    // Each spot gets assigned to consecutive days based on its daysToStay
-    let currentDayIndex = 0;
     const daySpotsMap: Record<number, PlannerSpot[]> = {};
+    let totalDays = 1;
 
-    selectedSpots.forEach(spot => {
-      const config = getSpotStayConfig(spot.id);
-      const stayDays = config.daysToStay;
+    if (distributeOverDays && distributeOverDays > 0) {
+      totalDays = distributeOverDays;
+      // Distribute spots across the requested days
+      // First, handle spots with manual dayIndex
+      const manualSpots: PlannerSpot[] = [];
+      const autoSpots: PlannerSpot[] = [];
+      
+      selectedSpots.forEach(spot => {
+        const config = getSpotStayConfig(spot.id);
+        const stayDays = config.daysToStay || 1;
 
-      for (let d = 0; d < stayDays; d++) {
-        const dayIdx = currentDayIndex + d;
-        if (!daySpotsMap[dayIdx]) daySpotsMap[dayIdx] = [];
-        daySpotsMap[dayIdx].push(spot);
+        if (typeof config.dayIndex === 'number' && config.dayIndex < totalDays) {
+          // Add this spot to all the days it spans
+          for (let d = 0; d < stayDays; d++) {
+            const currentIdx = config.dayIndex + d;
+            if (currentIdx < totalDays) {
+              if (!daySpotsMap[currentIdx]) daySpotsMap[currentIdx] = [];
+              daySpotsMap[currentIdx].push(spot);
+            }
+          }
+          manualSpots.push(spot);
+        } else {
+          autoSpots.push(spot);
+        }
+      });
+
+      // Distribute remaining spots across available days
+      if (autoSpots.length > 0) {
+        if (autoSpots.length === 1) {
+          // Special case: If only one spot is chosen, stretch it across ALL days
+          const spot = autoSpots[0];
+          for (let d = 0; d < totalDays; d++) {
+            if (!daySpotsMap[d]) daySpotsMap[d] = [];
+            daySpotsMap[d].push(spot);
+          }
+        } else {
+          // Standard distribution
+          const spotsPerDay = Math.ceil(autoSpots.length / totalDays);
+          autoSpots.forEach((spot, index) => {
+            const dayIdx = Math.floor(index / (spotsPerDay || 1));
+            if (dayIdx < totalDays) {
+              if (!daySpotsMap[dayIdx]) daySpotsMap[dayIdx] = [];
+              daySpotsMap[dayIdx].push(spot);
+            }
+          });
+        }
       }
-      currentDayIndex += stayDays;
-    });
+    } else {
+      // Sequential logic
+      let currentDayIndex = 0;
+      selectedSpots.forEach(spot => {
+        const config = getSpotStayConfig(spot.id);
+        const stayDays = config.daysToStay;
 
-    const totalDays = currentDayIndex || 1;
+        for (let d = 0; d < stayDays; d++) {
+          const dayIdx = currentDayIndex + d;
+          if (!daySpotsMap[dayIdx]) daySpotsMap[dayIdx] = [];
+          daySpotsMap[dayIdx].push(spot);
+        }
+        currentDayIndex += stayDays;
+      });
+      totalDays = currentDayIndex || 1;
+    }
 
     for (let d = 0; d < totalDays; d++) {
       const daySpots = daySpotsMap[d] || [];
@@ -248,6 +296,7 @@ export function useItinerary() {
   }, [selectedSpots, tripDateRange, getSpotStayConfig]);
 
   const clearAll = useCallback(() => {
+    setSelectedRegions([]);
     setSelectedSpots([]);
     setGeneratedPlan(null);
     setIsOptimized(false);

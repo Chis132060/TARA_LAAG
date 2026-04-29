@@ -114,6 +114,85 @@ export const philippineRegions: Record<string, Region> = {
       { id: "bt-3", name: "Marlboro Country", region: "Batanes", description: "Wide green pastures by the sea, resembling scenes from a movie.", category: "Nature", gps: [20.380, 121.920], tourismFee: 0, environmentalFee: 0, entryFee: 0, image: "/batanesbasco/batanesbasco3.jpg", rating: 4.8, suggestedDuration: 60 },
       { id: "bt-4", name: "Sabtang Island", region: "Batanes", description: "Traditional Ivatan stone houses and unspoiled coastal landscapes.", category: "Cultural", gps: [20.330, 121.880], tourismFee: 0, environmentalFee: 0, entryFee: 200, image: "/batanesbasco/batanesbasco4.jpg", rating: 4.9, suggestedDuration: 240 },
     ]
+  },
+  "Camiguin": {
+    name: "Camiguin",
+    center: [9.1830, 124.7166],
+    zoom: 11,
+    spots: [
+      { id: "cg-1", name: "White Island", region: "Camiguin", description: "A horseshoe-shaped sandbar with a stunning view of Mt. Hibok-Hibok.", category: "Beach", gps: [9.2558, 124.6547], tourismFee: 0, environmentalFee: 50, entryFee: 0, image: "/WhiteIslandCamiguin/White-Island-Camiguin-1.jpg", rating: 4.8, suggestedDuration: 120 },
+      { id: "cg-2", name: "Mantigue Island", region: "Camiguin", description: "A paradise for snorkelers and divers with its diverse marine life.", category: "Beach", gps: [9.1700, 124.8100], tourismFee: 0, environmentalFee: 0, entryFee: 100, image: "/mantigueislands/mantigueisland1.jpg", rating: 4.7, suggestedDuration: 180 },
+      { id: "cg-3", name: "Katibawasan Falls", region: "Camiguin", description: "A 250-foot waterfall plunging into a clear pool surrounded by orchids.", category: "Nature", gps: [9.2150, 124.7180], tourismFee: 0, environmentalFee: 0, entryFee: 30, image: "/katibawasanfalls/katibawasanfalls1.jpg", rating: 4.6, suggestedDuration: 90 },
+    ]
+  },
+  "Davao Region": {
+    name: "Davao Region",
+    center: [7.1907, 125.4553],
+    zoom: 8,
+    spots: [
+      { id: "dv-1", name: "Dahican Beach", region: "Davao Region", description: "A 7-kilometer crescent of white sand facing the Pacific Ocean.", category: "Beach", gps: [6.9157, 126.2572], tourismFee: 0, environmentalFee: 0, entryFee: 100, image: "/dahicanbeach/dahicanbeach1.jpg", rating: 4.8, suggestedDuration: 240 },
+      { id: "dv-2", name: "Mount Apo", region: "Davao Region", description: "The highest mountain in the Philippines. A challenging climb with stunning vistas.", category: "Adventure", gps: [6.9875, 125.2708], tourismFee: 0, environmentalFee: 0, entryFee: 500, image: "/mountapo/mountapo1.jpg", rating: 4.9, suggestedDuration: 600 },
+      { id: "dv-3", name: "Samal Island", region: "Davao Region", description: "Known for its beautiful resorts and the famous Monfort Bat Sanctuary.", category: "Beach", gps: [7.1000, 125.7167], tourismFee: 0, environmentalFee: 0, entryFee: 150, image: "/samalisland/samal1.jpg", rating: 4.8, suggestedDuration: 300 },
+      { id: "dv-4", name: "Aliwagwag Falls", region: "Davao Region", description: "A multi-tiered waterfall often described as a 'stairway to heaven'.", category: "Nature", gps: [7.7231, 126.2950], tourismFee: 0, environmentalFee: 0, entryFee: 50, image: "/aliwagwagfalls/aliwagwagfalls1.jpg", rating: 4.7, suggestedDuration: 120 },
+      { id: "dv-5", name: "Kadayawan Festival", region: "Davao Region", description: "A week-long celebration of life and thanksgiving for the gifts of nature.", category: "Cultural", gps: [7.0707, 125.6092], tourismFee: 0, environmentalFee: 0, entryFee: 0, image: "/kadayawan festival/kadayawan festival1.jpg", rating: 4.9, suggestedDuration: 240 },
+    ]
+  },
+  "South Cotabato": {
+    name: "South Cotabato",
+    center: [6.2272, 124.7100],
+    zoom: 11,
+    spots: [
+      { id: "sc-1", name: "Lake Sebu", region: "South Cotabato", description: "A natural lake famous for its 7 waterfalls and T'boli culture.", category: "Nature", gps: [6.2272, 124.7100], tourismFee: 0, environmentalFee: 0, entryFee: 50, image: "/lakesebu/lakesebu1.jpg", rating: 4.7, suggestedDuration: 180 },
+      { id: "sc-2", name: "T'boli Living Museum", region: "South Cotabato", description: "An authentic T'boli house where visitors can learn about the tribe's weaving and traditions.", category: "Cultural", gps: [6.2300, 124.7000], tourismFee: 0, environmentalFee: 0, entryFee: 50, image: "/tbolilivingmuseum/tbolilivingmuseum1.jpg", rating: 4.8, suggestedDuration: 90 },
+    ]
+  },
+  "Lanao del Norte": {
+    name: "Lanao del Norte",
+    center: [8.1833, 124.1931],
+    zoom: 11,
+    spots: [
+      { id: "ln-1", name: "Maria Cristina Falls", region: "Lanao del Norte", description: "The 'Twin Falls' of Iligan, which powers the hydroelectric plant of the region.", category: "Nature", gps: [8.1833, 124.1931], tourismFee: 0, environmentalFee: 0, entryFee: 30, image: "/mariacristinafalls/mariacristinafalls1.jpg", rating: 4.6, suggestedDuration: 90 },
+    ]
+  },
+  "Ilocos Sur": {
+    name: "Ilocos Sur",
+    center: [17.5719, 120.3888],
+    zoom: 13,
+    spots: [
+      { id: "is-1", name: "Calle Crisologo", region: "Ilocos Sur", description: "A UNESCO World Heritage site featuring Spanish colonial architecture and cobblestone streets.", category: "Historical", gps: [17.5719, 120.3888], tourismFee: 0, environmentalFee: 0, entryFee: 0, image: "/callecrisologo/callecrisologo1.jpg", rating: 4.9, suggestedDuration: 120 },
+    ]
+  },
+  "Zamboanga": {
+    name: "Zamboanga",
+    center: [6.9014, 122.0811],
+    zoom: 13,
+    spots: [
+      { id: "za-1", name: "Fort Pilar", region: "Zamboanga", description: "A 17th-century Spanish military defense fortress and a symbol of cultural heritage.", category: "Historical", gps: [6.9014, 122.0811], tourismFee: 0, environmentalFee: 0, entryFee: 20, image: "/fortpillar/fortpillar1.jpg", rating: 4.7, suggestedDuration: 90 },
+    ]
+  },
+  "Mountain Province": {
+    name: "Mountain Province",
+    center: [17.0833, 120.9000],
+    zoom: 11,
+    spots: [
+      { id: "mp-1", name: "Sumaguing Cave", region: "Mountain Province", description: "The 'Big Cave' of Sagada. Explore stunning stalactite and stalagmite formations.", category: "Adventure", gps: [17.0833, 120.9000], tourismFee: 0, environmentalFee: 0, entryFee: 500, image: "/Sumanguingcave/Sumanguingcave1.jpg", rating: 4.8, suggestedDuration: 180 },
+    ]
+  },
+  "Tagaytay": {
+    name: "Tagaytay",
+    center: [14.0113, 120.9977],
+    zoom: 11,
+    spots: [
+      { id: "tg-1", name: "Taal Volcano", region: "Tagaytay", description: "The world's smallest active volcano. A boat ride across the lake and a trek to the crater.", category: "Nature", gps: [14.0113, 120.9977], tourismFee: 0, environmentalFee: 0, entryFee: 100, image: "/taalvolcano/taalvolcano1.jpg", rating: 4.8, suggestedDuration: 240 },
+    ]
+  },
+  "Pangasinan": {
+    name: "Pangasinan",
+    center: [16.2025, 119.9950],
+    zoom: 11,
+    spots: [
+      { id: "pg-1", name: "Hundred Islands", region: "Pangasinan", description: "Over a hundred mushroom-shaped islands scattered in the Lingayen Gulf.", category: "Beach", gps: [16.2025, 119.9950], tourismFee: 0, environmentalFee: 0, entryFee: 150, image: "/hundredislands/hundredislands1.jpg", rating: 4.8, suggestedDuration: 300 },
+    ]
   }
 };
 

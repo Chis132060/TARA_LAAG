@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { Search, MapPin, Clock, DollarSign, ChevronRight, Sparkles, Trash2, GripVertical, X, ChevronDown, Route, Calendar, ArrowRight, CheckCircle2, Circle, Navigation, Minus, Plus, Sun, Sunset, ArrowLeft, Menu } from "lucide-react";
+import { Search, MapPin, Clock, DollarSign, ChevronRight, Sparkles, Trash2, GripVertical, X, ChevronDown, Route, Calendar, ArrowRight, CheckCircle2, Circle, Navigation, Minus, Plus, Sun, Sunset, ArrowLeft, Menu, Settings2, CalendarDays } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { philippineRegions, allRegionNames, haversineDistance, estimateTravelMinutes, formatFee, type PlannerSpot } from "../data/philippineRegions";
 import { useItinerary, type TripDuration } from "../hooks/useItinerary";
@@ -27,59 +27,18 @@ export function ItineraryPlanner() {
   const itinerary = useItinerary();
   const [globalDays, setGlobalDays] = useState(2);
 
-  // Helper to generate itinerary based on global days
   const handleGenerateItinerary = () => {
-    // We will distribute the globalDays roughly among the selected spots
-    // For simplicity, we can just set all spots to 1 day if we don't have a complex distribution
-    // or we can divide globalDays evenly.
-    // Given the previous useItinerary hook expects each spot to have daysToStay:
-    let daysRemaining = globalDays;
-    itinerary.selectedSpots.forEach((spot, idx) => {
-      // Distribute evenly
-      const daysForThisSpot = Math.max(1, Math.floor(globalDays / itinerary.selectedSpots.length));
-      itinerary.updateSpotStayConfig(spot.id, { daysToStay: daysForThisSpot, startTime: "08:00", endTime: "17:00" });
-    });
-    
     // Generate
-    itinerary.generateItinerary();
+    itinerary.generateItinerary(globalDays);
     setStep("itinerary");
   };
   // Auto-regenerate plan if it becomes null while on itinerary step (e.g. after removing a spot)
   useEffect(() => {
     if (step === "itinerary" && !itinerary.generatedPlan && itinerary.selectedSpots.length > 0) {
-      itinerary.generateItinerary();
+      itinerary.generateItinerary(globalDays);
     }
-  }, [step, itinerary.generatedPlan, itinerary.selectedSpots, itinerary.generateItinerary]);
+  }, [step, itinerary.generatedPlan, itinerary.selectedSpots, itinerary.generateItinerary, globalDays]);
 
-  // Auto-select region & spot when coming from "Add to Trip" on destination details
-  useEffect(() => {
-    const autoRegion = localStorage.getItem("planner_auto_region");
-    const autoSpot = localStorage.getItem("planner_auto_spot");
-    if (autoRegion && autoSpot) {
-      const regionName = JSON.parse(autoRegion) as string;
-      const spotId = JSON.parse(autoSpot) as string;
-      // Clean up so it doesn't re-trigger
-      localStorage.removeItem("planner_auto_region");
-      localStorage.removeItem("planner_auto_spot");
-
-      // Select the region
-      if (!itinerary.selectedRegions.includes(regionName)) {
-        itinerary.setSelectedRegions([...itinerary.selectedRegions, regionName]);
-      }
-
-      // Toggle the spot
-      const region = philippineRegions[regionName];
-      if (region) {
-        const spot = region.spots.find(s => s.id === spotId);
-        if (spot && !itinerary.isSelected(spotId)) {
-          itinerary.toggleSpot(spot);
-        }
-      }
-
-      // Go to the select step to show the spot list
-      setStep("select");
-    }
-  }, []);
 
   // Search logic to match region name OR spot name
   const searchResults = useMemo(() => {
@@ -321,64 +280,247 @@ export function ItineraryPlanner() {
       </div>
     );
   }
-  // STEP: Duration Selection & Summary — New Visual Design
-  if (step === "duration" || step === "schedule") {
+  // STEP: Duration Selection
+  if (step === "duration") {
     return (
       <div className="bg-[#F9F9FC] min-h-screen pb-40">
         <div className="bg-[#ff7800] px-4 pt-6 pb-4 flex items-center justify-between sticky top-0 z-30 shadow-md">
           <button onClick={() => setStep("select")} className="w-10 h-10 flex items-center justify-center active:scale-95 transition-transform">
             <ArrowLeft className="w-6 h-6 text-white" />
           </button>
-          <h1 className="text-white" style={{ fontSize: "18px", fontWeight: 800 }}>Planned Itinerary</h1>
-          <button className="w-10 h-10 flex items-center justify-center active:scale-95 transition-transform">
-            <Menu className="w-6 h-6 text-white" />
-          </button>
+          <h1 className="text-white" style={{ fontSize: "18px", fontWeight: 800 }}>Trip Duration</h1>
+          <div className="w-10" />
         </div>
 
-        <div className="px-4 py-6 space-y-4">
-          {itinerary.selectedSpots.map((spot, index) => (
-            <div key={spot.id} className="bg-white rounded-2xl p-3 flex gap-4 shadow-sm border border-gray-100 relative">
-              <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 relative">
-                <ImageWithFallback src={spot.image} alt={spot.name} className="w-full h-full object-cover" />
-                <div className="absolute top-2 left-2 bg-[#ff7800] w-6 h-6 rounded-full flex items-center justify-center text-white font-bold border-2 border-white shadow-sm" style={{ fontSize: "12px" }}>
-                  {index + 1}
-                </div>
-              </div>
-              <div className="flex-1 min-w-0 py-1">
-                <h3 className="text-[#1A1A1A] truncate mb-1" style={{ fontSize: "16px", fontWeight: 800 }}>{spot.name}</h3>
-                <div className="flex items-center gap-1 text-[#6B7280] mb-2" style={{ fontSize: "12px" }}>
-                  <MapPin className="w-3.5 h-3.5" />
-                  <span className="truncate">{itinerary.selectedRegion}</span>
-                </div>
-                <p className="text-[#6B7280] line-clamp-2" style={{ fontSize: "12px", lineHeight: "1.4" }}>
-                  {spot.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div className="px-6 py-12 flex flex-col items-center justify-center text-center">
+          <div className="w-20 h-20 bg-orange-100 rounded-3xl flex items-center justify-center mb-6">
+            <Calendar className="w-10 h-10 text-[#ff7800]" />
+          </div>
+          <h2 className="text-2xl font-extrabold text-[#1A1A1A] mb-2">How long is your stay?</h2>
+          <p className="text-[#6B7280] mb-10 max-w-[280px]">Select the number of days you want to explore these spots.</p>
 
-        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 w-full max-w-[448px] px-4 pb-4 pt-4 bg-white border-t border-gray-100 z-20 rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
-          <div className="border border-dashed border-[#ff7800] rounded-[24px] p-5 mb-4 bg-white relative">
-            <div className="text-center text-[#1A1A1A] mb-4" style={{ fontSize: "14px", fontWeight: 800 }}>Days of Stay</div>
-            <div className="flex items-center justify-center gap-8 mb-3">
-              <button onClick={() => setGlobalDays(Math.max(1, globalDays - 1))} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#ff7800] hover:bg-orange-50 active:scale-95 transition-all shadow-sm">
-                <Minus className="w-5 h-5" />
+          <div className="bg-white rounded-[32px] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 w-full max-w-sm relative">
+            <div className="text-center text-[#6B7280] uppercase tracking-widest mb-6" style={{ fontSize: "11px", fontWeight: 800 }}>Days of Stay</div>
+            <div className="flex items-center justify-center gap-8 mb-4">
+              <button onClick={() => setGlobalDays(Math.max(1, globalDays - 1))} className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-[#ff7800] hover:bg-orange-50 active:scale-95 transition-all border border-gray-100">
+                <Minus className="w-6 h-6" />
               </button>
-              <div className="w-24 text-center text-[#1A1A1A]" style={{ fontSize: "20px", fontWeight: 800 }}>
-                {globalDays} {globalDays === 1 ? 'Day' : 'Days'}
+              <div className="flex flex-col items-center">
+                <span className="text-4xl font-black text-[#1A1A1A]">{globalDays}</span>
+                <span className="text-[#6B7280] font-bold" style={{ fontSize: "13px" }}>{globalDays === 1 ? 'Day' : 'Days'}</span>
               </div>
-              <button onClick={() => setGlobalDays(globalDays + 1)} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#ff7800] hover:bg-orange-50 active:scale-95 transition-all shadow-sm">
-                <Plus className="w-5 h-5" />
+              <button onClick={() => setGlobalDays(globalDays + 1)} className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-[#ff7800] hover:bg-orange-50 active:scale-95 transition-all border border-gray-100">
+                <Plus className="w-6 h-6" />
               </button>
-            </div>
-            <div className="text-center text-[#6B7280]" style={{ fontSize: "11px" }}>
-              Itinerary will be generated based on your selected number of days.
             </div>
           </div>
+        </div>
+        
+        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 w-full max-w-[448px] px-6 z-20">
+          <button onClick={() => { itinerary.generateItinerary(globalDays); setStep("schedule"); }} className="w-full bg-[#ff7800] text-white py-5 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-[#ff7800]/30 active:scale-[0.98] transition-transform" style={{ fontSize: "17px", fontWeight: 800 }}>
+            Continue to Budgeting <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // STEP: Budgeting / Schedule Allocation
+  if (step === "schedule" && itinerary.generatedPlan) {
+    const plan = itinerary.generatedPlan;
+    return (
+      <div className="bg-[#F9F9FC] min-h-screen pb-40">
+        {/* Purple Header */}
+        <div className="bg-gradient-to-br from-[#7B2CBF] to-[#5A189A] px-6 pt-8 pb-10 rounded-b-[40px] shadow-xl relative overflow-hidden">
+          {/* Decorative circles */}
+          <div className="absolute top-[-20px] right-[-20px] w-40 h-40 bg-white/5 rounded-full" />
+          <div className="absolute bottom-[-40px] left-[-20px] w-32 h-32 bg-white/5 rounded-full" />
           
-          <button onClick={handleGenerateItinerary} className="w-full bg-[#ff7800] text-white py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-[#ff7800]/30 active:scale-[0.98] transition-transform" style={{ fontSize: "16px", fontWeight: 800 }}>
-            <Calendar className="w-5 h-5" />
+          <div className="flex items-center justify-between mb-8 relative z-10">
+            <button onClick={() => setStep("duration")} className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <X className="w-5 h-5 text-white" />
+            </button>
+            <div className="flex flex-col items-center">
+              <h1 className="text-white flex items-center gap-2" style={{ fontSize: "20px", fontWeight: 800 }}>
+                Schedule Your Trip ⏰
+              </h1>
+              <p className="text-white/70" style={{ fontSize: "13px", fontWeight: 500 }}>Set time frames for each day</p>
+            </div>
+            <div className="w-10" />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 relative z-10">
+            <div className="bg-white/15 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex flex-col items-center">
+              <span className="text-white text-2xl font-black">{globalDays}</span>
+              <span className="text-white/60 text-[11px] font-bold uppercase tracking-wider">Total Days</span>
+            </div>
+            <div className="bg-white/15 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex flex-col items-center">
+              <span className="text-white text-2xl font-black">{itinerary.selectedSpots.length}</span>
+              <span className="text-white/60 text-[11px] font-bold uppercase tracking-wider">Destinations</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="px-6 py-8 space-y-6">
+          {itinerary.selectedSpots.map((spot, idx) => {
+            const config = itinerary.getSpotStayConfig(spot.id);
+            return (
+              <div key={spot.id} className="bg-white rounded-[32px] p-5 shadow-sm border border-gray-100 space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 shadow-inner">
+                    <ImageWithFallback src={spot.image} alt={spot.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-[#1A1A1A] truncate" style={{ fontSize: "18px", fontWeight: 800 }}>{spot.name}</h3>
+                      <div className={`px-2.5 py-1 rounded-full flex items-center gap-1.5`} style={{ backgroundColor: `${categoryColors[spot.category]}20` }}>
+                        <span style={{ fontSize: "10px" }}>{categoryEmoji[spot.category]}</span>
+                        <span className="font-extrabold uppercase" style={{ fontSize: "10px", color: categoryColors[spot.category] }}>{spot.category}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <p className="text-[#6B7280] font-bold" style={{ fontSize: "13px" }}>{config.daysToStay} {config.daysToStay === 1 ? 'day' : 'days'} stay</p>
+                      
+                      {/* Stay Duration Controls */}
+                      <div className="flex items-center gap-2 bg-[#F9F9FC] rounded-lg px-2 py-1 border border-gray-50">
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const newDays = Math.max(1, config.daysToStay - 1);
+                            itinerary.updateSpotStayConfig(spot.id, { daysToStay: newDays });
+                            setTimeout(() => itinerary.generateItinerary(globalDays), 50);
+                          }}
+                          className="w-6 h-6 rounded flex items-center justify-center text-[#ff7800] hover:bg-orange-50 active:scale-95 transition-all"
+                        >
+                          <Minus className="w-3.5 h-3.5" />
+                        </button>
+                        <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "12px" }}>{config.daysToStay}</span>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const newDays = Math.min(globalDays, config.daysToStay + 1);
+                            itinerary.updateSpotStayConfig(spot.id, { daysToStay: newDays });
+                            setTimeout(() => itinerary.generateItinerary(globalDays), 50);
+                          }}
+                          className="w-6 h-6 rounded flex items-center justify-center text-[#ff7800] hover:bg-orange-50 active:scale-95 transition-all"
+                        >
+                          <Plus className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Start Time */}
+                  <div className="bg-[#F9F9FC] rounded-[20px] p-4 border border-gray-100 flex flex-col gap-2 relative group">
+                    <div className="flex items-center gap-2 text-[#FF7A00]">
+                      <Sun className="w-3.5 h-3.5" />
+                      <span className="font-bold" style={{ fontSize: "11px" }}>Start Time</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "15px" }}>{config.startTime || "8:00 AM"}</span>
+                      <ChevronDown className="w-4 h-4 text-gray-400" />
+                    </div>
+                    <select 
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      value={config.startTime}
+                      onChange={(e) => itinerary.updateSpotStayConfig(spot.id, { startTime: e.target.value })}
+                    >
+                      {Array.from({ length: 13 }).map((_, i) => (
+                        <option key={i} value={`${i + 6}:00`}>{i + 6 > 12 ? i - 6 : i + 6}:00 {i + 6 >= 12 ? 'PM' : 'AM'}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* End Time */}
+                  <div className="bg-[#F9F9FC] rounded-[20px] p-4 border border-gray-100 flex flex-col gap-2 relative group">
+                    <div className="flex items-center gap-2 text-[#7B2CBF]">
+                      <Sunset className="w-3.5 h-3.5" />
+                      <span className="font-bold" style={{ fontSize: "11px" }}>End Time</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "15px" }}>{config.endTime || "5:00 PM"}</span>
+                      <ChevronDown className="w-4 h-4 text-gray-400" />
+                    </div>
+                    <select 
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      value={config.endTime}
+                      onChange={(e) => itinerary.updateSpotStayConfig(spot.id, { endTime: e.target.value })}
+                    >
+                      {Array.from({ length: 13 }).map((_, i) => (
+                        <option key={i} value={`${i + 10}:00`}>{i + 10 > 12 ? i - 2 : i + 10}:00 {i + 10 >= 12 ? 'PM' : 'AM'}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Day Assignment Selection (Moved inside card for utility) */}
+                <div className="bg-[#F9F9FC] rounded-2xl p-3 border border-gray-100 flex items-center justify-between">
+                  <span className="text-[#6B7280] font-bold" style={{ fontSize: "12px" }}>Assigned Day</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "14px" }}>Day {config.dayIndex !== undefined ? config.dayIndex + 1 : idx + 1}</span>
+                    <div className="relative">
+                      <select 
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        value={config.dayIndex ?? idx}
+                        onChange={(e) => {
+                          itinerary.updateSpotStayConfig(spot.id, { dayIndex: parseInt(e.target.value) });
+                          setTimeout(() => itinerary.generateItinerary(globalDays), 50);
+                        }}
+                      >
+                        {Array.from({ length: globalDays }).map((_, i) => (
+                          <option key={i} value={i}>Day {i + 1}</option>
+                        ))}
+                      </select>
+                      <Settings2 className="w-4 h-4 text-[#FF7A00]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Day Overview Section */}
+          <div className="bg-white rounded-[32px] p-6 shadow-sm border border-gray-100 space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                <CalendarDays className="w-4 h-4 text-[#7B2CBF]" />
+              </div>
+              <h3 className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "18px" }}>Day Overview</h3>
+            </div>
+
+            <div className="space-y-4">
+              {plan.map((dayPlan, dIdx) => (
+                <div key={dIdx} className="space-y-3">
+                  {dayPlan.events.map((event, eIdx) => (
+                    <div key={eIdx} className="flex items-center gap-4 bg-[#F9F9FC] p-3 rounded-2xl border border-gray-50">
+                      <div className="w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold" style={{ borderColor: categoryColors[event.spot.category], color: categoryColors[event.spot.category] }}>
+                        {eIdx + 1}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-[#1A1A1A] font-extrabold truncate" style={{ fontSize: "14px" }}>{event.spot.name}</h4>
+                        <p className="text-[#6B7280] font-bold" style={{ fontSize: "11px" }}>Day {dayPlan.day} • {itinerary.getSpotStayConfig(event.spot.id).startTime || "08:00"} - {itinerary.getSpotStayConfig(event.spot.id).endTime || "17:00"}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Button */}
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-[448px] px-6 z-20">
+          <button 
+            onClick={() => {
+              itinerary.generateItinerary(globalDays);
+              setStep("itinerary");
+            }} 
+            className="w-full bg-gradient-to-r from-[#FF7A00] to-[#FF9500] text-white py-5 rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-orange-200 active:scale-[0.98] transition-transform" 
+            style={{ fontSize: "18px", fontWeight: 800 }}
+          >
+            <Sparkles className="w-5 h-5" />
             Generate Itinerary
           </button>
         </div>

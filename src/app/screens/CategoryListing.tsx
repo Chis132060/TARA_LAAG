@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router";
-import { ChevronLeft, Star, MapPin } from "lucide-react";
+import { ChevronLeft, Star, MapPin, Calendar } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-
 import { allDestinations } from "../data/destinations";
+import { addToTrip } from "../utils/tripPlannerUtils";
 
 export function CategoryListing() {
   const { category } = useParams();
@@ -56,13 +56,20 @@ export function CategoryListing() {
                 <MapPin className="w-3.5 h-3.5" />
                 <span style={{ fontSize: '12px' }} className="line-clamp-1">{dest.location}</span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-1">
                   <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                   <span className="text-[#1A1A1A]" style={{ fontSize: '14px', fontWeight: 600 }}>{dest.rating}</span>
                 </div>
-                <span className="text-[#00C851]" style={{ fontSize: '13px', fontWeight: 700 }}>{dest.entranceFee} <span style={{ fontSize: '10px', opacity: 0.8 }}>Entrance Fee</span></span>
+                <span className="text-[#00C851]" style={{ fontSize: '13px', fontWeight: 700 }}>{dest.entranceFee} <span style={{ fontSize: '10px', opacity: 0.8 }}>Entry</span></span>
               </div>
+              <button
+                onClick={(e) => { e.stopPropagation(); addToTrip(dest.name, navigate, dest.id); }}
+                className="w-full bg-[#FF7A00]/10 text-[#FF7A00] py-2 rounded-xl flex items-center justify-center gap-1.5 active:scale-95 transition-transform"
+              >
+                <Calendar className="w-3.5 h-3.5" />
+                <span style={{ fontSize: '12px', fontWeight: 700 }}>Add to Trip</span>
+              </button>
             </div>
           </button>
         ))}

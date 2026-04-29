@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router";
-import { ChevronLeft, Heart, Share2, Star, MapPin, Camera, Clock, Info, Sparkles, Calendar } from "lucide-react";
+import { ChevronLeft, Heart, Share2, Star, MapPin, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { allDestinations, Destination } from "../data/destinations";
-import { philippineRegions } from "../data/philippineRegions";
+import { addToTrip } from "../utils/tripPlannerUtils";
 
 export function DestinationDetails() {
   const { id } = useParams();
@@ -15,37 +15,7 @@ export function DestinationDetails() {
   const destination = allDestinations.find(d => d.id.toString() === id) || allDestinations[0];
   const [itinerary, setItinerary] = useLocalStorage<Destination[]>("itinerary", []);
 
-  const addToTrip = () => {
-    // Find the matching planner spot by name (fuzzy match)
-    let matchedRegion = "";
-    let matchedSpotId = "";
-    const destNameLower = destination.name.toLowerCase();
-
-    for (const [regionName, region] of Object.entries(philippineRegions)) {
-      for (const spot of region.spots) {
-        const spotNameLower = spot.name.toLowerCase();
-        // Check if destination name contains spot name or vice versa
-        if (destNameLower.includes(spotNameLower) || spotNameLower.includes(destNameLower) ||
-            destNameLower.replace(/\s+/g, '').includes(spotNameLower.replace(/\s+/g, '')) ||
-            spotNameLower.replace(/\s+/g, '').includes(destNameLower.replace(/\s+/g, ''))) {
-          matchedRegion = regionName;
-          matchedSpotId = spot.id;
-          break;
-        }
-      }
-      if (matchedRegion) break;
-    }
-
-    if (matchedRegion && matchedSpotId) {
-      // Pre-select the region and spot in the planner
-      localStorage.setItem("planner_auto_region", JSON.stringify(matchedRegion));
-      localStorage.setItem("planner_auto_spot", JSON.stringify(matchedSpotId));
-      navigate("/app/planner");
-    } else {
-      // No match found — just go to planner
-      navigate("/app/planner");
-    }
-  };
+  const handleAddToTrip = () => addToTrip(destination.name, navigate, destination.id);
 
   const bookNow = () => {
     navigate(`/app/book/${destination.id}`);
@@ -177,7 +147,7 @@ export function DestinationDetails() {
           {/* 4. ACTION BUTTON SECTION (PILL SHAPE, INSIDE SCROLL) */}
           <div className="pt-4 space-y-4 mb-8">
             <button
-              onClick={addToTrip}
+              onClick={handleAddToTrip}
               className="w-full py-4.5 rounded-full border-2 border-[#FF7A00] text-[#FF7A00] transition-all active:scale-95 flex items-center justify-center gap-2"
               style={{ fontSize: '17px', fontWeight: 700 }}
             >
