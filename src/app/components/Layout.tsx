@@ -21,8 +21,8 @@ export function Layout() {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-[448px] mx-auto bg-[#F9F9FC]">
-      <div className="flex-1 overflow-auto pb-20">
+    <div className="flex flex-col h-[100dvh] w-full max-w-[448px] mx-auto bg-[#F9F9FC] shadow-[0_0_50px_rgba(0,0,0,0.1)] relative overflow-hidden">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pb-20 scroll-smooth">
         <Outlet />
       </div>
 

@@ -123,7 +123,11 @@
 @layer base {
   /* Global border-border removed to prevent unwanted lines across the UI */
   body {
-    @apply bg-background text-foreground;
+    background-color: #E2E8F0; /* Soft blue-gray for PC backdrop */
+    color: var(--foreground);
+    display: flex;
+    justify-content: center;
+    min-height: 100dvh;
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
