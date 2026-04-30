@@ -419,17 +419,31 @@ export function ItineraryPlanner() {
                       <span className="font-bold" style={{ fontSize: "11px" }}>Start Time</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "15px" }}>{config.startTime || "8:00 AM"}</span>
+                      <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "15px" }}>
+                        {(() => {
+                          const [h, m] = (config.startTime || "08:00").split(':').map(Number);
+                          return `${h > 12 ? h - 12 : h === 0 ? 12 : h}:${m < 10 ? '0' + m : m} ${h >= 12 ? 'PM' : 'AM'}`;
+                        })()}
+                      </span>
                       <ChevronDown className="w-4 h-4 text-gray-400" />
                     </div>
                     <select 
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                       value={config.startTime}
-                      onChange={(e) => itinerary.updateSpotStayConfig(spot.id, { startTime: e.target.value })}
+                      onChange={(e) => {
+                        const newStart = e.target.value;
+                        const [h, m] = newStart.split(':').map(Number);
+                        // Auto set end time to 2 hours later
+                        const newEnd = `${Math.min(23, h + 2)}:${m === 0 ? '00' : m}`;
+                        itinerary.updateSpotStayConfig(spot.id, { startTime: newStart, endTime: newEnd });
+                        setTimeout(() => itinerary.generateItinerary(globalDays), 10);
+                      }}
                     >
-                      {Array.from({ length: 13 }).map((_, i) => (
-                        <option key={i} value={`${i + 6}:00`}>{i + 6 > 12 ? i - 6 : i + 6}:00 {i + 6 >= 12 ? 'PM' : 'AM'}</option>
-                      ))}
+                      {Array.from({ length: 16 }).map((_, i) => {
+                        const hour = i + 6;
+                        const label = `${hour > 12 ? hour - 12 : hour}:00 ${hour >= 12 ? 'PM' : 'AM'}`;
+                        return <option key={i} value={`${hour}:00`}>{label}</option>;
+                      })}
                     </select>
                   </div>
 
@@ -440,17 +454,27 @@ export function ItineraryPlanner() {
                       <span className="font-bold" style={{ fontSize: "11px" }}>End Time</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "15px" }}>{config.endTime || "5:00 PM"}</span>
+                      <span className="text-[#1A1A1A] font-extrabold" style={{ fontSize: "15px" }}>
+                        {(() => {
+                          const [h, m] = (config.endTime || "17:00").split(':').map(Number);
+                          return `${h > 12 ? h - 12 : h === 0 ? 12 : h}:${m < 10 ? '0' + m : m} ${h >= 12 ? 'PM' : 'AM'}`;
+                        })()}
+                      </span>
                       <ChevronDown className="w-4 h-4 text-gray-400" />
                     </div>
                     <select 
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                       value={config.endTime}
-                      onChange={(e) => itinerary.updateSpotStayConfig(spot.id, { endTime: e.target.value })}
+                      onChange={(e) => {
+                        itinerary.updateSpotStayConfig(spot.id, { endTime: e.target.value });
+                        setTimeout(() => itinerary.generateItinerary(globalDays), 10);
+                      }}
                     >
-                      {Array.from({ length: 13 }).map((_, i) => (
-                        <option key={i} value={`${i + 10}:00`}>{i + 10 > 12 ? i - 2 : i + 10}:00 {i + 10 >= 12 ? 'PM' : 'AM'}</option>
-                      ))}
+                      {Array.from({ length: 16 }).map((_, i) => {
+                        const hour = i + 8;
+                        const label = `${hour > 12 ? hour - 12 : hour}:00 ${hour >= 12 ? 'PM' : 'AM'}`;
+                        return <option key={i} value={`${hour}:00`}>{label}</option>;
+                      })}
                     </select>
                   </div>
                 </div>
@@ -500,7 +524,16 @@ export function ItineraryPlanner() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-[#1A1A1A] font-extrabold truncate" style={{ fontSize: "14px" }}>{event.spot.name}</h4>
-                        <p className="text-[#6B7280] font-bold" style={{ fontSize: "11px" }}>Day {dayPlan.day} • {itinerary.getSpotStayConfig(event.spot.id).startTime || "08:00"} - {itinerary.getSpotStayConfig(event.spot.id).endTime || "17:00"}</p>
+                        <p className="text-[#6B7280] font-bold" style={{ fontSize: "11px" }}>
+                          Day {dayPlan.day} • {(() => {
+                            const conf = itinerary.getSpotStayConfig(event.spot.id);
+                            const [sh, sm] = (conf.startTime || "08:00").split(':').map(Number);
+                            const [eh, em] = (conf.endTime || "17:00").split(':').map(Number);
+                            const startStr = `${sh > 12 ? sh - 12 : sh === 0 ? 12 : sh}:${sm < 10 ? '0' + sm : sm} ${sh >= 12 ? 'PM' : 'AM'}`;
+                            const endStr = `${eh > 12 ? eh - 12 : eh === 0 ? 12 : eh}:${em < 10 ? '0' + em : em} ${eh >= 12 ? 'PM' : 'AM'}`;
+                            return `${startStr} - ${endStr}`;
+                          })()}
+                        </p>
                       </div>
                     </div>
                   ))}

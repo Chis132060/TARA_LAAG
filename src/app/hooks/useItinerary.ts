@@ -62,8 +62,7 @@ export function useItinerary() {
       }
       return [...prev, { spotId, daysToStay: 1, startTime: "08:00", endTime: "17:00", ...updates }];
     });
-    setGeneratedPlan(null);
-  }, []);
+  }, [setSpotStayConfigs]);
 
   // Total days calculated from all spot stay configs
   const totalTripDays = useMemo(() => {
